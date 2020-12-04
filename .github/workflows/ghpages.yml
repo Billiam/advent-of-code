@@ -1,0 +1,39 @@
+name: Publish to GH Pages
+
+on:
+  push:
+    branches: [main]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - uses: actions/setup-ruby@v1
+      with:
+        ruby-version: 2.6.x
+    - run: |
+        sudo apt-get install python3-pip libtool libffi-dev ruby ruby-dev make libzmq3-dev libczmq-dev
+        pip install jupyter-book
+        gem install ffi-rzmq
+        gem install iruby --pre
+        iruby register --force
+        pip install ghp-import
+        PATH="${PATH}:${HOME}/.local/bin"
+    - run: |
+        jupyter-book toc .
+    - run: |
+        jupyter-book build .
+
+    - run: |
+        sudo chown -R $(whoami):$(whoami) .
+        git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com"
+        git config --global user.name "$GITHUB_ACTOR"
+        git remote set-url origin "https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY" 
+        
+        ghp-import _build/html -f -p -n
