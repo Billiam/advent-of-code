@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
     - uses: actions/checkout@v2
@@ -26,8 +26,7 @@ jobs:
         pip install ghp-import
         PATH="${PATH}:${HOME}/.local/bin"
     - run: |
-        rm README.md
-        jupyter-book toc .
+        bin/toc.rb > _toc.yml
     - run: |
         jupyter-book build .
 
