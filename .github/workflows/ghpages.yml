@@ -18,9 +18,7 @@ jobs:
       with:
         ruby-version: 2.6.x
     - run: |
-        sudo apt-get install python3-pip 
-        pip install jupyter-book
-        pip install ghp-import
+        pip install jupyter-book ghp-import
         PATH="${PATH}:${HOME}/.local/bin"
     - run: |
         bin/toc.rb > _toc.yml
