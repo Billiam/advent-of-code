@@ -26,6 +26,7 @@ jobs:
         pip install ghp-import
         PATH="${PATH}:${HOME}/.local/bin"
     - run: |
+        rm README.md
         jupyter-book toc .
     - run: |
         jupyter-book build .
