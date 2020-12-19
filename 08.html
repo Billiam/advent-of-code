@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 8 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Day 7" href="07.html" />
+    <link rel="prev" title="Day 9" href="09.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.html">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.html">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07.html">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05.html">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.html">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/08.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/08.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-8">
+<h1>Day 8<a class="headerlink" href="#day-8" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;8.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">each_line</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">x</span><span class="o">=</span><span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">);</span> <span class="o">[</span><span class="n">x</span><span class="o">.</span><span class="n">first</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&quot;acc&quot;, -15], [&quot;jmp&quot;, 164], [&quot;nop&quot;, 157], [&quot;acc&quot;, -12], [&quot;acc&quot;, -19], [&quot;acc&quot;, 41], [&quot;jmp&quot;, 177], [&quot;acc&quot;, 36], [&quot;acc&quot;, 37], [&quot;nop&quot;, 471], [&quot;jmp&quot;, 433], [&quot;acc&quot;, 24], [&quot;acc&quot;, 13], [&quot;acc&quot;, -12], [&quot;jmp&quot;, 556], [&quot;jmp&quot;, 1], [&quot;acc&quot;, -15], [&quot;acc&quot;, 33], [&quot;jmp&quot;, 299], [&quot;jmp&quot;, 344], [&quot;acc&quot;, -3], [&quot;jmp&quot;, 124], [&quot;acc&quot;, 10], [&quot;nop&quot;, 562], [&quot;acc&quot;, 45], [&quot;jmp&quot;, 386], [&quot;acc&quot;, -3], [&quot;jmp&quot;, 206], [&quot;acc&quot;, -19], [&quot;acc&quot;, 12], [&quot;jmp&quot;, 424], [&quot;acc&quot;, -18], [&quot;acc&quot;, 23], [&quot;acc&quot;, 12], [&quot;acc&quot;, 0], [&quot;jmp&quot;, 311], [&quot;nop&quot;, 327], [&quot;jmp&quot;, 301], [&quot;acc&quot;, 20], [&quot;nop&quot;, 375], [&quot;jmp&quot;, 25], [&quot;acc&quot;, -13], [&quot;acc&quot;, 49], [&quot;acc&quot;, 23], [&quot;acc&quot;, -3], [&quot;jmp&quot;, 346], [&quot;acc&quot;, 2], [&quot;acc&quot;, 3], [&quot;jmp&quot;, 123], [&quot;acc&quot;, -7], [&quot;nop&quot;, 183], [&quot;jmp&quot;, 165], [&quot;acc&quot;, 47], [&quot;acc&quot;, 34], [&quot;jmp&quot;, 1], [&quot;jmp&quot;, 359], [&quot;acc&quot;, 12], [&quot;acc&quot;, 16], [&quot;acc&quot;, -3], [&quot;acc&quot;, 0], [&quot;jmp&quot;, 556], [&quot;acc&quot;, 14], [&quot;acc&quot;, -3], [&quot;jmp&quot;, 559], [&quot;jmp&quot;, 192], [&quot;jmp&quot;, 495], [&quot;nop&quot;, 264], [&quot;acc&quot;, 3], [&quot;acc&quot;, 47], [&quot;jmp&quot;, 187], [&quot;acc&quot;, -18], [&quot;jmp&quot;, 1], [&quot;acc&quot;, -12], [&quot;jmp&quot;, -58], [&quot;acc&quot;, 49], [&quot;nop&quot;, 288], [&quot;jmp&quot;, 145], [&quot;acc&quot;, 46], [&quot;jmp&quot;, 294], [&quot;acc&quot;, 38], [&quot;nop&quot;, 400], [&quot;jmp&quot;, 373], [&quot;acc&quot;, 7], [&quot;acc&quot;, 31], [&quot;jmp&quot;, 492], [&quot;acc&quot;, 40], [&quot;acc&quot;, 5], [&quot;acc&quot;, 11], [&quot;jmp&quot;, 263], [&quot;acc&quot;, 29], [&quot;acc&quot;, 10], [&quot;acc&quot;, 21], [&quot;acc&quot;, 14], [&quot;jmp&quot;, 450], [&quot;nop&quot;, 458], [&quot;acc&quot;, 38], [&quot;nop&quot;, 432], [&quot;acc&quot;, 42], [&quot;jmp&quot;, 191], [&quot;jmp&quot;, 279], [&quot;nop&quot;, 71], [&quot;acc&quot;, -17], [&quot;jmp&quot;, -64], [&quot;acc&quot;, 17], [&quot;jmp&quot;, 1], [&quot;acc&quot;, 29], [&quot;jmp&quot;, 506], [&quot;jmp&quot;, 354], [&quot;acc&quot;, 42], [&quot;acc&quot;, 32], [&quot;jmp&quot;, -40], [&quot;jmp&quot;, 184], [&quot;acc&quot;, 41], [&quot;acc&quot;, -7], [&quot;acc&quot;, 10], [&quot;acc&quot;, 38], [&quot;jmp&quot;, 100], [&quot;jmp&quot;, 104], [&quot;jmp&quot;, 245], [&quot;jmp&quot;, 335], [&quot;jmp&quot;, 20], [&quot;acc&quot;, 3], [&quot;jmp&quot;, 490], [&quot;jmp&quot;, -62], [&quot;acc&quot;, 34], [&quot;acc&quot;, 34], [&quot;acc&quot;, -1], [&quot;jmp&quot;, 6], [&quot;acc&quot;, 5], [&quot;acc&quot;, -9], [&quot;acc&quot;, -19], [&quot;jmp&quot;, 397], [&quot;jmp&quot;, 253], [&quot;acc&quot;, 9], [&quot;jmp&quot;, 270], [&quot;acc&quot;, 8], [&quot;acc&quot;, -16], [&quot;acc&quot;, 32], [&quot;acc&quot;, 48], [&quot;jmp&quot;, 258], [&quot;acc&quot;, 4], [&quot;acc&quot;, 37], [&quot;nop&quot;, 319], [&quot;jmp&quot;, 318], [&quot;jmp&quot;, -4], [&quot;acc&quot;, -5], [&quot;jmp&quot;, 32], [&quot;nop&quot;, -86], [&quot;jmp&quot;, 306], [&quot;acc&quot;, -13], [&quot;acc&quot;, 50], [&quot;acc&quot;, -16], [&quot;jmp&quot;, -53], [&quot;acc&quot;, 31], [&quot;jmp&quot;, 52], [&quot;acc&quot;, -11], [&quot;jmp&quot;, 89], [&quot;acc&quot;, 21], [&quot;jmp&quot;, 126], [&quot;acc&quot;, 44], [&quot;acc&quot;, 49], [&quot;nop&quot;, 177], [&quot;jmp&quot;, 44], [&quot;acc&quot;, 8], [&quot;jmp&quot;, 166], [&quot;acc&quot;, 20], [&quot;acc&quot;, -8], [&quot;acc&quot;, 38], [&quot;acc&quot;, 10], [&quot;jmp&quot;, 311], [&quot;jmp&quot;, 21], [&quot;acc&quot;, -10], [&quot;nop&quot;, 84], [&quot;acc&quot;, -7], [&quot;acc&quot;, 13], [&quot;jmp&quot;, 78], [&quot;jmp&quot;, 1], [&quot;jmp&quot;, 366], [&quot;acc&quot;, -6], [&quot;acc&quot;, -12], [&quot;jmp&quot;, -142], [&quot;nop&quot;, 223], [&quot;jmp&quot;, 42], [&quot;acc&quot;, -6], [&quot;nop&quot;, 227], [&quot;nop&quot;, 193], [&quot;acc&quot;, 23], [&quot;jmp&quot;, 83], [&quot;acc&quot;, -10], [&quot;acc&quot;, 12], [&quot;jmp&quot;, 1], [&quot;acc&quot;, -8], [&quot;acc&quot;, 3], [&quot;nop&quot;, 28], [&quot;jmp&quot;, 301], [&quot;acc&quot;, 23], [&quot;jmp&quot;, -170], [&quot;nop&quot;, -79], [&quot;acc&quot;, 21], [&quot;acc&quot;, 37], [&quot;jmp&quot;, 138], [&quot;acc&quot;, 37], [&quot;acc&quot;, 24], [&quot;nop&quot;, 413], [&quot;acc&quot;, -9], [&quot;jmp&quot;, -179], [&quot;acc&quot;, -1], [&quot;acc&quot;, -10], [&quot;nop&quot;, 261], [&quot;acc&quot;, -19], [&quot;jmp&quot;, 168], [&quot;acc&quot;, -16], [&quot;acc&quot;, 19], [&quot;acc&quot;, 17], [&quot;acc&quot;, 21], [&quot;jmp&quot;, -9], [&quot;jmp&quot;, 46], [&quot;acc&quot;, 4], [&quot;nop&quot;, 398], [&quot;acc&quot;, 28], [&quot;jmp&quot;, 396], [&quot;acc&quot;, 11], [&quot;jmp&quot;, 384], [&quot;jmp&quot;, 375], [&quot;acc&quot;, 25], [&quot;acc&quot;, 30], [&quot;acc&quot;, -11], [&quot;jmp&quot;, 371], [&quot;jmp&quot;, 249], [&quot;acc&quot;, -10], [&quot;acc&quot;, -15], [&quot;jmp&quot;, -7], [&quot;jmp&quot;, 38], [&quot;acc&quot;, 29], [&quot;acc&quot;, 15], [&quot;acc&quot;, 46], [&quot;jmp&quot;, -77], [&quot;acc&quot;, 43], [&quot;jmp&quot;, -83], [&quot;jmp&quot;, -42], [&quot;acc&quot;, 30], [&quot;acc&quot;, 44], [&quot;acc&quot;, 33], [&quot;acc&quot;, 14], [&quot;jmp&quot;, 326], [&quot;acc&quot;, -3], [&quot;nop&quot;, 49], [&quot;acc&quot;, 12], [&quot;jmp&quot;, 63], [&quot;acc&quot;, -13], [&quot;acc&quot;, -19], [&quot;acc&quot;, -17], [&quot;jmp&quot;, 126], [&quot;jmp&quot;, 293], [&quot;acc&quot;, 16], [&quot;jmp&quot;, -185], [&quot;acc&quot;, -12], [&quot;jmp&quot;, -92], [&quot;acc&quot;, -13], [&quot;acc&quot;, 19], [&quot;acc&quot;, -1], [&quot;jmp&quot;, -138], [&quot;acc&quot;, 28], [&quot;nop&quot;, -243], [&quot;nop&quot;, 352], [&quot;acc&quot;, 43], [&quot;jmp&quot;, 249], [&quot;acc&quot;, -5], [&quot;acc&quot;, 36], [&quot;jmp&quot;, -217], [&quot;nop&quot;, 197], [&quot;nop&quot;, -106], [&quot;acc&quot;, 30], [&quot;jmp&quot;, 194], [&quot;acc&quot;, 7], [&quot;acc&quot;, -16], [&quot;nop&quot;, 128], [&quot;jmp&quot;, -239], [&quot;jmp&quot;, -258], [&quot;acc&quot;, 11], [&quot;nop&quot;, -74], [&quot;acc&quot;, 42], [&quot;acc&quot;, 40], [&quot;jmp&quot;, 72], [&quot;jmp&quot;, -207], [&quot;nop&quot;, 337], [&quot;nop&quot;, -240], [&quot;nop&quot;, -169], [&quot;jmp&quot;, -55], [&quot;nop&quot;, 165], [&quot;acc&quot;, 27], [&quot;acc&quot;, 4], [&quot;jmp&quot;, -169], [&quot;acc&quot;, -2], [&quot;jmp&quot;, 69], [&quot;acc&quot;, 0], [&quot;jmp&quot;, -250], [&quot;acc&quot;, 11], [&quot;acc&quot;, 45], [&quot;acc&quot;, 31], [&quot;jmp&quot;, 195], [&quot;acc&quot;, -10], [&quot;acc&quot;, -8], [&quot;nop&quot;, -283], [&quot;acc&quot;, -2], [&quot;jmp&quot;, 63], [&quot;acc&quot;, 17], [&quot;acc&quot;, 12], [&quot;acc&quot;, 0], [&quot;nop&quot;, 243], [&quot;jmp&quot;, 190], [&quot;acc&quot;, 17], [&quot;acc&quot;, -18], [&quot;jmp&quot;, 78], [&quot;acc&quot;, 7], [&quot;acc&quot;, 33], [&quot;jmp&quot;, 244], [&quot;nop&quot;, 29], [&quot;acc&quot;, 20], [&quot;nop&quot;, 150], [&quot;acc&quot;, 29], [&quot;jmp&quot;, -43], [&quot;acc&quot;, 45], [&quot;nop&quot;, -132], [&quot;acc&quot;, 16], [&quot;acc&quot;, 14], [&quot;jmp&quot;, -237], [&quot;jmp&quot;, -199], [&quot;acc&quot;, -4], [&quot;jmp&quot;, 179], [&quot;acc&quot;, 13], [&quot;acc&quot;, 15], [&quot;acc&quot;, 6], [&quot;acc&quot;, 46], [&quot;jmp&quot;, -222], [&quot;acc&quot;, -8], [&quot;acc&quot;, 15], [&quot;jmp&quot;, -26], [&quot;acc&quot;, 38], [&quot;jmp&quot;, 1], [&quot;nop&quot;, 266], [&quot;jmp&quot;, 44], [&quot;acc&quot;, -13], [&quot;nop&quot;, 209], [&quot;acc&quot;, 21], [&quot;jmp&quot;, 201], [&quot;acc&quot;, 8], [&quot;acc&quot;, 18], [&quot;jmp&quot;, 190], [&quot;acc&quot;, 35], [&quot;jmp&quot;, -238], [&quot;jmp&quot;, 69], [&quot;acc&quot;, -11], [&quot;nop&quot;, -182], [&quot;jmp&quot;, -221], [&quot;acc&quot;, -16], [&quot;acc&quot;, -5], [&quot;acc&quot;, 7], [&quot;jmp&quot;, 39], [&quot;acc&quot;, 26], [&quot;acc&quot;, 43], [&quot;acc&quot;, 20], [&quot;jmp&quot;, 92], [&quot;acc&quot;, 22], [&quot;jmp&quot;, 81], [&quot;acc&quot;, 32], [&quot;acc&quot;, -13], [&quot;jmp&quot;, 30], [&quot;acc&quot;, 1], [&quot;jmp&quot;, 201], [&quot;acc&quot;, 4], [&quot;jmp&quot;, -165], [&quot;acc&quot;, -17], [&quot;jmp&quot;, -84], [&quot;acc&quot;, -16], [&quot;acc&quot;, 2], [&quot;acc&quot;, 47], [&quot;jmp&quot;, 54], [&quot;jmp&quot;, -195], [&quot;acc&quot;, 33], [&quot;acc&quot;, -17], [&quot;jmp&quot;, -18], [&quot;jmp&quot;, 256], [&quot;acc&quot;, 1], [&quot;jmp&quot;, -244], [&quot;acc&quot;, 28], [&quot;acc&quot;, 35], [&quot;jmp&quot;, 189], [&quot;nop&quot;, 32], [&quot;acc&quot;, 9], [&quot;jmp&quot;, 24], [&quot;acc&quot;, 21], [&quot;acc&quot;, 14], [&quot;acc&quot;, 17], [&quot;jmp&quot;, -67], [&quot;acc&quot;, 21], [&quot;jmp&quot;, -297], [&quot;acc&quot;, 36], [&quot;acc&quot;, 14], [&quot;acc&quot;, -13], [&quot;jmp&quot;, 115], [&quot;acc&quot;, -2], [&quot;acc&quot;, -13], [&quot;jmp&quot;, -182], [&quot;nop&quot;, 119], [&quot;acc&quot;, -4], [&quot;acc&quot;, 44], [&quot;acc&quot;, -14], [&quot;jmp&quot;, 61], [&quot;acc&quot;, 41], [&quot;jmp&quot;, -13], [&quot;nop&quot;, -116], [&quot;jmp&quot;, -294], [&quot;jmp&quot;, 7], [&quot;jmp&quot;, 17], [&quot;acc&quot;, -14], [&quot;acc&quot;, 42], [&quot;acc&quot;, -6], [&quot;acc&quot;, 24], [&quot;jmp&quot;, 151], [&quot;nop&quot;, -374], [&quot;nop&quot;, -375], [&quot;acc&quot;, 4], [&quot;jmp&quot;, -268], [&quot;nop&quot;, -27], [&quot;acc&quot;, 16], [&quot;acc&quot;, 2], [&quot;jmp&quot;, -206], [&quot;jmp&quot;, -320], [&quot;nop&quot;, -196], [&quot;jmp&quot;, 168], [&quot;nop&quot;, 36], [&quot;acc&quot;, 34], [&quot;jmp&quot;, -402], [&quot;acc&quot;, 36], [&quot;acc&quot;, 38], [&quot;acc&quot;, -11], [&quot;nop&quot;, 17], [&quot;jmp&quot;, -182], [&quot;acc&quot;, 15], [&quot;jmp&quot;, -145], [&quot;acc&quot;, 43], [&quot;jmp&quot;, -79], [&quot;jmp&quot;, -391], [&quot;jmp&quot;, -155], [&quot;nop&quot;, -94], [&quot;acc&quot;, 0], [&quot;acc&quot;, 9], [&quot;jmp&quot;, -441], [&quot;acc&quot;, 3], [&quot;acc&quot;, 6], [&quot;acc&quot;, 50], [&quot;nop&quot;, -334], [&quot;jmp&quot;, 163], [&quot;acc&quot;, 18], [&quot;acc&quot;, -11], [&quot;jmp&quot;, 21], [&quot;acc&quot;, 10], [&quot;acc&quot;, 4], [&quot;nop&quot;, 132], [&quot;jmp&quot;, -348], [&quot;acc&quot;, 18], [&quot;nop&quot;, -1], [&quot;acc&quot;, -4], [&quot;nop&quot;, 148], [&quot;jmp&quot;, 165], [&quot;jmp&quot;, 146], [&quot;jmp&quot;, -460], [&quot;jmp&quot;, -14], [&quot;acc&quot;, 26], [&quot;nop&quot;, -388], [&quot;nop&quot;, -353], [&quot;jmp&quot;, 119], [&quot;acc&quot;, 26], [&quot;acc&quot;, -1], [&quot;acc&quot;, 9], [&quot;jmp&quot;, -285], [&quot;acc&quot;, 37], [&quot;jmp&quot;, -345], [&quot;jmp&quot;, -178], [&quot;acc&quot;, 7], [&quot;acc&quot;, 13], [&quot;jmp&quot;, -39], [&quot;acc&quot;, 29], [&quot;nop&quot;, -200], [&quot;acc&quot;, 50], [&quot;acc&quot;, 24], [&quot;jmp&quot;, -160], [&quot;acc&quot;, 18], [&quot;jmp&quot;, 63], [&quot;acc&quot;, -11], [&quot;acc&quot;, 1], [&quot;acc&quot;, -6], [&quot;acc&quot;, 33], [&quot;jmp&quot;, -90], [&quot;acc&quot;, -3], [&quot;acc&quot;, 11], [&quot;acc&quot;, 45], [&quot;jmp&quot;, -197], [&quot;jmp&quot;, -169], [&quot;acc&quot;, 7], [&quot;acc&quot;, -4], [&quot;jmp&quot;, -281], [&quot;acc&quot;, 48], [&quot;nop&quot;, 19], [&quot;nop&quot;, -25], [&quot;nop&quot;, 9], [&quot;jmp&quot;, -274], [&quot;nop&quot;, -126], [&quot;acc&quot;, 22], [&quot;acc&quot;, -4], [&quot;jmp&quot;, -408], [&quot;acc&quot;, 1], [&quot;acc&quot;, 0], [&quot;jmp&quot;, 98], [&quot;acc&quot;, 25], [&quot;acc&quot;, 12], [&quot;acc&quot;, -19], [&quot;jmp&quot;, -90], [&quot;acc&quot;, 44], [&quot;acc&quot;, 20], [&quot;acc&quot;, 21], [&quot;jmp&quot;, -192], [&quot;acc&quot;, -12], [&quot;jmp&quot;, -70], [&quot;nop&quot;, 3], [&quot;acc&quot;, 17], [&quot;jmp&quot;, -349], [&quot;acc&quot;, 20], [&quot;acc&quot;, -7], [&quot;acc&quot;, 6], [&quot;nop&quot;, -43], [&quot;jmp&quot;, 53], [&quot;acc&quot;, 34], [&quot;acc&quot;, 48], [&quot;acc&quot;, -4], [&quot;acc&quot;, 8], [&quot;jmp&quot;, -126], [&quot;acc&quot;, 23], [&quot;acc&quot;, 25], [&quot;jmp&quot;, -349], [&quot;acc&quot;, -4], [&quot;jmp&quot;, -272], [&quot;jmp&quot;, -129], [&quot;nop&quot;, -366], [&quot;jmp&quot;, -292], [&quot;acc&quot;, 29], [&quot;nop&quot;, -269], [&quot;acc&quot;, 50], [&quot;nop&quot;, -254], [&quot;jmp&quot;, -321], [&quot;jmp&quot;, -23], [&quot;acc&quot;, 11], [&quot;nop&quot;, -425], [&quot;nop&quot;, -150], [&quot;acc&quot;, -9], [&quot;jmp&quot;, -467], [&quot;acc&quot;, 18], [&quot;acc&quot;, 27], [&quot;jmp&quot;, -338], [&quot;jmp&quot;, 1], [&quot;acc&quot;, 21], [&quot;acc&quot;, 27], [&quot;acc&quot;, -11], [&quot;jmp&quot;, -160], [&quot;acc&quot;, 27], [&quot;acc&quot;, 15], [&quot;acc&quot;, 0], [&quot;acc&quot;, 41], [&quot;jmp&quot;, -386], [&quot;acc&quot;, -10], [&quot;acc&quot;, 14], [&quot;jmp&quot;, -217], [&quot;nop&quot;, -484], [&quot;acc&quot;, 47], [&quot;jmp&quot;, -529], [&quot;acc&quot;, -10], [&quot;acc&quot;, 48], [&quot;acc&quot;, 0], [&quot;jmp&quot;, -430], [&quot;acc&quot;, 45], [&quot;acc&quot;, -8], [&quot;acc&quot;, 3], [&quot;nop&quot;, -103], [&quot;jmp&quot;, -387], [&quot;acc&quot;, -16], [&quot;acc&quot;, 39], [&quot;jmp&quot;, 1], [&quot;acc&quot;, 17], [&quot;jmp&quot;, -350], [&quot;jmp&quot;, -328], [&quot;acc&quot;, 30], [&quot;acc&quot;, 28], [&quot;jmp&quot;, -309], [&quot;nop&quot;, -361], [&quot;acc&quot;, 1], [&quot;nop&quot;, -468], [&quot;jmp&quot;, -212], [&quot;acc&quot;, 29], [&quot;acc&quot;, -4], [&quot;jmp&quot;, -249], [&quot;acc&quot;, 45], [&quot;acc&quot;, 30], [&quot;acc&quot;, 40], [&quot;acc&quot;, -17], [&quot;jmp&quot;, -579], [&quot;acc&quot;, 25], [&quot;jmp&quot;, -525], [&quot;nop&quot;, -217], [&quot;acc&quot;, 17], [&quot;acc&quot;, 3], [&quot;jmp&quot;, -142], [&quot;nop&quot;, 18], [&quot;jmp&quot;, -493], [&quot;jmp&quot;, 1], [&quot;jmp&quot;, -495], [&quot;jmp&quot;, -360], [&quot;acc&quot;, 7], [&quot;acc&quot;, 30], [&quot;acc&quot;, -3], [&quot;nop&quot;, -449], [&quot;jmp&quot;, -326], [&quot;acc&quot;, -10], [&quot;acc&quot;, -8], [&quot;jmp&quot;, -371], [&quot;acc&quot;, 22], [&quot;acc&quot;, 48], [&quot;acc&quot;, 6], [&quot;acc&quot;, 18], [&quot;jmp&quot;, -59], [&quot;acc&quot;, 17], [&quot;acc&quot;, 14], [&quot;jmp&quot;, -250], [&quot;acc&quot;, 19], [&quot;acc&quot;, 25], [&quot;acc&quot;, -14], [&quot;acc&quot;, -17], [&quot;jmp&quot;, -517], [&quot;acc&quot;, 29], [&quot;acc&quot;, -4], [&quot;acc&quot;, 9], [&quot;acc&quot;, 17], [&quot;jmp&quot;, 1]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="n">acc</span><span class="o">=</span><span class="mi">0</span>
+  <span class="n">ins</span><span class="o">=</span><span class="mi">0</span>
+  <span class="n">lines</span> <span class="o">=</span> <span class="o">[]</span>
+
+  <span class="k">while</span> <span class="o">!</span><span class="n">lines</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">ins</span><span class="p">)</span>
+    <span class="k">return</span> <span class="o">[</span><span class="kp">nil</span><span class="p">,</span> <span class="n">acc</span><span class="o">]</span> <span class="k">unless</span> <span class="n">data</span><span class="o">[</span><span class="n">ins</span><span class="o">]</span>
+
+    <span class="n">lines</span> <span class="o">&lt;&lt;</span> <span class="n">ins</span>
+    <span class="n">cmd</span><span class="p">,</span> <span class="n">num</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">ins</span><span class="o">]</span>
+    
+    <span class="n">ins</span> <span class="o">+=</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;jmp&quot;</span> <span class="p">?</span> <span class="n">num</span> <span class="p">:</span> <span class="mi">1</span>
+    <span class="n">acc</span> <span class="o">+=</span> <span class="n">num</span> <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;acc&quot;</span>
+  <span class="k">end</span>
+
+  <span class="o">[</span><span class="n">lines</span><span class="p">,</span> <span class="n">acc</span><span class="o">]</span>
+<span class="k">end</span>
+
+<span class="n">run</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">last</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1200
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">lines</span><span class="p">,</span><span class="n">acc</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="n">lines</span><span class="o">.</span><span class="n">reverse</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">line_num</span><span class="o">|</span>
+  <span class="n">d</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dup</span>
+  <span class="n">cmd</span><span class="p">,</span><span class="n">num</span> <span class="o">=</span> <span class="n">data</span><span class="o">[</span><span class="n">line_num</span><span class="o">]</span>
+  <span class="k">next</span> <span class="k">if</span> <span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;acc&quot;</span>
+  
+  <span class="n">d</span><span class="o">[</span><span class="n">line_num</span><span class="o">]</span> <span class="o">=</span> <span class="o">[</span><span class="n">cmd</span> <span class="o">==</span> <span class="s2">&quot;nop&quot;</span> <span class="p">?</span> <span class="s2">&quot;jmp&quot;</span> <span class="p">:</span> <span class="s2">&quot;nop&quot;</span><span class="p">,</span> <span class="n">num</span><span class="o">]</span>
+
+  <span class="n">l</span><span class="p">,</span> <span class="n">acc</span> <span class="o">=</span> <span class="n">run</span><span class="p">(</span><span class="n">d</span><span class="p">)</span> 
+  <span class="k">break</span> <span class="n">acc</span> <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">nil?</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1023
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="09.html" title="previous page">Day 9</a>
+    <a class='right-next' id="next-link" href="07.html" title="next page">Day 7</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

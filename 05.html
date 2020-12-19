@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 5 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Day 4" href="04.html" />
+    <link rel="prev" title="Day 6" href="06.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.html">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.html">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.html">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07.html">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.html">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/05.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#better-solution">
+   Better solution
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-5">
+<h1>Day 5<a class="headerlink" href="#day-5" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">seats</span><span class="o">=</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;5.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">f</span><span class="o">|</span> <span class="n">f</span><span class="o">==</span><span class="s1">&#39;F&#39;</span> <span class="o">||</span> <span class="n">f</span><span class="o">==</span><span class="s1">&#39;L&#39;</span><span class="p">}};</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">seat_ids</span> <span class="o">=</span> <span class="n">seats</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">seat_data</span><span class="o">|</span>
+  <span class="n">row</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="o">[[</span><span class="n">seat_data</span><span class="o">.</span><span class="n">first</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="mi">0</span><span class="o">..</span><span class="mi">127</span><span class="o">]</span><span class="p">,</span> <span class="o">[</span><span class="n">seat_data</span><span class="o">.</span><span class="n">last</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="mi">0</span><span class="o">..</span><span class="mi">7</span><span class="o">]].</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">chars</span><span class="p">,</span> <span class="n">range</span><span class="o">|</span>
+    <span class="n">chars</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">range</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">seat</span><span class="p">,</span> <span class="n">low_range</span><span class="o">|</span>
+      <span class="nb">split</span> <span class="o">=</span> <span class="n">seat</span><span class="o">.</span><span class="n">to_a</span><span class="o">.</span><span class="n">each_slice</span><span class="p">(</span><span class="n">seat</span><span class="o">.</span><span class="n">size</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span>
+      <span class="nb">split</span><span class="o">[</span><span class="n">low_range</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="mi">1</span><span class="o">]</span>
+    <span class="k">end</span><span class="o">.</span><span class="n">first</span>
+  <span class="k">end</span>
+  <span class="n">row</span> <span class="o">*</span> <span class="mi">8</span> <span class="o">+</span> <span class="n">col</span>
+<span class="k">end</span><span class="o">.</span><span class="n">sort</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295, 296, 297, 298, 299, 300, 301, 302, 303, 304, 305, 306, 307, 308, 309, 310, 311, 312, 313, 314, 315, 316, 317, 318, 319, 320, 321, 322, 323, 324, 325, 326, 327, 328, 329, 330, 331, 332, 333, 334, 335, 336, 337, 338, 339, 340, 341, 342, 343, 344, 345, 346, 347, 348, 349, 350, 351, 352, 353, 354, 355, 356, 357, 358, 359, 360, 361, 362, 363, 364, 365, 366, 367, 368, 369, 370, 371, 372, 373, 374, 375, 376, 377, 378, 379, 380, 381, 382, 383, 384, 385, 386, 387, 388, 389, 390, 391, 392, 393, 394, 395, 396, 397, 398, 399, 400, 401, 402, 403, 404, 405, 406, 407, 408, 409, 410, 411, 412, 413, 414, 415, 416, 417, 418, 419, 420, 421, 422, 423, 424, 425, 426, 427, 428, 429, 430, 431, 432, 433, 434, 435, 436, 437, 438, 439, 440, 441, 442, 443, 444, 445, 446, 447, 448, 449, 450, 451, 452, 453, 454, 455, 456, 457, 458, 459, 460, 461, 462, 463, 464, 465, 466, 467, 468, 469, 470, 471, 472, 473, 474, 475, 476, 477, 478, 479, 480, 481, 482, 483, 484, 485, 486, 487, 488, 489, 490, 491, 492, 493, 494, 495, 496, 497, 498, 499, 500, 501, 502, 503, 504, 505, 506, 507, 508, 509, 510, 511, 512, 513, 514, 515, 516, 517, 518, 519, 520, 521, 522, 523, 524, 525, 526, 527, 528, 529, 530, 531, 532, 533, 534, 535, 536, 537, 538, 539, 540, 541, 542, 543, 544, 545, 546, 547, 548, 549, 550, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, 579, 580, 581, 582, 583, 584, 585, 586, 587, 588, 589, 590, 591, 592, 593, 594, 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606, 607, 608, 609, 610, 611, 612, 613, 614, 615, 616, 617, 618, 619, 620, 621, 622, 623, 624, 625, 626, 627, 628, 629, 630, 631, 632, 633, 634, 635, 636, 637, 638, 639, 640, 641, 642, 643, 644, 645, 647, 648, 649, 650, 651, 652, 653, 654, 655, 656, 657, 658, 659, 660, 661, 662, 663, 664, 665, 666, 667, 668, 669, 670, 671, 672, 673, 674, 675, 676, 677, 678, 679, 680, 681, 682, 683, 684, 685, 686, 687, 688, 689, 690, 691, 692, 693, 694, 695, 696, 697, 698, 699, 700, 701, 702, 703, 704, 705, 706, 707, 708, 709, 710, 711, 712, 713, 714, 715, 716, 717, 718, 719, 720, 721, 722, 723, 724, 725, 726, 727, 728, 729, 730, 731, 732, 733, 734, 735, 736, 737, 738, 739, 740, 741, 742, 743, 744, 745, 746, 747, 748, 749, 750, 751, 752, 753, 754, 755, 756, 757, 758, 759, 760, 761, 762, 763, 764, 765, 766, 767, 768, 769, 770, 771, 772, 773, 774, 775, 776, 777, 778, 779, 780, 781, 782, 783, 784, 785, 786, 787, 788, 789, 790, 791, 792, 793, 794, 795, 796, 797, 798, 799, 800, 801, 802, 803, 804, 805, 806, 807, 808, 809, 810, 811, 812, 813, 814, 815, 816, 817, 818, 819, 820, 821, 822, 823, 824, 825, 826, 827, 828, 829, 830, 831, 832, 833, 834, 835, 836, 837, 838, 839, 840, 841, 842, 843, 844, 845, 846, 847, 848, 849, 850, 851, 852, 853, 854, 855, 856, 857, 858, 859, 860, 861, 862, 863, 864, 865, 866, 867, 868, 869, 870, 871, 872, 873, 874, 875, 876, 877, 878, 879, 880, 881, 882, 883, 884, 885, 886, 887, 888, 889, 890, 891, 892, 893, 894, 895, 896, 897, 898, 899, 900, 901, 902, 903, 904, 905, 906, 907, 908, 909, 910, 911, 912, 913, 914, 915, 916, 917, 918, 919, 920, 921, 922, 923, 924, 925, 926, 927, 928, 929, 930, 931, 932, 933, 934, 935, 936, 937, 938, 939, 940, 941, 942, 943, 944, 945, 946, 947, 948, 949, 950, 951, 952, 953, 954, 955, 956, 957, 958, 959, 960, 961, 962, 963, 964, 965, 966, 967, 968, 969, 970, 971, 972, 973, 974]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">seat_ids</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>974
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">99</span><span class="o">..</span><span class="mi">974</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="o">-</span> <span class="n">seat_ids</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[646]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="better-solution">
+<h2>Better solution<a class="headerlink" href="#better-solution" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">seats</span><span class="o">=</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;5.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">seat</span><span class="o">|</span> 
+  <span class="n">seat</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">char</span><span class="o">|</span> <span class="s2">&quot;BR&quot;</span><span class="o">.</span><span class="n">include?</span><span class="p">(</span><span class="n">char</span><span class="p">)</span> <span class="p">?</span> <span class="mi">1</span> <span class="p">:</span> <span class="mi">0</span><span class="p">}</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_i</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[883, 848, 232, 685, 515, 406, 760, 494, 115, 780, 161, 766, 808, 439, 151, 938, 753, 642, 960, 675, 215, 475, 879, 947, 628, 739, 198, 464, 653, 790, 488, 334, 425, 928, 227, 106, 652, 954, 281, 720, 258, 615, 407, 155, 702, 626, 442, 509, 507, 724, 718, 359, 449, 710, 222, 257, 634, 641, 327, 368, 904, 109, 320, 318, 599, 125, 593, 553, 730, 609, 116, 695, 256, 622, 900, 397, 629, 849, 729, 526, 563, 882, 697, 807, 148, 453, 293, 452, 358, 586, 411, 122, 915, 462, 131, 916, 956, 581, 604, 142, 832, 921, 631, 644, 308, 237, 409, 761, 602, 451, 466, 260, 369, 561, 857, 806, 796, 676, 435, 448, 353, 860, 545, 415, 850, 531, 279, 316, 378, 587, 733, 520, 765, 234, 689, 864, 948, 170, 870, 714, 178, 265, 919, 655, 810, 383, 332, 579, 911, 726, 570, 878, 605, 611, 137, 465, 367, 486, 306, 395, 717, 885, 614, 387, 640, 973, 686, 501, 606, 235, 214, 692, 811, 889, 624, 826, 348, 887, 225, 578, 461, 580, 379, 288, 735, 698, 473, 782, 834, 912, 269, 575, 223, 294, 891, 830, 173, 894, 794, 945, 283, 498, 478, 487, 618, 180, 393, 869, 402, 683, 874, 158, 419, 764, 598, 162, 328, 182, 205, 937, 651, 444, 828, 99, 909, 955, 331, 762, 268, 455, 287, 898, 803, 187, 589, 657, 101, 139, 740, 533, 171, 480, 226, 940, 798, 522, 470, 950, 521, 704, 340, 539, 901, 567, 899, 421, 364, 591, 756, 749, 469, 500, 317, 793, 824, 902, 632, 157, 736, 127, 801, 871, 370, 428, 213, 562, 278, 743, 424, 759, 918, 362, 738, 120, 337, 812, 168, 431, 548, 617, 709, 668, 233, 678, 386, 236, 344, 329, 946, 285, 463, 113, 569, 875, 758, 886, 220, 868, 492, 716, 933, 263, 936, 110, 922, 829, 719, 408, 712, 537, 276, 744, 530, 571, 613, 490, 392, 722, 601, 786, 159, 797, 647, 124, 186, 672, 893, 788, 289, 821, 218, 892, 930, 413, 669, 482, 865, 433, 145, 732, 175, 322, 970, 650, 774, 311, 913, 592, 862, 731, 284, 248, 742, 799, 191, 195, 336, 931, 661, 405, 855, 923, 734, 418, 961, 841, 554, 696, 517, 815, 633, 935, 304, 143, 390, 816, 474, 211, 827, 312, 401, 888, 649, 261, 156, 206, 426, 384, 144, 682, 246, 597, 831, 192, 250, 746, 819, 321, 534, 354, 303, 128, 673, 574, 667, 385, 496, 414, 603, 300, 547, 836, 516, 228, 853, 908, 674, 107, 625, 253, 535, 135, 146, 817, 174, 204, 165, 856, 335, 659, 267, 748, 133, 564, 117, 971, 905, 249, 777, 514, 196, 280, 166, 380, 355, 325, 305, 140, 658, 176, 229, 897, 566, 789, 612, 924, 755, 105, 814, 141, 450, 962, 590, 272, 239, 230, 607, 427, 783, 189, 203, 519, 706, 338, 700, 296, 838, 711, 721, 684, 345, 343, 859, 728, 528, 555, 858, 491, 949, 417, 274, 784, 398, 896, 577, 238, 638, 188, 867, 376, 183, 585, 802, 185, 505, 573, 818, 307, 264, 703, 181, 152, 244, 680, 866, 179, 221, 489, 297, 568, 277, 880, 404, 339, 572, 665, 705, 619, 403, 197, 881, 326, 510, 400, 639, 884, 538, 727, 443, 691, 693, 150, 447, 551, 699, 679, 254, 132, 154, 910, 381, 770, 506, 757, 550, 330, 194, 549, 262, 843, 410, 876, 217, 944, 616, 926, 525, 212, 298, 460, 502, 224, 282, 688, 523, 454, 177, 637, 302, 877, 270, 648, 635, 295, 541, 745, 468, 504, 595, 771, 436, 286, 540, 565, 600, 118, 792, 556, 713, 412, 423, 396, 837, 123, 741, 582, 429, 763, 943, 389, 314, 610, 430, 932, 363, 781, 737, 375, 169, 925, 576, 366, 111, 394, 873, 813, 472, 895, 163, 481, 477, 805, 275, 342, 508, 512, 852, 942, 432, 542, 863, 957, 951, 660, 596, 750, 664, 513, 310, 291, 966, 164, 190, 643, 255, 373, 833, 835, 445, 670, 126, 941, 440, 903, 939, 301, 623, 768, 645, 200, 100, 914, 588, 371, 687, 292, 193, 138, 119, 241, 112, 907, 527, 219, 671, 775, 103, 231, 787, 104, 715, 341, 958, 446, 959, 546, 767, 972, 360, 357, 927, 842, 240, 199, 839, 511, 773, 559, 823, 752, 201, 666, 333, 319, 114, 681, 677, 906, 356, 845, 434, 259, 172, 701, 630, 273, 621, 778, 242, 627, 457, 847, 620, 247, 846, 484, 968, 309, 769, 524, 361, 365, 840, 216, 544, 953, 350, 791, 290, 974, 266, 861, 708, 324, 391, 129, 243, 800, 209, 207, 251, 583, 471, 315, 929, 313, 636, 536, 552, 347, 963, 136, 872, 584, 441, 299, 663, 349, 271, 134, 707, 844, 969, 518, 820, 851, 422, 557, 822, 503, 210, 694, 102, 656, 352, 934, 420, 785, 558, 160, 351, 532, 382, 467, 493, 153, 964, 416, 346, 560, 252, 754, 147, 499, 809, 690, 917, 483, 662, 323, 437, 399, 438, 654, 184, 245, 372, 795, 594, 776, 377, 965, 202, 459, 779, 804, 772, 952, 456, 458, 497, 479, 476, 967, 825, 495, 121, 529, 920, 167, 108, 747, 130, 725, 751, 608, 854, 890, 149, 374, 208, 543, 485, 388, 723]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">seats</span><span class="o">.</span><span class="n">max</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>974
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">seats</span><span class="o">.</span><span class="n">min</span><span class="o">..</span><span class="n">seats</span><span class="o">.</span><span class="n">max</span><span class="p">)</span><span class="o">.</span><span class="n">to_a</span> <span class="o">-</span> <span class="n">seats</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[646]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="06.html" title="previous page">Day 6</a>
+    <a class='right-next' id="next-link" href="04.html" title="next page">Day 4</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

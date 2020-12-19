@@ -1,0 +1,433 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 7 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Day 6" href="06.html" />
+    <link rel="prev" title="Day 8" href="08.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.html">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.html">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.html">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05.html">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.html">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/07.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-7">
+<h1>Day 7<a class="headerlink" href="#day-7" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;7.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">);</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">containers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+  <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; contain &#39;</span><span class="p">)</span>
+  <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="o">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">6</span><span class="o">]</span>
+  <span class="n">vals</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">bag</span><span class="o">|</span> <span class="n">m</span><span class="o">=</span><span class="sr">/(\d+) (.*) bag/</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">bag</span><span class="p">);</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="n">m</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span> <span class="p">}</span>
+  <span class="o">[</span><span class="n">key</span><span class="p">,</span> <span class="n">vals</span><span class="o">]</span>
+<span class="k">end</span><span class="o">.</span><span class="n">to_h</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&quot;muted white&quot;=&gt;[&quot;dark orange&quot;, &quot;bright white&quot;], &quot;bright salmon&quot;=&gt;[&quot;light indigo&quot;], &quot;drab brown&quot;=&gt;[&quot;dark green&quot;, &quot;plaid fuchsia&quot;, &quot;muted tomato&quot;, &quot;light tan&quot;], &quot;dark salmon&quot;=&gt;[&quot;posh white&quot;, &quot;light violet&quot;], &quot;mirrored gray&quot;=&gt;[&quot;mirrored turquoise&quot;], &quot;posh turquoise&quot;=&gt;[&quot;mirrored magenta&quot;, &quot;muted red&quot;, &quot;dim gray&quot;, &quot;dull tan&quot;], &quot;posh coral&quot;=&gt;[&quot;dark purple&quot;, &quot;drab teal&quot;], &quot;light violet&quot;=&gt;[&quot;striped magenta&quot;, &quot;light lime&quot;, &quot;posh cyan&quot;], &quot;dull brown&quot;=&gt;[&quot;vibrant silver&quot;, &quot;dotted beige&quot;], &quot;dim salmon&quot;=&gt;[nil], &quot;light bronze&quot;=&gt;[&quot;bright maroon&quot;, &quot;faded olive&quot;, &quot;shiny beige&quot;, &quot;striped orange&quot;], &quot;pale plum&quot;=&gt;[&quot;muted white&quot;, &quot;striped magenta&quot;], &quot;shiny tomato&quot;=&gt;[&quot;vibrant chartreuse&quot;], &quot;dark gray&quot;=&gt;[&quot;dim bronze&quot;], &quot;plaid tan&quot;=&gt;[&quot;light coral&quot;, &quot;dim fuchsia&quot;, &quot;mirrored coral&quot;], &quot;bright blue&quot;=&gt;[&quot;muted gold&quot;, &quot;striped aqua&quot;], &quot;faded cyan&quot;=&gt;[&quot;drab teal&quot;, &quot;faded black&quot;, &quot;posh cyan&quot;], &quot;clear purple&quot;=&gt;[&quot;posh lavender&quot;, &quot;dim green&quot;, &quot;dull white&quot;, &quot;pale crimson&quot;], &quot;faded chartreuse&quot;=&gt;[&quot;wavy orange&quot;, &quot;vibrant red&quot;, &quot;pale salmon&quot;, &quot;vibrant plum&quot;], &quot;dull plum&quot;=&gt;[&quot;posh gray&quot;, &quot;bright aqua&quot;, &quot;faded lavender&quot;, &quot;dull salmon&quot;], &quot;dull magenta&quot;=&gt;[&quot;shiny violet&quot;, &quot;posh tan&quot;], &quot;pale lime&quot;=&gt;[&quot;vibrant plum&quot;, &quot;striped crimson&quot;], &quot;shiny cyan&quot;=&gt;[&quot;plaid black&quot;, &quot;muted lime&quot;, &quot;posh black&quot;], &quot;posh lime&quot;=&gt;[&quot;light lavender&quot;, &quot;dim green&quot;, &quot;dull purple&quot;, &quot;muted tomato&quot;], &quot;dotted tomato&quot;=&gt;[&quot;bright lavender&quot;, &quot;muted white&quot;, &quot;pale maroon&quot;, &quot;dotted tan&quot;], &quot;muted teal&quot;=&gt;[&quot;shiny brown&quot;, &quot;drab olive&quot;, &quot;shiny black&quot;, &quot;posh white&quot;], &quot;mirrored violet&quot;=&gt;[&quot;striped gold&quot;, &quot;drab lavender&quot;, &quot;mirrored blue&quot;, &quot;bright gold&quot;], &quot;dim crimson&quot;=&gt;[&quot;pale bronze&quot;, &quot;pale turquoise&quot;, &quot;striped aqua&quot;, &quot;light lavender&quot;], &quot;wavy chartreuse&quot;=&gt;[&quot;shiny violet&quot;, &quot;striped white&quot;, &quot;vibrant silver&quot;], &quot;mirrored red&quot;=&gt;[&quot;clear maroon&quot;, &quot;dim indigo&quot;, &quot;drab brown&quot;, &quot;shiny white&quot;], &quot;mirrored maroon&quot;=&gt;[&quot;drab maroon&quot;, &quot;mirrored teal&quot;, &quot;faded coral&quot;], &quot;clear teal&quot;=&gt;[&quot;dim orange&quot;, &quot;mirrored bronze&quot;, &quot;faded beige&quot;], &quot;muted lime&quot;=&gt;[&quot;faded indigo&quot;, &quot;muted olive&quot;, &quot;mirrored chartreuse&quot;], &quot;faded fuchsia&quot;=&gt;[&quot;dim bronze&quot;, &quot;muted tan&quot;, &quot;drab teal&quot;, &quot;faded bronze&quot;], &quot;dull blue&quot;=&gt;[&quot;shiny beige&quot;, &quot;shiny silver&quot;, &quot;dull fuchsia&quot;], &quot;drab white&quot;=&gt;[&quot;dotted aqua&quot;], &quot;dark chartreuse&quot;=&gt;[&quot;mirrored magenta&quot;, &quot;wavy yellow&quot;], &quot;bright gold&quot;=&gt;[&quot;faded fuchsia&quot;, &quot;plaid olive&quot;, &quot;muted tomato&quot;, &quot;drab bronze&quot;], &quot;drab chartreuse&quot;=&gt;[&quot;vibrant lime&quot;, &quot;dark teal&quot;], &quot;muted plum&quot;=&gt;[&quot;light yellow&quot;, &quot;drab lime&quot;], &quot;shiny lime&quot;=&gt;[&quot;dull brown&quot;, &quot;dark brown&quot;], &quot;pale white&quot;=&gt;[&quot;dull aqua&quot;, &quot;muted tan&quot;, &quot;drab bronze&quot;], &quot;dim violet&quot;=&gt;[&quot;wavy red&quot;, &quot;striped brown&quot;], &quot;posh gold&quot;=&gt;[&quot;wavy blue&quot;, &quot;dotted aqua&quot;, &quot;wavy maroon&quot;, &quot;striped indigo&quot;], &quot;light indigo&quot;=&gt;[&quot;striped teal&quot;, &quot;wavy blue&quot;, &quot;shiny brown&quot;, &quot;plaid fuchsia&quot;], &quot;posh tan&quot;=&gt;[&quot;bright aqua&quot;, &quot;clear gold&quot;], &quot;muted bronze&quot;=&gt;[&quot;drab fuchsia&quot;, &quot;bright brown&quot;, &quot;dull brown&quot;, &quot;plaid red&quot;], &quot;shiny turquoise&quot;=&gt;[&quot;muted purple&quot;, &quot;striped green&quot;, &quot;clear tomato&quot;, &quot;bright plum&quot;], &quot;pale tan&quot;=&gt;[&quot;dark brown&quot;, &quot;clear tomato&quot;, &quot;mirrored black&quot;, &quot;bright red&quot;], &quot;faded yellow&quot;=&gt;[&quot;drab purple&quot;], &quot;striped black&quot;=&gt;[&quot;clear lavender&quot;], &quot;dotted indigo&quot;=&gt;[&quot;striped plum&quot;], &quot;dull black&quot;=&gt;[&quot;posh crimson&quot;, &quot;shiny bronze&quot;, &quot;posh salmon&quot;, &quot;bright salmon&quot;], &quot;plaid beige&quot;=&gt;[&quot;drab turquoise&quot;, &quot;striped lavender&quot;], &quot;striped gray&quot;=&gt;[&quot;vibrant bronze&quot;, &quot;bright chartreuse&quot;], &quot;wavy bronze&quot;=&gt;[&quot;clear teal&quot;, &quot;light orange&quot;, &quot;striped beige&quot;], &quot;mirrored green&quot;=&gt;[&quot;plaid lavender&quot;, &quot;mirrored purple&quot;, &quot;dark silver&quot;], &quot;posh maroon&quot;=&gt;[&quot;faded blue&quot;, &quot;light tan&quot;, &quot;clear brown&quot;], &quot;plaid chartreuse&quot;=&gt;[&quot;posh white&quot;, &quot;striped orange&quot;, &quot;light beige&quot;, &quot;drab lime&quot;], &quot;muted tomato&quot;=&gt;[&quot;striped teal&quot;], &quot;drab magenta&quot;=&gt;[&quot;bright brown&quot;, &quot;muted white&quot;, &quot;shiny silver&quot;, &quot;shiny indigo&quot;], &quot;light gray&quot;=&gt;[&quot;striped turquoise&quot;, &quot;light purple&quot;], &quot;pale violet&quot;=&gt;[&quot;posh olive&quot;, &quot;drab green&quot;], &quot;light chartreuse&quot;=&gt;[&quot;dull silver&quot;, &quot;faded maroon&quot;, &quot;drab purple&quot;, &quot;shiny gold&quot;], &quot;dull gold&quot;=&gt;[&quot;shiny indigo&quot;, &quot;bright orange&quot;, &quot;faded bronze&quot;, &quot;shiny tan&quot;], &quot;dark black&quot;=&gt;[&quot;faded lavender&quot;, &quot;faded gold&quot;, &quot;clear blue&quot;], &quot;clear blue&quot;=&gt;[&quot;dull teal&quot;, &quot;wavy violet&quot;], &quot;vibrant violet&quot;=&gt;[&quot;dark purple&quot;, &quot;bright aqua&quot;, &quot;light indigo&quot;, &quot;vibrant lime&quot;], &quot;pale gray&quot;=&gt;[&quot;plaid green&quot;, &quot;dull beige&quot;], &quot;plaid teal&quot;=&gt;[&quot;wavy gold&quot;], &quot;dotted maroon&quot;=&gt;[&quot;shiny green&quot;, &quot;wavy magenta&quot;, &quot;posh fuchsia&quot;], &quot;pale coral&quot;=&gt;[&quot;plaid chartreuse&quot;, &quot;dark bronze&quot;, &quot;wavy blue&quot;], &quot;shiny plum&quot;=&gt;[&quot;dark yellow&quot;, &quot;plaid gold&quot;], &quot;light plum&quot;=&gt;[&quot;light olive&quot;, &quot;clear yellow&quot;], &quot;drab aqua&quot;=&gt;[&quot;wavy gray&quot;, &quot;bright beige&quot;, &quot;drab plum&quot;, &quot;posh coral&quot;], &quot;posh brown&quot;=&gt;[&quot;dim blue&quot;, &quot;shiny tan&quot;], &quot;pale tomato&quot;=&gt;[&quot;light olive&quot;, &quot;shiny olive&quot;, &quot;posh lavender&quot;], &quot;dim orange&quot;=&gt;[&quot;posh tan&quot;], &quot;dull olive&quot;=&gt;[&quot;dim turquoise&quot;, &quot;dotted blue&quot;, &quot;dotted plum&quot;, &quot;mirrored bronze&quot;], &quot;dim gray&quot;=&gt;[&quot;shiny blue&quot;, &quot;striped aqua&quot;, &quot;bright tomato&quot;], &quot;posh gray&quot;=&gt;[&quot;plaid crimson&quot;, &quot;mirrored yellow&quot;], &quot;wavy silver&quot;=&gt;[&quot;mirrored black&quot;, &quot;clear gray&quot;], &quot;muted salmon&quot;=&gt;[&quot;clear indigo&quot;], &quot;clear gold&quot;=&gt;[nil], &quot;dotted cyan&quot;=&gt;[&quot;dotted turquoise&quot;], &quot;light crimson&quot;=&gt;[&quot;shiny turquoise&quot;, &quot;plaid fuchsia&quot;, &quot;shiny yellow&quot;], &quot;plaid lime&quot;=&gt;[&quot;dim silver&quot;], &quot;dim beige&quot;=&gt;[&quot;clear green&quot;, &quot;mirrored gray&quot;, &quot;dotted lavender&quot;, &quot;muted bronze&quot;], &quot;dark coral&quot;=&gt;[&quot;bright tomato&quot;, &quot;shiny brown&quot;, &quot;light magenta&quot;], &quot;dull orange&quot;=&gt;[&quot;striped red&quot;, &quot;pale coral&quot;, &quot;vibrant green&quot;, &quot;muted indigo&quot;], &quot;vibrant gold&quot;=&gt;[&quot;dull crimson&quot;, &quot;dark yellow&quot;], &quot;mirrored coral&quot;=&gt;[&quot;bright green&quot;, &quot;shiny orange&quot;, &quot;clear aqua&quot;, &quot;dull salmon&quot;], &quot;pale purple&quot;=&gt;[&quot;bright tomato&quot;, &quot;light beige&quot;, &quot;plaid bronze&quot;, &quot;dull beige&quot;], &quot;bright olive&quot;=&gt;[&quot;shiny beige&quot;, &quot;mirrored crimson&quot;, &quot;striped orange&quot;, &quot;plaid fuchsia&quot;], &quot;clear black&quot;=&gt;[&quot;dull green&quot;], &quot;bright red&quot;=&gt;[&quot;posh cyan&quot;, &quot;clear black&quot;, &quot;plaid turquoise&quot;, &quot;muted yellow&quot;], &quot;mirrored tan&quot;=&gt;[&quot;light cyan&quot;, &quot;vibrant red&quot;], &quot;muted orange&quot;=&gt;[&quot;clear lavender&quot;, &quot;posh bronze&quot;, &quot;dim bronze&quot;], &quot;plaid orange&quot;=&gt;[&quot;shiny silver&quot;], &quot;shiny teal&quot;=&gt;[&quot;light chartreuse&quot;, &quot;dull crimson&quot;], &quot;striped crimson&quot;=&gt;[&quot;dotted tomato&quot;, &quot;dim fuchsia&quot;], &quot;dotted tan&quot;=&gt;[&quot;drab purple&quot;, &quot;mirrored bronze&quot;, &quot;shiny beige&quot;, &quot;posh tan&quot;], &quot;posh olive&quot;=&gt;[&quot;clear tomato&quot;], &quot;faded silver&quot;=&gt;[&quot;drab blue&quot;, &quot;dull yellow&quot;, &quot;dim red&quot;], &quot;plaid violet&quot;=&gt;[&quot;dull tan&quot;, &quot;dim yellow&quot;], &quot;muted violet&quot;=&gt;[&quot;clear violet&quot;, &quot;mirrored teal&quot;, &quot;plaid violet&quot;], &quot;dull lavender&quot;=&gt;[&quot;dotted silver&quot;, &quot;striped coral&quot;, &quot;striped indigo&quot;], &quot;faded crimson&quot;=&gt;[&quot;drab red&quot;], &quot;striped coral&quot;=&gt;[&quot;dull brown&quot;, &quot;vibrant red&quot;], &quot;shiny tan&quot;=&gt;[&quot;shiny fuchsia&quot;, &quot;plaid gray&quot;], &quot;plaid coral&quot;=&gt;[&quot;muted brown&quot;, &quot;faded indigo&quot;, &quot;wavy white&quot;, &quot;mirrored blue&quot;], &quot;bright white&quot;=&gt;[nil], &quot;dark green&quot;=&gt;[&quot;mirrored lime&quot;, &quot;wavy maroon&quot;], &quot;mirrored yellow&quot;=&gt;[&quot;posh white&quot;], &quot;bright magenta&quot;=&gt;[&quot;drab lime&quot;, &quot;mirrored black&quot;, &quot;dark yellow&quot;, &quot;light indigo&quot;], &quot;shiny aqua&quot;=&gt;[&quot;drab tan&quot;, &quot;muted gray&quot;], &quot;dim olive&quot;=&gt;[&quot;dotted lavender&quot;, &quot;plaid green&quot;, &quot;posh lavender&quot;, &quot;dim tan&quot;], &quot;posh magenta&quot;=&gt;[&quot;posh white&quot;, &quot;clear plum&quot;], &quot;light aqua&quot;=&gt;[&quot;dim salmon&quot;], &quot;muted indigo&quot;=&gt;[&quot;plaid purple&quot;], &quot;clear chartreuse&quot;=&gt;[&quot;mirrored bronze&quot;], &quot;dim teal&quot;=&gt;[&quot;striped orange&quot;, &quot;posh tan&quot;, &quot;wavy maroon&quot;, &quot;bright turquoise&quot;], &quot;dim lime&quot;=&gt;[&quot;faded coral&quot;, &quot;muted aqua&quot;, &quot;faded maroon&quot;, &quot;mirrored bronze&quot;], &quot;faded black&quot;=&gt;[&quot;wavy maroon&quot;, &quot;light aqua&quot;, &quot;muted gray&quot;], &quot;striped violet&quot;=&gt;[&quot;drab olive&quot;, &quot;clear purple&quot;], &quot;plaid silver&quot;=&gt;[&quot;wavy violet&quot;, &quot;dotted beige&quot;, &quot;dull bronze&quot;], &quot;dull salmon&quot;=&gt;[&quot;light bronze&quot;, &quot;drab fuchsia&quot;], &quot;posh salmon&quot;=&gt;[&quot;dim bronze&quot;], &quot;dim plum&quot;=&gt;[&quot;pale maroon&quot;, &quot;dim yellow&quot;, &quot;dim turquoise&quot;], &quot;faded maroon&quot;=&gt;[&quot;shiny blue&quot;, &quot;striped lavender&quot;, &quot;bright aqua&quot;, &quot;posh white&quot;], &quot;plaid white&quot;=&gt;[&quot;dark coral&quot;, &quot;drab salmon&quot;, &quot;muted blue&quot;], &quot;pale red&quot;=&gt;[&quot;dim aqua&quot;, &quot;shiny lavender&quot;], &quot;plaid gold&quot;=&gt;[&quot;dotted brown&quot;, &quot;clear tomato&quot;], &quot;dim white&quot;=&gt;[&quot;bright olive&quot;, &quot;vibrant maroon&quot;, &quot;pale brown&quot;], &quot;bright brown&quot;=&gt;[&quot;dark green&quot;, &quot;dim gold&quot;, &quot;bright aqua&quot;, &quot;pale indigo&quot;], &quot;mirrored bronze&quot;=&gt;[&quot;striped orange&quot;, &quot;dim bronze&quot;, &quot;clear gold&quot;], &quot;plaid plum&quot;=&gt;[&quot;dotted tan&quot;, &quot;dim salmon&quot;], &quot;dim maroon&quot;=&gt;[&quot;light aqua&quot;], &quot;striped brown&quot;=&gt;[&quot;vibrant beige&quot;, &quot;dim indigo&quot;], &quot;vibrant yellow&quot;=&gt;[&quot;plaid black&quot;], &quot;shiny white&quot;=&gt;[&quot;dim maroon&quot;, &quot;posh lavender&quot;, &quot;dim gray&quot;], &quot;striped tomato&quot;=&gt;[&quot;pale plum&quot;, &quot;wavy lime&quot;, &quot;dim lime&quot;, &quot;dark teal&quot;], &quot;drab tan&quot;=&gt;[&quot;dark brown&quot;], &quot;pale beige&quot;=&gt;[&quot;dim teal&quot;, &quot;dim silver&quot;], &quot;faded aqua&quot;=&gt;[&quot;muted black&quot;, &quot;light bronze&quot;], &quot;dim green&quot;=&gt;[&quot;vibrant lime&quot;, &quot;drab fuchsia&quot;], &quot;dim lavender&quot;=&gt;[&quot;dotted beige&quot;, &quot;dim green&quot;, &quot;faded coral&quot;, &quot;shiny teal&quot;], &quot;pale blue&quot;=&gt;[&quot;plaid fuchsia&quot;, &quot;dark purple&quot;, &quot;bright crimson&quot;], &quot;faded lavender&quot;=&gt;[&quot;mirrored black&quot;, &quot;muted blue&quot;], &quot;plaid aqua&quot;=&gt;[&quot;clear maroon&quot;, &quot;shiny teal&quot;, &quot;posh fuchsia&quot;], &quot;dotted violet&quot;=&gt;[&quot;pale indigo&quot;, &quot;muted red&quot;, &quot;light lavender&quot;, &quot;shiny yellow&quot;], &quot;dotted olive&quot;=&gt;[&quot;dim aqua&quot;, &quot;striped maroon&quot;, &quot;pale red&quot;], &quot;drab lime&quot;=&gt;[&quot;dotted aqua&quot;, &quot;posh tan&quot;, &quot;faded black&quot;], &quot;dim yellow&quot;=&gt;[&quot;faded maroon&quot;, &quot;light teal&quot;], &quot;dull maroon&quot;=&gt;[&quot;drab purple&quot;, &quot;pale maroon&quot;, &quot;light gold&quot;, &quot;faded salmon&quot;], &quot;wavy tan&quot;=&gt;[&quot;vibrant maroon&quot;, &quot;muted white&quot;, &quot;shiny brown&quot;, &quot;light chartreuse&quot;], &quot;dull violet&quot;=&gt;[&quot;bright beige&quot;, &quot;vibrant maroon&quot;, &quot;dim gold&quot;, &quot;drab violet&quot;], &quot;drab cyan&quot;=&gt;[&quot;light olive&quot;, &quot;dark turquoise&quot;, &quot;dark yellow&quot;, &quot;light black&quot;], &quot;wavy coral&quot;=&gt;[&quot;posh lavender&quot;, &quot;pale indigo&quot;, &quot;striped green&quot;, &quot;light beige&quot;], &quot;clear white&quot;=&gt;[&quot;dull purple&quot;, &quot;wavy red&quot;], &quot;shiny gray&quot;=&gt;[&quot;striped teal&quot;], &quot;shiny indigo&quot;=&gt;[&quot;clear gold&quot;, &quot;dark teal&quot;], &quot;light blue&quot;=&gt;[&quot;muted coral&quot;, &quot;dark cyan&quot;], &quot;bright cyan&quot;=&gt;[&quot;drab brown&quot;, &quot;pale teal&quot;, &quot;posh cyan&quot;, &quot;shiny indigo&quot;], &quot;plaid yellow&quot;=&gt;[&quot;vibrant gray&quot;], &quot;dotted brown&quot;=&gt;[&quot;mirrored silver&quot;], &quot;dotted bronze&quot;=&gt;[&quot;light indigo&quot;, &quot;mirrored crimson&quot;], &quot;bright purple&quot;=&gt;[&quot;posh teal&quot;, &quot;dim orange&quot;, &quot;dark gold&quot;, &quot;striped purple&quot;], &quot;striped lavender&quot;=&gt;[&quot;dim salmon&quot;, &quot;posh indigo&quot;], &quot;dark gold&quot;=&gt;[&quot;faded brown&quot;, &quot;faded magenta&quot;, &quot;drab lavender&quot;, &quot;dull tan&quot;], &quot;clear beige&quot;=&gt;[&quot;drab violet&quot;, &quot;dim crimson&quot;], &quot;drab orange&quot;=&gt;[&quot;clear blue&quot;], &quot;wavy teal&quot;=&gt;[&quot;plaid green&quot;, &quot;light bronze&quot;, &quot;shiny indigo&quot;, &quot;drab violet&quot;], &quot;muted maroon&quot;=&gt;[&quot;bright plum&quot;, &quot;dim teal&quot;], &quot;wavy violet&quot;=&gt;[&quot;striped green&quot;, &quot;striped brown&quot;, &quot;muted bronze&quot;], &quot;clear brown&quot;=&gt;[&quot;wavy lime&quot;, &quot;mirrored red&quot;], &quot;plaid magenta&quot;=&gt;[&quot;vibrant gold&quot;, &quot;striped green&quot;, &quot;striped maroon&quot;], &quot;vibrant blue&quot;=&gt;[&quot;light beige&quot;, &quot;mirrored cyan&quot;, &quot;dark blue&quot;, &quot;drab yellow&quot;], &quot;mirrored brown&quot;=&gt;[&quot;dotted white&quot;], &quot;light gold&quot;=&gt;[&quot;vibrant silver&quot;], &quot;mirrored silver&quot;=&gt;[&quot;faded maroon&quot;, &quot;faded coral&quot;], &quot;bright indigo&quot;=&gt;[&quot;clear salmon&quot;, &quot;dim turquoise&quot;, &quot;mirrored black&quot;, &quot;striped indigo&quot;], &quot;mirrored olive&quot;=&gt;[&quot;drab olive&quot;, &quot;vibrant gray&quot;], &quot;dark silver&quot;=&gt;[&quot;bright chartreuse&quot;, &quot;shiny indigo&quot;, &quot;dull brown&quot;], &quot;drab salmon&quot;=&gt;[&quot;dotted plum&quot;, &quot;bright gold&quot;, &quot;plaid beige&quot;], &quot;dotted white&quot;=&gt;[&quot;bright plum&quot;, &quot;dotted beige&quot;, &quot;dotted silver&quot;], &quot;light olive&quot;=&gt;[&quot;muted aqua&quot;, &quot;striped brown&quot;, &quot;mirrored bronze&quot;], &quot;dotted blue&quot;=&gt;[&quot;drab red&quot;, &quot;mirrored bronze&quot;], &quot;muted lavender&quot;=&gt;[&quot;clear chartreuse&quot;, &quot;striped brown&quot;, &quot;mirrored tan&quot;, &quot;shiny indigo&quot;], &quot;dotted chartreuse&quot;=&gt;[&quot;clear maroon&quot;, &quot;clear turquoise&quot;, &quot;mirrored aqua&quot;, &quot;plaid aqua&quot;], &quot;posh crimson&quot;=&gt;[&quot;plaid plum&quot;, &quot;wavy blue&quot;], &quot;vibrant olive&quot;=&gt;[&quot;wavy silver&quot;, &quot;shiny blue&quot;], &quot;wavy yellow&quot;=&gt;[&quot;dim teal&quot;, &quot;light brown&quot;, &quot;dull chartreuse&quot;, &quot;striped red&quot;], &quot;dark olive&quot;=&gt;[&quot;bright maroon&quot;, &quot;dim tan&quot;, &quot;bright aqua&quot;, &quot;pale turquoise&quot;], &quot;bright plum&quot;=&gt;[&quot;light yellow&quot;, &quot;muted aqua&quot;], &quot;drab plum&quot;=&gt;[&quot;dim gray&quot;, &quot;light chartreuse&quot;], &quot;striped salmon&quot;=&gt;[&quot;drab lavender&quot;], &quot;bright coral&quot;=&gt;[&quot;clear tomato&quot;], &quot;drab silver&quot;=&gt;[&quot;shiny orange&quot;, &quot;muted coral&quot;], &quot;posh violet&quot;=&gt;[&quot;wavy red&quot;, &quot;shiny blue&quot;, &quot;pale brown&quot;, &quot;light yellow&quot;], &quot;mirrored black&quot;=&gt;[&quot;wavy white&quot;, &quot;dotted tan&quot;, &quot;shiny purple&quot;, &quot;dim bronze&quot;], &quot;faded green&quot;=&gt;[&quot;drab brown&quot;], &quot;posh yellow&quot;=&gt;[&quot;striped gold&quot;, &quot;light purple&quot;], &quot;drab lavender&quot;=&gt;[&quot;pale brown&quot;, &quot;striped aqua&quot;], &quot;clear magenta&quot;=&gt;[&quot;dull beige&quot;, &quot;wavy red&quot;], &quot;wavy fuchsia&quot;=&gt;[&quot;dull fuchsia&quot;, &quot;bright beige&quot;], &quot;bright maroon&quot;=&gt;[&quot;striped orange&quot;, &quot;muted white&quot;, &quot;vibrant beige&quot;], &quot;mirrored chartreuse&quot;=&gt;[&quot;bright plum&quot;], &quot;mirrored lavender&quot;=&gt;[&quot;clear magenta&quot;], &quot;light lime&quot;=&gt;[&quot;vibrant cyan&quot;, &quot;mirrored yellow&quot;, &quot;light teal&quot;, &quot;muted plum&quot;], &quot;pale green&quot;=&gt;[&quot;vibrant coral&quot;], &quot;dark plum&quot;=&gt;[&quot;shiny lavender&quot;, &quot;light plum&quot;, &quot;drab gold&quot;], &quot;faded purple&quot;=&gt;[&quot;wavy lime&quot;, &quot;drab teal&quot;, &quot;dark green&quot;], &quot;dim silver&quot;=&gt;[&quot;striped white&quot;, &quot;drab coral&quot;], &quot;faded bronze&quot;=&gt;[&quot;bright white&quot;, &quot;posh fuchsia&quot;, &quot;mirrored teal&quot;], &quot;pale indigo&quot;=&gt;[&quot;dull brown&quot;, &quot;muted red&quot;, &quot;vibrant chartreuse&quot;, &quot;drab teal&quot;], &quot;dark tan&quot;=&gt;[&quot;dim blue&quot;, &quot;plaid indigo&quot;, &quot;vibrant indigo&quot;, &quot;dull salmon&quot;], &quot;bright silver&quot;=&gt;[&quot;vibrant black&quot;, &quot;clear salmon&quot;, &quot;dull violet&quot;], &quot;striped aqua&quot;=&gt;[&quot;pale brown&quot;, &quot;shiny silver&quot;, &quot;dim salmon&quot;, &quot;dull chartreuse&quot;], &quot;light beige&quot;=&gt;[&quot;posh lavender&quot;, &quot;muted gold&quot;, &quot;light tan&quot;, &quot;striped magenta&quot;], &quot;faded gold&quot;=&gt;[&quot;posh brown&quot;, &quot;dull salmon&quot;, &quot;faded olive&quot;, &quot;posh coral&quot;], &quot;drab violet&quot;=&gt;[&quot;vibrant gray&quot;, &quot;light silver&quot;, &quot;posh gold&quot;, &quot;vibrant lime&quot;], &quot;striped beige&quot;=&gt;[&quot;shiny yellow&quot;, &quot;striped magenta&quot;, &quot;shiny gold&quot;, &quot;dotted tan&quot;], &quot;muted beige&quot;=&gt;[&quot;wavy lavender&quot;, &quot;light beige&quot;, &quot;vibrant tan&quot;, &quot;dark plum&quot;], &quot;shiny salmon&quot;=&gt;[&quot;muted aqua&quot;, &quot;dark olive&quot;, &quot;shiny blue&quot;, &quot;wavy maroon&quot;], &quot;dotted crimson&quot;=&gt;[&quot;mirrored cyan&quot;, &quot;light black&quot;, &quot;faded lavender&quot;, &quot;drab indigo&quot;], &quot;vibrant red&quot;=&gt;[&quot;light silver&quot;, &quot;shiny purple&quot;, &quot;shiny blue&quot;, &quot;dotted lavender&quot;], &quot;striped yellow&quot;=&gt;[&quot;clear red&quot;, &quot;dim violet&quot;], &quot;posh bronze&quot;=&gt;[&quot;clear salmon&quot;, &quot;dull salmon&quot;, &quot;drab turquoise&quot;], &quot;mirrored plum&quot;=&gt;[&quot;bright plum&quot;, &quot;striped tan&quot;, &quot;shiny magenta&quot;, &quot;shiny coral&quot;], &quot;plaid gray&quot;=&gt;[&quot;dim teal&quot;, &quot;plaid green&quot;, &quot;muted green&quot;], &quot;bright orange&quot;=&gt;[&quot;muted gray&quot;, &quot;dim violet&quot;, &quot;dark turquoise&quot;], &quot;dim purple&quot;=&gt;[&quot;dark brown&quot;, &quot;dark cyan&quot;, &quot;faded indigo&quot;, &quot;light coral&quot;], &quot;muted magenta&quot;=&gt;[&quot;muted white&quot;], &quot;vibrant white&quot;=&gt;[&quot;wavy lime&quot;, &quot;vibrant gold&quot;, &quot;dim silver&quot;], &quot;dull lime&quot;=&gt;[&quot;dark salmon&quot;, &quot;mirrored yellow&quot;, &quot;clear salmon&quot;, &quot;light white&quot;], &quot;dark fuchsia&quot;=&gt;[&quot;wavy salmon&quot;, &quot;bright lavender&quot;], &quot;bright bronze&quot;=&gt;[&quot;dark turquoise&quot;, &quot;dim maroon&quot;], &quot;faded beige&quot;=&gt;[&quot;wavy gold&quot;], &quot;dotted green&quot;=&gt;[&quot;muted red&quot;, &quot;light black&quot;, &quot;wavy cyan&quot;, &quot;mirrored aqua&quot;], &quot;light salmon&quot;=&gt;[&quot;dim plum&quot;, &quot;dark bronze&quot;, &quot;dotted turquoise&quot;], &quot;light red&quot;=&gt;[&quot;vibrant gold&quot;, &quot;drab red&quot;], &quot;mirrored orange&quot;=&gt;[&quot;drab lavender&quot;, &quot;drab aqua&quot;, &quot;mirrored aqua&quot;, &quot;posh blue&quot;], &quot;light coral&quot;=&gt;[&quot;posh magenta&quot;, &quot;dim maroon&quot;, &quot;light aqua&quot;], &quot;dotted purple&quot;=&gt;[&quot;plaid purple&quot;, &quot;light chartreuse&quot;], &quot;light cyan&quot;=&gt;[&quot;dotted magenta&quot;, &quot;drab lime&quot;, &quot;clear magenta&quot;], &quot;shiny green&quot;=&gt;[&quot;drab silver&quot;, &quot;wavy blue&quot;], &quot;dull yellow&quot;=&gt;[&quot;wavy maroon&quot;, &quot;bright white&quot;, &quot;wavy white&quot;], &quot;vibrant gray&quot;=&gt;[&quot;wavy maroon&quot;, &quot;dark yellow&quot;, &quot;wavy silver&quot;, &quot;vibrant silver&quot;], &quot;plaid purple&quot;=&gt;[&quot;dark yellow&quot;, &quot;faded maroon&quot;, &quot;muted coral&quot;, &quot;clear yellow&quot;], &quot;light orange&quot;=&gt;[&quot;vibrant black&quot;, &quot;striped brown&quot;], &quot;vibrant tomato&quot;=&gt;[&quot;plaid cyan&quot;, &quot;dim salmon&quot;, &quot;pale lime&quot;, &quot;dim teal&quot;], &quot;shiny coral&quot;=&gt;[&quot;shiny blue&quot;, &quot;shiny beige&quot;, &quot;drab silver&quot;], &quot;dark aqua&quot;=&gt;[&quot;plaid magenta&quot;, &quot;dull cyan&quot;, &quot;dim red&quot;], &quot;dotted aqua&quot;=&gt;[&quot;pale turquoise&quot;], &quot;clear gray&quot;=&gt;[&quot;vibrant salmon&quot;, &quot;dim salmon&quot;, &quot;shiny silver&quot;], &quot;striped purple&quot;=&gt;[&quot;muted salmon&quot;, &quot;posh green&quot;], &quot;dark indigo&quot;=&gt;[&quot;muted lime&quot;, &quot;posh cyan&quot;, &quot;dull brown&quot;], &quot;wavy crimson&quot;=&gt;[&quot;pale purple&quot;, &quot;pale black&quot;, &quot;plaid gold&quot;, &quot;dull red&quot;], &quot;faded gray&quot;=&gt;[&quot;plaid maroon&quot;, &quot;muted red&quot;, &quot;drab turquoise&quot;, &quot;clear maroon&quot;], &quot;drab indigo&quot;=&gt;[&quot;faded olive&quot;, &quot;pale plum&quot;, &quot;muted aqua&quot;, &quot;muted white&quot;], &quot;light green&quot;=&gt;[&quot;plaid gray&quot;], &quot;posh white&quot;=&gt;[&quot;dim salmon&quot;], &quot;shiny bronze&quot;=&gt;[&quot;pale brown&quot;], &quot;light tomato&quot;=&gt;[&quot;dim tan&quot;, &quot;dull crimson&quot;, &quot;dark coral&quot;, &quot;mirrored gold&quot;], &quot;shiny crimson&quot;=&gt;[&quot;vibrant gray&quot;], &quot;muted blue&quot;=&gt;[&quot;light magenta&quot;, &quot;drab indigo&quot;, &quot;vibrant salmon&quot;, &quot;dim tomato&quot;], &quot;wavy maroon&quot;=&gt;[&quot;mirrored bronze&quot;, &quot;clear gray&quot;, &quot;muted white&quot;], &quot;wavy white&quot;=&gt;[&quot;dim salmon&quot;, &quot;striped lavender&quot;, &quot;faded olive&quot;], &quot;striped plum&quot;=&gt;[&quot;drab purple&quot;], &quot;bright lavender&quot;=&gt;[&quot;posh white&quot;], &quot;posh red&quot;=&gt;[&quot;vibrant salmon&quot;, &quot;dark yellow&quot;, &quot;dotted tan&quot;], &quot;dark violet&quot;=&gt;[&quot;vibrant beige&quot;, &quot;drab lime&quot;, &quot;dull plum&quot;], &quot;mirrored aqua&quot;=&gt;[&quot;posh orange&quot;, &quot;mirrored fuchsia&quot;, &quot;shiny chartreuse&quot;], &quot;dark crimson&quot;=&gt;[&quot;dim cyan&quot;, &quot;wavy magenta&quot;], &quot;striped cyan&quot;=&gt;[&quot;mirrored teal&quot;, &quot;light turquoise&quot;], &quot;posh blue&quot;=&gt;[&quot;posh indigo&quot;, &quot;clear maroon&quot;, &quot;pale salmon&quot;, &quot;faded yellow&quot;], &quot;mirrored tomato&quot;=&gt;[&quot;dim silver&quot;, &quot;bright purple&quot;, &quot;clear lavender&quot;, &quot;drab gold&quot;], &quot;plaid green&quot;=&gt;[&quot;drab indigo&quot;, &quot;vibrant gray&quot;, &quot;vibrant chartreuse&quot;, &quot;mirrored lavender&quot;], &quot;clear maroon&quot;=&gt;[&quot;shiny beige&quot;], &quot;faded turquoise&quot;=&gt;[&quot;vibrant crimson&quot;], &quot;striped magenta&quot;=&gt;[&quot;vibrant salmon&quot;, &quot;dull chartreuse&quot;, &quot;faded olive&quot;, &quot;striped aqua&quot;], &quot;dark magenta&quot;=&gt;[&quot;mirrored purple&quot;, &quot;dull beige&quot;, &quot;plaid chartreuse&quot;], &quot;drab turquoise&quot;=&gt;[&quot;dark olive&quot;, &quot;pale plum&quot;], &quot;faded tan&quot;=&gt;[&quot;dull crimson&quot;, &quot;wavy gray&quot;], &quot;muted tan&quot;=&gt;[nil], &quot;dull tan&quot;=&gt;[&quot;plaid maroon&quot;, &quot;dark green&quot;, &quot;shiny orange&quot;], &quot;striped red&quot;=&gt;[&quot;striped maroon&quot;, &quot;clear red&quot;], &quot;faded magenta&quot;=&gt;[&quot;shiny teal&quot;, &quot;bright crimson&quot;], &quot;dull aqua&quot;=&gt;[&quot;pale turquoise&quot;, &quot;bright tomato&quot;, &quot;drab lime&quot;, &quot;drab brown&quot;], &quot;bright lime&quot;=&gt;[&quot;light red&quot;, &quot;shiny olive&quot;, &quot;posh white&quot;, &quot;dotted white&quot;], &quot;clear tomato&quot;=&gt;[&quot;shiny beige&quot;, &quot;bright lavender&quot;], &quot;faded indigo&quot;=&gt;[&quot;muted tan&quot;, &quot;dim bronze&quot;], &quot;bright yellow&quot;=&gt;[&quot;wavy blue&quot;], &quot;striped bronze&quot;=&gt;[&quot;muted gold&quot;], &quot;mirrored fuchsia&quot;=&gt;[&quot;faded yellow&quot;, &quot;light cyan&quot;, &quot;striped crimson&quot;], &quot;wavy gray&quot;=&gt;[&quot;dull chartreuse&quot;, &quot;drab black&quot;], &quot;muted coral&quot;=&gt;[&quot;light aqua&quot;, &quot;striped lavender&quot;], &quot;vibrant lime&quot;=&gt;[&quot;posh lavender&quot;, &quot;dim bronze&quot;, &quot;dull silver&quot;], &quot;shiny gold&quot;=&gt;[&quot;plaid orange&quot;, &quot;striped lavender&quot;, &quot;pale brown&quot;, &quot;wavy blue&quot;], &quot;plaid red&quot;=&gt;[&quot;light aqua&quot;, &quot;mirrored salmon&quot;], &quot;dark brown&quot;=&gt;[&quot;dull maroon&quot;], &quot;pale fuchsia&quot;=&gt;[&quot;striped coral&quot;, &quot;dim tomato&quot;], &quot;dull green&quot;=&gt;[&quot;mirrored yellow&quot;, &quot;bright lavender&quot;, &quot;faded coral&quot;, &quot;light bronze&quot;], &quot;clear coral&quot;=&gt;[&quot;mirrored black&quot;, &quot;light chartreuse&quot;], &quot;clear fuchsia&quot;=&gt;[&quot;clear plum&quot;, &quot;faded maroon&quot;], &quot;drab gray&quot;=&gt;[&quot;wavy tomato&quot;, &quot;dark cyan&quot;], &quot;wavy lavender&quot;=&gt;[&quot;dim lavender&quot;, &quot;clear turquoise&quot;], &quot;dark tomato&quot;=&gt;[&quot;dark red&quot;, &quot;mirrored red&quot;, &quot;plaid plum&quot;, &quot;dark turquoise&quot;], &quot;shiny maroon&quot;=&gt;[&quot;plaid tomato&quot;, &quot;posh magenta&quot;], &quot;plaid bronze&quot;=&gt;[&quot;light beige&quot;], &quot;dim magenta&quot;=&gt;[&quot;clear gold&quot;, &quot;dark orange&quot;, &quot;striped red&quot;], &quot;pale aqua&quot;=&gt;[&quot;vibrant beige&quot;, &quot;vibrant maroon&quot;], &quot;dim red&quot;=&gt;[&quot;vibrant silver&quot;, &quot;dark teal&quot;, &quot;muted olive&quot;, &quot;shiny beige&quot;], &quot;shiny lavender&quot;=&gt;[&quot;dim indigo&quot;, &quot;muted brown&quot;, &quot;dim tan&quot;, &quot;dull white&quot;], &quot;wavy turquoise&quot;=&gt;[&quot;dim salmon&quot;, &quot;light aqua&quot;, &quot;vibrant salmon&quot;], &quot;posh green&quot;=&gt;[&quot;drab purple&quot;], &quot;dim fuchsia&quot;=&gt;[&quot;muted white&quot;, &quot;pale bronze&quot;, &quot;bright aqua&quot;], &quot;wavy orange&quot;=&gt;[&quot;muted tomato&quot;], &quot;dark turquoise&quot;=&gt;[&quot;plaid bronze&quot;], &quot;shiny silver&quot;=&gt;[nil], &quot;pale gold&quot;=&gt;[&quot;posh turquoise&quot;, &quot;posh gray&quot;, &quot;wavy magenta&quot;, &quot;posh beige&quot;], &quot;dull chartreuse&quot;=&gt;[nil], &quot;vibrant crimson&quot;=&gt;[&quot;striped red&quot;, &quot;light aqua&quot;, &quot;shiny purple&quot;], &quot;clear olive&quot;=&gt;[&quot;shiny violet&quot;, &quot;posh coral&quot;, &quot;vibrant beige&quot;, &quot;shiny salmon&quot;], &quot;vibrant magenta&quot;=&gt;[&quot;shiny blue&quot;, &quot;dark brown&quot;, &quot;dim teal&quot;, &quot;pale purple&quot;], &quot;faded orange&quot;=&gt;[&quot;clear maroon&quot;, &quot;posh tomato&quot;, &quot;vibrant white&quot;, &quot;shiny tan&quot;], &quot;drab yellow&quot;=&gt;[&quot;wavy maroon&quot;, &quot;dotted fuchsia&quot;], &quot;wavy purple&quot;=&gt;[&quot;pale lavender&quot;, &quot;faded indigo&quot;, &quot;dotted lavender&quot;, &quot;dim tomato&quot;], &quot;drab beige&quot;=&gt;[&quot;dark yellow&quot;, &quot;drab indigo&quot;, &quot;faded yellow&quot;], &quot;wavy tomato&quot;=&gt;[&quot;dim tan&quot;], &quot;vibrant beige&quot;=&gt;[&quot;bright aqua&quot;, &quot;dull chartreuse&quot;], &quot;dull bronze&quot;=&gt;[&quot;dotted lavender&quot;, &quot;shiny violet&quot;, &quot;bright blue&quot;], &quot;striped gold&quot;=&gt;[&quot;dim white&quot;, &quot;drab aqua&quot;, &quot;dotted indigo&quot;, &quot;vibrant black&quot;], &quot;shiny yellow&quot;=&gt;[&quot;dotted fuchsia&quot;], &quot;mirrored salmon&quot;=&gt;[&quot;wavy blue&quot;, &quot;striped green&quot;, &quot;dull beige&quot;, &quot;light tan&quot;], &quot;clear red&quot;=&gt;[&quot;vibrant lime&quot;, &quot;faded maroon&quot;, &quot;striped lavender&quot;], &quot;pale black&quot;=&gt;[&quot;mirrored crimson&quot;, &quot;drab lavender&quot;, &quot;drab blue&quot;], &quot;wavy green&quot;=&gt;[&quot;drab lavender&quot;, &quot;light teal&quot;, &quot;mirrored chartreuse&quot;], &quot;muted crimson&quot;=&gt;[&quot;dim aqua&quot;], &quot;dull red&quot;=&gt;[&quot;pale cyan&quot;, &quot;dotted indigo&quot;, &quot;drab violet&quot;], &quot;dull purple&quot;=&gt;[&quot;dull gray&quot;, &quot;dim turquoise&quot;], &quot;dull beige&quot;=&gt;[&quot;bright white&quot;, &quot;dark orange&quot;, &quot;dull chartreuse&quot;], &quot;light silver&quot;=&gt;[&quot;muted gold&quot;, &quot;clear chartreuse&quot;, &quot;faded maroon&quot;, &quot;pale plum&quot;], &quot;mirrored turquoise&quot;=&gt;[&quot;faded black&quot;, &quot;light teal&quot;, &quot;striped plum&quot;], &quot;wavy blue&quot;=&gt;[&quot;faded indigo&quot;, &quot;wavy white&quot;, &quot;bright aqua&quot;, &quot;light yellow&quot;], &quot;faded lime&quot;=&gt;[&quot;drab black&quot;, &quot;shiny indigo&quot;, &quot;light black&quot;, &quot;dim green&quot;], &quot;plaid brown&quot;=&gt;[&quot;light turquoise&quot;], &quot;drab gold&quot;=&gt;[&quot;mirrored silver&quot;, &quot;dark coral&quot;, &quot;muted green&quot;], &quot;vibrant aqua&quot;=&gt;[&quot;muted salmon&quot;, &quot;clear gray&quot;], &quot;clear turquoise&quot;=&gt;[&quot;dark coral&quot;], &quot;dark cyan&quot;=&gt;[&quot;mirrored silver&quot;, &quot;wavy blue&quot;, &quot;vibrant purple&quot;], &quot;striped indigo&quot;=&gt;[&quot;dim violet&quot;, &quot;bright aqua&quot;, &quot;shiny orange&quot;], &quot;wavy red&quot;=&gt;[&quot;dim indigo&quot;, &quot;light gold&quot;], &quot;clear cyan&quot;=&gt;[&quot;muted cyan&quot;, &quot;muted magenta&quot;, &quot;faded cyan&quot;], &quot;shiny violet&quot;=&gt;[&quot;mirrored bronze&quot;, &quot;wavy red&quot;], &quot;wavy indigo&quot;=&gt;[&quot;vibrant cyan&quot;], &quot;posh fuchsia&quot;=&gt;[&quot;dotted silver&quot;], &quot;mirrored white&quot;=&gt;[&quot;shiny fuchsia&quot;, &quot;drab indigo&quot;], &quot;dotted black&quot;=&gt;[&quot;clear magenta&quot;, &quot;dim plum&quot;, &quot;dim red&quot;], &quot;vibrant turquoise&quot;=&gt;[&quot;dim aqua&quot;], &quot;bright green&quot;=&gt;[&quot;drab black&quot;, &quot;light magenta&quot;, &quot;dark purple&quot;], &quot;bright crimson&quot;=&gt;[&quot;faded indigo&quot;, &quot;dim indigo&quot;, &quot;pale purple&quot;], &quot;posh beige&quot;=&gt;[&quot;dim orange&quot;, &quot;vibrant chartreuse&quot;, &quot;bright crimson&quot;], &quot;faded white&quot;=&gt;[&quot;drab fuchsia&quot;, &quot;faded cyan&quot;], &quot;striped turquoise&quot;=&gt;[&quot;muted olive&quot;], &quot;bright chartreuse&quot;=&gt;[&quot;plaid turquoise&quot;, &quot;muted tomato&quot;, &quot;bright gold&quot;], &quot;muted red&quot;=&gt;[&quot;faded maroon&quot;, &quot;light chartreuse&quot;, &quot;dark olive&quot;], &quot;dull turquoise&quot;=&gt;[&quot;striped lavender&quot;, &quot;dark purple&quot;, &quot;dim coral&quot;], &quot;pale yellow&quot;=&gt;[&quot;muted indigo&quot;, &quot;dull black&quot;], &quot;dim indigo&quot;=&gt;[&quot;bright aqua&quot;, &quot;shiny silver&quot;, &quot;drab purple&quot;, &quot;muted aqua&quot;], &quot;faded blue&quot;=&gt;[&quot;pale maroon&quot;, &quot;faded maroon&quot;], &quot;plaid olive&quot;=&gt;[&quot;plaid cyan&quot;, &quot;dim plum&quot;, &quot;bright salmon&quot;], &quot;drab black&quot;=&gt;[&quot;faded black&quot;, &quot;light yellow&quot;, &quot;dim bronze&quot;, &quot;drab indigo&quot;], &quot;vibrant plum&quot;=&gt;[&quot;mirrored lime&quot;, &quot;dim yellow&quot;, &quot;posh tomato&quot;, &quot;light gold&quot;], &quot;dotted lime&quot;=&gt;[&quot;posh lavender&quot;, &quot;faded purple&quot;, &quot;dim salmon&quot;, &quot;clear tomato&quot;], &quot;pale turquoise&quot;=&gt;[&quot;muted tan&quot;, &quot;dark orange&quot;, &quot;vibrant salmon&quot;, &quot;dim bronze&quot;], &quot;drab blue&quot;=&gt;[&quot;posh white&quot;, &quot;muted aqua&quot;, &quot;light fuchsia&quot;], &quot;faded olive&quot;=&gt;[nil], &quot;posh black&quot;=&gt;[&quot;faded bronze&quot;, &quot;mirrored red&quot;, &quot;dim gray&quot;], &quot;shiny orange&quot;=&gt;[&quot;dark olive&quot;, &quot;drab indigo&quot;, &quot;faded indigo&quot;, &quot;striped brown&quot;], &quot;mirrored blue&quot;=&gt;[&quot;posh crimson&quot;, &quot;striped lavender&quot;, &quot;mirrored yellow&quot;], &quot;drab purple&quot;=&gt;[&quot;light teal&quot;, &quot;striped magenta&quot;, &quot;striped aqua&quot;], &quot;bright gray&quot;=&gt;[&quot;striped tan&quot;, &quot;bright coral&quot;], &quot;dim gold&quot;=&gt;[&quot;dull brown&quot;, &quot;mirrored crimson&quot;, &quot;bright tomato&quot;], &quot;posh aqua&quot;=&gt;[&quot;bright magenta&quot;, &quot;posh orange&quot;, &quot;wavy silver&quot;, &quot;posh plum&quot;], &quot;wavy gold&quot;=&gt;[&quot;drab purple&quot;, &quot;posh plum&quot;], &quot;wavy lime&quot;=&gt;[&quot;drab teal&quot;, &quot;drab bronze&quot;, &quot;wavy maroon&quot;, &quot;wavy silver&quot;], &quot;muted black&quot;=&gt;[&quot;drab gray&quot;, &quot;pale salmon&quot;, &quot;dull indigo&quot;, &quot;pale brown&quot;], &quot;bright aqua&quot;=&gt;[&quot;dim salmon&quot;, &quot;dark orange&quot;], &quot;vibrant brown&quot;=&gt;[&quot;dim gray&quot;], &quot;striped teal&quot;=&gt;[&quot;muted tan&quot;, &quot;pale plum&quot;], &quot;drab olive&quot;=&gt;[&quot;dotted lavender&quot;, &quot;muted green&quot;, &quot;wavy gray&quot;], &quot;shiny blue&quot;=&gt;[&quot;pale turquoise&quot;, &quot;faded olive&quot;], &quot;dotted yellow&quot;=&gt;[&quot;dim blue&quot;, &quot;vibrant silver&quot;], &quot;vibrant lavender&quot;=&gt;[&quot;posh fuchsia&quot;, &quot;mirrored crimson&quot;, &quot;posh gray&quot;], &quot;bright black&quot;=&gt;[&quot;striped blue&quot;], &quot;pale salmon&quot;=&gt;[&quot;bright maroon&quot;], &quot;dull white&quot;=&gt;[&quot;striped salmon&quot;, &quot;wavy turquoise&quot;], &quot;faded teal&quot;=&gt;[&quot;vibrant brown&quot;], &quot;shiny olive&quot;=&gt;[&quot;muted tomato&quot;, &quot;light cyan&quot;], &quot;shiny chartreuse&quot;=&gt;[&quot;pale olive&quot;, &quot;vibrant chartreuse&quot;, &quot;striped cyan&quot;], &quot;muted turquoise&quot;=&gt;[&quot;light white&quot;, &quot;pale maroon&quot;], &quot;bright tomato&quot;=&gt;[&quot;mirrored bronze&quot;, &quot;light aqua&quot;, &quot;bright aqua&quot;], &quot;light black&quot;=&gt;[&quot;mirrored chartreuse&quot;], &quot;bright turquoise&quot;=&gt;[&quot;shiny silver&quot;, &quot;wavy blue&quot;], &quot;dim coral&quot;=&gt;[&quot;dull coral&quot;, &quot;shiny yellow&quot;, &quot;dark lavender&quot;, &quot;light magenta&quot;], &quot;clear indigo&quot;=&gt;[&quot;faded maroon&quot;], &quot;vibrant coral&quot;=&gt;[&quot;mirrored teal&quot;], &quot;dark red&quot;=&gt;[&quot;drab lavender&quot;], &quot;posh chartreuse&quot;=&gt;[&quot;posh bronze&quot;, &quot;posh crimson&quot;, &quot;dark gray&quot;, &quot;dark silver&quot;], &quot;shiny purple&quot;=&gt;[&quot;dull silver&quot;, &quot;light aqua&quot;, &quot;posh white&quot;, &quot;clear chartreuse&quot;], &quot;dull crimson&quot;=&gt;[&quot;bright blue&quot;], &quot;vibrant cyan&quot;=&gt;[&quot;pale maroon&quot;, &quot;mirrored yellow&quot;, &quot;dark teal&quot;], &quot;pale magenta&quot;=&gt;[&quot;bright lavender&quot;, &quot;wavy gray&quot;, &quot;dark bronze&quot;], &quot;shiny black&quot;=&gt;[&quot;striped blue&quot;, &quot;shiny brown&quot;], &quot;pale lavender&quot;=&gt;[&quot;dark gray&quot;, &quot;vibrant beige&quot;, &quot;dull coral&quot;], &quot;dark beige&quot;=&gt;[&quot;vibrant tomato&quot;, &quot;shiny chartreuse&quot;, &quot;light coral&quot;, &quot;light violet&quot;], &quot;bright violet&quot;=&gt;[&quot;plaid lavender&quot;, &quot;faded white&quot;], &quot;pale silver&quot;=&gt;[&quot;faded maroon&quot;, &quot;clear coral&quot;, &quot;light beige&quot;], &quot;clear tan&quot;=&gt;[&quot;wavy tan&quot;], &quot;striped white&quot;=&gt;[&quot;drab indigo&quot;, &quot;faded olive&quot;, &quot;dull chartreuse&quot;, &quot;dotted beige&quot;], &quot;muted chartreuse&quot;=&gt;[&quot;bright crimson&quot;, &quot;dull bronze&quot;, &quot;dark aqua&quot;], &quot;plaid black&quot;=&gt;[&quot;striped brown&quot;, &quot;wavy crimson&quot;, &quot;plaid olive&quot;], &quot;muted olive&quot;=&gt;[&quot;posh white&quot;, &quot;plaid plum&quot;], &quot;dim brown&quot;=&gt;[&quot;wavy lime&quot;, &quot;bright orange&quot;, &quot;striped aqua&quot;, &quot;bright teal&quot;], &quot;striped silver&quot;=&gt;[&quot;wavy tan&quot;, &quot;light coral&quot;], &quot;drab tomato&quot;=&gt;[&quot;dotted fuchsia&quot;, &quot;plaid aqua&quot;], &quot;dim chartreuse&quot;=&gt;[&quot;pale beige&quot;, &quot;bright brown&quot;, &quot;dull lavender&quot;], &quot;clear lavender&quot;=&gt;[&quot;wavy maroon&quot;, &quot;drab coral&quot;, &quot;muted tan&quot;], &quot;light magenta&quot;=&gt;[&quot;wavy white&quot;, &quot;pale salmon&quot;, &quot;muted gold&quot;, &quot;pale cyan&quot;], &quot;pale crimson&quot;=&gt;[&quot;striped blue&quot;, &quot;pale lavender&quot;], &quot;plaid crimson&quot;=&gt;[&quot;mirrored black&quot;, &quot;pale magenta&quot;, &quot;wavy plum&quot;, &quot;bright green&quot;], &quot;pale cyan&quot;=&gt;[&quot;light tan&quot;, &quot;drab purple&quot;], &quot;pale teal&quot;=&gt;[&quot;wavy magenta&quot;], &quot;wavy salmon&quot;=&gt;[&quot;muted aqua&quot;, &quot;dull purple&quot;, &quot;drab teal&quot;, &quot;dull gray&quot;], &quot;plaid blue&quot;=&gt;[&quot;plaid gray&quot;, &quot;dim fuchsia&quot;, &quot;muted purple&quot;], &quot;dotted magenta&quot;=&gt;[&quot;dotted lavender&quot;, &quot;striped magenta&quot;], &quot;striped olive&quot;=&gt;[&quot;striped teal&quot;, &quot;faded maroon&quot;, &quot;plaid maroon&quot;, &quot;muted gold&quot;], &quot;dotted turquoise&quot;=&gt;[&quot;dull cyan&quot;, &quot;shiny yellow&quot;, &quot;striped maroon&quot;], &quot;dotted plum&quot;=&gt;[&quot;bright plum&quot;, &quot;shiny yellow&quot;], &quot;pale bronze&quot;=&gt;[&quot;faded salmon&quot;, &quot;muted gray&quot;, &quot;shiny beige&quot;], &quot;mirrored beige&quot;=&gt;[&quot;vibrant gold&quot;, &quot;posh plum&quot;, &quot;plaid purple&quot;], &quot;vibrant purple&quot;=&gt;[&quot;bright crimson&quot;, &quot;faded coral&quot;, &quot;striped lavender&quot;, &quot;wavy turquoise&quot;], &quot;dim tan&quot;=&gt;[&quot;posh indigo&quot;], &quot;faded violet&quot;=&gt;[&quot;clear silver&quot;, &quot;faded salmon&quot;], &quot;dim turquoise&quot;=&gt;[&quot;light beige&quot;], &quot;faded salmon&quot;=&gt;[&quot;shiny purple&quot;, &quot;dim bronze&quot;, &quot;light aqua&quot;, &quot;posh indigo&quot;], &quot;dull gray&quot;=&gt;[&quot;dotted magenta&quot;], &quot;dark purple&quot;=&gt;[&quot;striped magenta&quot;, &quot;faded maroon&quot;], &quot;muted silver&quot;=&gt;[&quot;posh lavender&quot;], &quot;drab green&quot;=&gt;[&quot;dotted tomato&quot;, &quot;muted gray&quot;, &quot;dim maroon&quot;, &quot;plaid chartreuse&quot;], &quot;mirrored indigo&quot;=&gt;[&quot;shiny crimson&quot;], &quot;muted purple&quot;=&gt;[&quot;plaid plum&quot;, &quot;dull gray&quot;], &quot;plaid indigo&quot;=&gt;[&quot;drab bronze&quot;, &quot;light turquoise&quot;, &quot;dull chartreuse&quot;, &quot;bright blue&quot;], &quot;drab bronze&quot;=&gt;[&quot;light cyan&quot;, &quot;faded yellow&quot;], &quot;clear violet&quot;=&gt;[&quot;bright silver&quot;, &quot;mirrored yellow&quot;], &quot;faded brown&quot;=&gt;[&quot;wavy red&quot;, &quot;muted aqua&quot;], &quot;dotted red&quot;=&gt;[&quot;clear chartreuse&quot;], &quot;drab teal&quot;=&gt;[&quot;striped aqua&quot;, &quot;pale salmon&quot;], &quot;wavy beige&quot;=&gt;[&quot;bright brown&quot;], &quot;striped green&quot;=&gt;[&quot;wavy blue&quot;, &quot;light aqua&quot;, &quot;light tan&quot;, &quot;mirrored lime&quot;], &quot;dark blue&quot;=&gt;[&quot;bright crimson&quot;, &quot;striped salmon&quot;], &quot;dark bronze&quot;=&gt;[&quot;plaid yellow&quot;, &quot;wavy white&quot;], &quot;clear crimson&quot;=&gt;[&quot;dull white&quot;, &quot;plaid crimson&quot;, &quot;mirrored yellow&quot;, &quot;wavy lime&quot;], &quot;dark lavender&quot;=&gt;[&quot;striped green&quot;], &quot;light maroon&quot;=&gt;[&quot;faded fuchsia&quot;], &quot;dull coral&quot;=&gt;[&quot;mirrored lavender&quot;], &quot;plaid cyan&quot;=&gt;[&quot;faded maroon&quot;, &quot;light indigo&quot;, &quot;light brown&quot;], &quot;drab fuchsia&quot;=&gt;[&quot;drab turquoise&quot;, &quot;bright white&quot;, &quot;vibrant chartreuse&quot;, &quot;posh white&quot;], &quot;clear orange&quot;=&gt;[&quot;clear red&quot;], &quot;posh plum&quot;=&gt;[&quot;dim indigo&quot;, &quot;muted coral&quot;, &quot;light aqua&quot;, &quot;muted tomato&quot;], &quot;dotted salmon&quot;=&gt;[&quot;drab aqua&quot;, &quot;faded cyan&quot;, &quot;light red&quot;, &quot;shiny aqua&quot;], &quot;clear aqua&quot;=&gt;[&quot;shiny red&quot;, &quot;pale white&quot;], &quot;clear yellow&quot;=&gt;[&quot;dark orange&quot;, &quot;light silver&quot;, &quot;plaid fuchsia&quot;], &quot;striped lime&quot;=&gt;[&quot;drab lime&quot;], &quot;posh silver&quot;=&gt;[&quot;posh yellow&quot;, &quot;light orange&quot;, &quot;striped fuchsia&quot;, &quot;dull silver&quot;], &quot;wavy black&quot;=&gt;[&quot;dim crimson&quot;, &quot;muted violet&quot;], &quot;dull silver&quot;=&gt;[&quot;vibrant silver&quot;, &quot;dim salmon&quot;, &quot;drab lavender&quot;], &quot;light lavender&quot;=&gt;[&quot;bright lavender&quot;, &quot;dim gray&quot;, &quot;drab lime&quot;], &quot;posh tomato&quot;=&gt;[&quot;dark bronze&quot;, &quot;dull silver&quot;, &quot;dull bronze&quot;], &quot;wavy brown&quot;=&gt;[&quot;clear lime&quot;, &quot;mirrored tan&quot;, &quot;dull coral&quot;], &quot;clear salmon&quot;=&gt;[&quot;dull white&quot;, &quot;drab purple&quot;, &quot;shiny violet&quot;, &quot;plaid chartreuse&quot;], &quot;bright beige&quot;=&gt;[&quot;dull tomato&quot;, &quot;drab chartreuse&quot;], &quot;dull cyan&quot;=&gt;[&quot;bright plum&quot;, &quot;light lavender&quot;], &quot;light turquoise&quot;=&gt;[&quot;muted green&quot;, &quot;wavy maroon&quot;, &quot;dotted beige&quot;], &quot;dark maroon&quot;=&gt;[&quot;bright fuchsia&quot;, &quot;dull crimson&quot;, &quot;plaid crimson&quot;], &quot;vibrant black&quot;=&gt;[&quot;muted red&quot;], &quot;wavy aqua&quot;=&gt;[&quot;pale plum&quot;, &quot;shiny lime&quot;], &quot;plaid turquoise&quot;=&gt;[&quot;shiny red&quot;, &quot;bright tomato&quot;, &quot;muted olive&quot;, &quot;pale maroon&quot;], &quot;dull tomato&quot;=&gt;[&quot;dim yellow&quot;, &quot;posh violet&quot;, &quot;plaid yellow&quot;], &quot;drab maroon&quot;=&gt;[&quot;drab olive&quot;], &quot;dark orange&quot;=&gt;[&quot;clear gold&quot;, &quot;striped aqua&quot;, &quot;muted aqua&quot;, &quot;striped magenta&quot;], &quot;vibrant chartreuse&quot;=&gt;[&quot;dim indigo&quot;, &quot;drab purple&quot;, &quot;shiny gold&quot;, &quot;faded salmon&quot;], &quot;striped chartreuse&quot;=&gt;[&quot;drab gray&quot;, &quot;drab red&quot;], &quot;plaid tomato&quot;=&gt;[&quot;dark gray&quot;, &quot;dim bronze&quot;], &quot;drab red&quot;=&gt;[&quot;light silver&quot;, &quot;drab turquoise&quot;, &quot;striped lavender&quot;], &quot;clear green&quot;=&gt;[&quot;vibrant magenta&quot;, &quot;plaid beige&quot;, &quot;mirrored tan&quot;], &quot;dull teal&quot;=&gt;[&quot;vibrant green&quot;], &quot;vibrant fuchsia&quot;=&gt;[&quot;dull purple&quot;, &quot;drab gold&quot;, &quot;light aqua&quot;], &quot;vibrant salmon&quot;=&gt;[nil], &quot;posh teal&quot;=&gt;[&quot;light magenta&quot;, &quot;dotted fuchsia&quot;], &quot;mirrored gold&quot;=&gt;[&quot;posh crimson&quot;, &quot;dull beige&quot;, &quot;plaid salmon&quot;], &quot;pale orange&quot;=&gt;[&quot;plaid violet&quot;], &quot;vibrant maroon&quot;=&gt;[&quot;drab teal&quot;], &quot;faded coral&quot;=&gt;[&quot;muted gold&quot;, &quot;posh white&quot;, &quot;plaid plum&quot;, &quot;mirrored lime&quot;], &quot;vibrant teal&quot;=&gt;[&quot;faded black&quot;, &quot;posh green&quot;, &quot;plaid fuchsia&quot;], &quot;shiny red&quot;=&gt;[&quot;striped orange&quot;, &quot;light purple&quot;], &quot;mirrored cyan&quot;=&gt;[&quot;muted bronze&quot;, &quot;shiny green&quot;], &quot;dotted silver&quot;=&gt;[&quot;striped indigo&quot;, &quot;dotted magenta&quot;, &quot;striped plum&quot;, &quot;faded brown&quot;], &quot;mirrored purple&quot;=&gt;[&quot;plaid red&quot;, &quot;dotted beige&quot;, &quot;drab black&quot;], &quot;clear lime&quot;=&gt;[&quot;faded salmon&quot;], &quot;muted fuchsia&quot;=&gt;[&quot;dim gold&quot;, &quot;clear gray&quot;, &quot;posh red&quot;, &quot;drab indigo&quot;], &quot;mirrored lime&quot;=&gt;[&quot;drab turquoise&quot;, &quot;dark yellow&quot;], &quot;bright teal&quot;=&gt;[&quot;wavy plum&quot;, &quot;plaid red&quot;, &quot;bright tomato&quot;], &quot;dark teal&quot;=&gt;[&quot;muted coral&quot;, &quot;light tan&quot;, &quot;dotted tan&quot;], &quot;faded plum&quot;=&gt;[&quot;pale indigo&quot;, &quot;bright plum&quot;, &quot;shiny crimson&quot;], &quot;vibrant tan&quot;=&gt;[&quot;muted violet&quot;], &quot;shiny magenta&quot;=&gt;[&quot;posh tan&quot;, &quot;mirrored tan&quot;, &quot;plaid chartreuse&quot;], &quot;vibrant orange&quot;=&gt;[&quot;vibrant crimson&quot;, &quot;shiny tan&quot;, &quot;dark crimson&quot;, &quot;dotted silver&quot;], &quot;muted aqua&quot;=&gt;[nil], &quot;clear silver&quot;=&gt;[&quot;faded olive&quot;, &quot;vibrant purple&quot;], &quot;plaid fuchsia&quot;=&gt;[&quot;vibrant beige&quot;, &quot;mirrored bronze&quot;], &quot;muted gold&quot;=&gt;[&quot;striped aqua&quot;, &quot;light yellow&quot;], &quot;posh cyan&quot;=&gt;[&quot;vibrant gold&quot;, &quot;light lavender&quot;, &quot;striped green&quot;], &quot;bright tan&quot;=&gt;[&quot;pale maroon&quot;, &quot;dim coral&quot;], &quot;drab crimson&quot;=&gt;[&quot;mirrored chartreuse&quot;, &quot;faded maroon&quot;, &quot;dotted magenta&quot;, &quot;bright brown&quot;], &quot;dotted coral&quot;=&gt;[&quot;muted aqua&quot;, &quot;striped white&quot;, &quot;dim bronze&quot;], &quot;dotted gray&quot;=&gt;[&quot;mirrored white&quot;], &quot;shiny beige&quot;=&gt;[&quot;dim tan&quot;], &quot;light brown&quot;=&gt;[&quot;dim violet&quot;], &quot;shiny fuchsia&quot;=&gt;[&quot;dark teal&quot;, &quot;drab purple&quot;, &quot;mirrored bronze&quot;, &quot;dim salmon&quot;], &quot;wavy magenta&quot;=&gt;[&quot;vibrant gray&quot;, &quot;clear salmon&quot;], &quot;light teal&quot;=&gt;[&quot;dull beige&quot;], &quot;dark yellow&quot;=&gt;[&quot;clear chartreuse&quot;, &quot;mirrored bronze&quot;, &quot;dim salmon&quot;, &quot;wavy white&quot;], &quot;bright fuchsia&quot;=&gt;[&quot;pale magenta&quot;, &quot;muted plum&quot;], &quot;muted cyan&quot;=&gt;[&quot;shiny tan&quot;, &quot;mirrored blue&quot;, &quot;mirrored chartreuse&quot;, &quot;plaid chartreuse&quot;], &quot;dim aqua&quot;=&gt;[&quot;pale bronze&quot;, &quot;muted blue&quot;, &quot;clear red&quot;, &quot;light lavender&quot;], &quot;pale brown&quot;=&gt;[nil], &quot;plaid salmon&quot;=&gt;[&quot;posh coral&quot;, &quot;dim white&quot;, &quot;drab olive&quot;, &quot;shiny violet&quot;], &quot;dull fuchsia&quot;=&gt;[&quot;striped red&quot;, &quot;pale black&quot;], &quot;light purple&quot;=&gt;[&quot;plaid orange&quot;, &quot;vibrant red&quot;], &quot;dotted lavender&quot;=&gt;[&quot;light gold&quot;, &quot;shiny gold&quot;, &quot;dim tan&quot;], &quot;dotted gold&quot;=&gt;[&quot;muted gray&quot;], &quot;wavy cyan&quot;=&gt;[&quot;drab teal&quot;, &quot;wavy yellow&quot;, &quot;striped blue&quot;, &quot;dull blue&quot;], &quot;striped orange&quot;=&gt;[&quot;striped lavender&quot;, &quot;posh white&quot;, &quot;bright aqua&quot;, &quot;shiny silver&quot;], &quot;clear bronze&quot;=&gt;[&quot;striped gold&quot;, &quot;light tomato&quot;], &quot;mirrored teal&quot;=&gt;[&quot;bright lavender&quot;, &quot;dim green&quot;, &quot;bright brown&quot;], &quot;vibrant green&quot;=&gt;[&quot;vibrant violet&quot;, &quot;pale bronze&quot;], &quot;muted gray&quot;=&gt;[&quot;pale brown&quot;, &quot;mirrored bronze&quot;, &quot;dim tan&quot;, &quot;bright white&quot;], &quot;shiny brown&quot;=&gt;[&quot;light chartreuse&quot;], &quot;pale maroon&quot;=&gt;[&quot;drab lavender&quot;, &quot;bright turquoise&quot;, &quot;dim tan&quot;], &quot;light fuchsia&quot;=&gt;[&quot;plaid bronze&quot;], &quot;pale olive&quot;=&gt;[&quot;striped teal&quot;], &quot;plaid lavender&quot;=&gt;[&quot;posh gold&quot;], &quot;light yellow&quot;=&gt;[&quot;striped aqua&quot;, &quot;dotted aqua&quot;, &quot;dark orange&quot;, &quot;faded olive&quot;], &quot;dull indigo&quot;=&gt;[&quot;bright indigo&quot;, &quot;dotted plum&quot;, &quot;pale black&quot;, &quot;pale turquoise&quot;], &quot;light white&quot;=&gt;[&quot;bright brown&quot;, &quot;pale brown&quot;, &quot;faded olive&quot;], &quot;mirrored crimson&quot;=&gt;[&quot;faded maroon&quot;, &quot;dim maroon&quot;, &quot;faded indigo&quot;, &quot;striped aqua&quot;], &quot;dim black&quot;=&gt;[&quot;muted silver&quot;, &quot;plaid magenta&quot;, &quot;muted fuchsia&quot;, &quot;dim olive&quot;], &quot;dotted fuchsia&quot;=&gt;[&quot;mirrored salmon&quot;, &quot;drab purple&quot;], &quot;faded tomato&quot;=&gt;[&quot;dim gold&quot;, &quot;light olive&quot;], &quot;vibrant bronze&quot;=&gt;[&quot;mirrored turquoise&quot;], &quot;faded red&quot;=&gt;[&quot;bright bronze&quot;, &quot;dotted aqua&quot;], &quot;vibrant silver&quot;=&gt;[&quot;dull chartreuse&quot;, &quot;faded olive&quot;, &quot;shiny blue&quot;], &quot;muted green&quot;=&gt;[&quot;posh lavender&quot;, &quot;faded indigo&quot;, &quot;mirrored black&quot;, &quot;clear magenta&quot;], &quot;pale chartreuse&quot;=&gt;[&quot;wavy olive&quot;, &quot;faded orange&quot;, &quot;pale indigo&quot;, &quot;bright plum&quot;], &quot;dim bronze&quot;=&gt;[&quot;striped magenta&quot;, &quot;faded olive&quot;, &quot;pale brown&quot;, &quot;muted tan&quot;], &quot;posh purple&quot;=&gt;[&quot;posh indigo&quot;, &quot;faded white&quot;, &quot;dull salmon&quot;, &quot;pale aqua&quot;], &quot;drab coral&quot;=&gt;[&quot;posh red&quot;, &quot;clear plum&quot;, &quot;faded tomato&quot;, &quot;wavy maroon&quot;], &quot;striped fuchsia&quot;=&gt;[&quot;pale brown&quot;], &quot;striped blue&quot;=&gt;[&quot;drab lavender&quot;, &quot;plaid gray&quot;], &quot;posh indigo&quot;=&gt;[&quot;muted white&quot;, &quot;striped aqua&quot;], &quot;mirrored magenta&quot;=&gt;[&quot;posh tan&quot;, &quot;light magenta&quot;], &quot;dim blue&quot;=&gt;[&quot;vibrant purple&quot;], &quot;striped maroon&quot;=&gt;[&quot;drab black&quot;, &quot;bright beige&quot;, &quot;posh tomato&quot;, &quot;plaid red&quot;], &quot;dark lime&quot;=&gt;[&quot;drab indigo&quot;, &quot;bright teal&quot;], &quot;clear plum&quot;=&gt;[&quot;pale cyan&quot;, &quot;wavy white&quot;], &quot;muted brown&quot;=&gt;[&quot;light indigo&quot;, &quot;light olive&quot;, &quot;light lavender&quot;], &quot;posh lavender&quot;=&gt;[&quot;striped magenta&quot;], &quot;striped tan&quot;=&gt;[&quot;pale bronze&quot;, &quot;dull aqua&quot;], &quot;dim cyan&quot;=&gt;[&quot;dark violet&quot;, &quot;dull brown&quot;], &quot;dotted teal&quot;=&gt;[&quot;posh gray&quot;, &quot;posh purple&quot;, &quot;vibrant gray&quot;], &quot;muted yellow&quot;=&gt;[&quot;plaid red&quot;, &quot;faded black&quot;], &quot;dotted beige&quot;=&gt;[&quot;dotted tan&quot;], &quot;wavy plum&quot;=&gt;[&quot;mirrored black&quot;], &quot;wavy olive&quot;=&gt;[&quot;shiny silver&quot;], &quot;dotted orange&quot;=&gt;[&quot;faded indigo&quot;, &quot;posh lavender&quot;, &quot;plaid fuchsia&quot;, &quot;bright magenta&quot;], &quot;dim tomato&quot;=&gt;[&quot;faded olive&quot;, &quot;posh tan&quot;], &quot;light tan&quot;=&gt;[&quot;drab lavender&quot;, &quot;striped lavender&quot;, &quot;posh indigo&quot;, &quot;shiny silver&quot;], &quot;posh orange&quot;=&gt;[&quot;vibrant green&quot;, &quot;dim orange&quot;, &quot;dull silver&quot;, &quot;wavy orange&quot;], &quot;plaid maroon&quot;=&gt;[&quot;dim gray&quot;, &quot;muted red&quot;, &quot;posh violet&quot;, &quot;dark green&quot;], &quot;dark white&quot;=&gt;[&quot;drab chartreuse&quot;, &quot;striped lavender&quot;, &quot;dull aqua&quot;], &quot;vibrant indigo&quot;=&gt;[&quot;clear plum&quot;]}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">parent_containers</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">containers</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">k</span><span class="p">,</span><span class="n">v</span><span class="o">|</span>
+  <span class="n">v</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">bag</span><span class="o">|</span>
+    <span class="n">parent_containers</span><span class="o">[</span><span class="n">bag</span><span class="o">]</span> <span class="o">||=</span> <span class="o">[]</span>
+    <span class="n">parent_containers</span><span class="o">[</span><span class="n">bag</span><span class="o">]</span> <span class="o">&lt;&lt;</span> <span class="n">k</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="p">;</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">find_parents</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">type</span><span class="p">)</span>
+  <span class="nb">Array</span><span class="p">(</span><span class="n">container</span><span class="o">[</span><span class="n">type</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">parent</span><span class="o">|</span>
+    <span class="o">[</span><span class="n">parent</span><span class="o">]</span> <span class="o">+</span> <span class="n">find_parents</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">parent</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>:find_parents
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">found</span> <span class="o">=</span> <span class="n">find_parents</span><span class="p">(</span><span class="n">parent_containers</span><span class="p">,</span> <span class="s1">&#39;shiny gold&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="o">.</span><span class="n">uniq</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;light chartreuse&quot;, &quot;shiny teal&quot;, &quot;dim lavender&quot;, &quot;wavy lavender&quot;, &quot;muted beige&quot;, &quot;plaid aqua&quot;, &quot;dotted chartreuse&quot;, &quot;drab tomato&quot;, &quot;faded magenta&quot;, &quot;dark gold&quot;, &quot;bright purple&quot;, &quot;mirrored tomato&quot;, &quot;wavy tan&quot;, &quot;clear tan&quot;, &quot;striped silver&quot;, &quot;drab plum&quot;, &quot;drab aqua&quot;, &quot;mirrored orange&quot;, &quot;striped gold&quot;, &quot;mirrored violet&quot;, &quot;posh yellow&quot;, &quot;posh silver&quot;, &quot;clear bronze&quot;, &quot;dotted salmon&quot;, &quot;dotted purple&quot;, &quot;clear coral&quot;, &quot;pale silver&quot;, &quot;muted red&quot;, &quot;posh turquoise&quot;, &quot;pale gold&quot;, &quot;dotted violet&quot;, &quot;pale indigo&quot;, &quot;bright brown&quot;, &quot;muted bronze&quot;, &quot;dim beige&quot;, &quot;wavy violet&quot;, &quot;clear blue&quot;, &quot;dark black&quot;, &quot;drab orange&quot;, &quot;plaid silver&quot;, &quot;mirrored cyan&quot;, &quot;vibrant blue&quot;, &quot;dotted crimson&quot;, &quot;drab magenta&quot;, &quot;dim chartreuse&quot;, &quot;wavy beige&quot;, &quot;drab crimson&quot;, &quot;mirrored teal&quot;, &quot;mirrored maroon&quot;, &quot;muted violet&quot;, &quot;wavy black&quot;, &quot;vibrant tan&quot;, &quot;faded bronze&quot;, &quot;faded fuchsia&quot;, &quot;bright gold&quot;, &quot;drab salmon&quot;, &quot;plaid white&quot;, &quot;bright chartreuse&quot;, &quot;striped gray&quot;, &quot;dark silver&quot;, &quot;mirrored green&quot;, &quot;posh chartreuse&quot;, &quot;light maroon&quot;, &quot;dull gold&quot;, &quot;posh black&quot;, &quot;shiny cyan&quot;, &quot;striped cyan&quot;, &quot;shiny chartreuse&quot;, &quot;mirrored aqua&quot;, &quot;dotted green&quot;, &quot;dark beige&quot;, &quot;vibrant coral&quot;, &quot;pale green&quot;, &quot;light white&quot;, &quot;dull lime&quot;, &quot;muted turquoise&quot;, &quot;wavy coral&quot;, &quot;faded plum&quot;, &quot;pale chartreuse&quot;, &quot;faded gray&quot;, &quot;vibrant black&quot;, &quot;bright silver&quot;, &quot;clear violet&quot;, &quot;light orange&quot;, &quot;wavy bronze&quot;, &quot;plaid maroon&quot;, &quot;dull tan&quot;, &quot;plaid violet&quot;, &quot;pale orange&quot;, &quot;striped olive&quot;, &quot;shiny brown&quot;, &quot;muted teal&quot;, &quot;light indigo&quot;, &quot;bright salmon&quot;, &quot;dull black&quot;, &quot;pale yellow&quot;, &quot;plaid olive&quot;, &quot;plaid black&quot;, &quot;vibrant yellow&quot;, &quot;vibrant violet&quot;, &quot;vibrant green&quot;, &quot;dull orange&quot;, &quot;dull teal&quot;, &quot;posh orange&quot;, &quot;posh aqua&quot;, &quot;bright magenta&quot;, &quot;dotted orange&quot;, &quot;dotted bronze&quot;, &quot;plaid cyan&quot;, &quot;vibrant tomato&quot;, &quot;muted brown&quot;, &quot;plaid coral&quot;, &quot;shiny lavender&quot;, &quot;pale red&quot;, &quot;dotted olive&quot;, &quot;dark plum&quot;, &quot;dark coral&quot;, &quot;light tomato&quot;, &quot;drab gold&quot;, &quot;vibrant fuchsia&quot;, &quot;clear turquoise&quot;, &quot;shiny black&quot;, &quot;striped beige&quot;, &quot;vibrant chartreuse&quot;, &quot;shiny tomato&quot;, &quot;plaid green&quot;, &quot;pale gray&quot;, &quot;dim olive&quot;, &quot;dim black&quot;, &quot;wavy teal&quot;, &quot;plaid gray&quot;, &quot;shiny tan&quot;, &quot;posh brown&quot;, &quot;faded gold&quot;, &quot;faded orange&quot;, &quot;vibrant orange&quot;, &quot;muted cyan&quot;, &quot;clear cyan&quot;, &quot;light green&quot;, &quot;plaid blue&quot;, &quot;striped blue&quot;, &quot;bright black&quot;, &quot;pale crimson&quot;, &quot;clear purple&quot;, &quot;striped violet&quot;, &quot;wavy cyan&quot;, &quot;posh beige&quot;, &quot;drab fuchsia&quot;, &quot;dull salmon&quot;, &quot;dull plum&quot;, &quot;dark violet&quot;, &quot;dim cyan&quot;, &quot;dark crimson&quot;, &quot;mirrored coral&quot;, &quot;plaid tan&quot;, &quot;dark tan&quot;, &quot;posh bronze&quot;, &quot;muted orange&quot;, &quot;posh purple&quot;, &quot;dotted teal&quot;, &quot;dim green&quot;, &quot;posh lime&quot;, &quot;faded lime&quot;, &quot;faded white&quot;, &quot;bright violet&quot;, &quot;dotted lavender&quot;, &quot;vibrant red&quot;, &quot;faded chartreuse&quot;, &quot;mirrored tan&quot;, &quot;muted lavender&quot;, &quot;wavy brown&quot;, &quot;clear green&quot;, &quot;shiny magenta&quot;, &quot;mirrored plum&quot;, &quot;striped coral&quot;, &quot;dull lavender&quot;, &quot;pale fuchsia&quot;, &quot;light purple&quot;, &quot;light gray&quot;, &quot;shiny red&quot;, &quot;clear aqua&quot;, &quot;plaid turquoise&quot;, &quot;bright red&quot;, &quot;pale tan&quot;, &quot;wavy purple&quot;, &quot;dull bronze&quot;, &quot;muted chartreuse&quot;, &quot;posh tomato&quot;, &quot;vibrant plum&quot;, &quot;pale lime&quot;, &quot;striped maroon&quot;, &quot;plaid magenta&quot;, &quot;dark aqua&quot;, &quot;striped red&quot;, &quot;wavy yellow&quot;, &quot;dark chartreuse&quot;, &quot;dim magenta&quot;, &quot;vibrant crimson&quot;, &quot;faded turquoise&quot;, &quot;dull fuchsia&quot;, &quot;dull blue&quot;, &quot;wavy fuchsia&quot;, &quot;dotted turquoise&quot;, &quot;dotted cyan&quot;, &quot;light salmon&quot;, &quot;drab olive&quot;, &quot;mirrored olive&quot;, &quot;drab maroon&quot;, &quot;plaid salmon&quot;, &quot;mirrored gold&quot;, &quot;dotted magenta&quot;, &quot;light cyan&quot;, &quot;mirrored fuchsia&quot;, &quot;shiny olive&quot;, &quot;pale tomato&quot;, &quot;bright lime&quot;, &quot;drab bronze&quot;, &quot;pale white&quot;, &quot;wavy lime&quot;, &quot;striped tomato&quot;, &quot;clear brown&quot;, &quot;posh maroon&quot;, &quot;faded purple&quot;, &quot;dotted lime&quot;, &quot;vibrant white&quot;, &quot;dim brown&quot;, &quot;clear crimson&quot;, &quot;plaid indigo&quot;, &quot;dull gray&quot;, &quot;dull purple&quot;, &quot;clear white&quot;, &quot;wavy salmon&quot;, &quot;dark fuchsia&quot;, &quot;muted purple&quot;, &quot;shiny turquoise&quot;, &quot;light crimson&quot;, &quot;dotted silver&quot;, &quot;dotted white&quot;, &quot;mirrored brown&quot;, &quot;posh fuchsia&quot;, &quot;dotted maroon&quot;, &quot;vibrant lavender&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">found</span><span class="o">.</span><span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>242
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">sized_containers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">d</span><span class="o">|</span>
+  <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; contain &#39;</span><span class="p">)</span>
+  <span class="n">key</span><span class="o">=</span><span class="n">key</span><span class="o">[</span><span class="mi">0</span><span class="o">..-</span><span class="mi">6</span><span class="o">]</span>
+  <span class="n">vals</span> <span class="o">=</span> <span class="n">val</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;, &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">bag</span><span class="o">|</span> <span class="n">m</span><span class="o">=</span><span class="sr">/(\d+) (.*) bag/</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">bag</span><span class="p">);</span> <span class="n">m</span> <span class="o">&amp;&amp;</span> <span class="o">[</span><span class="n">m</span><span class="o">[</span><span class="mi">2</span><span class="o">]</span><span class="p">,</span><span class="n">m</span><span class="o">[</span><span class="mi">1</span><span class="o">].</span><span class="n">to_i</span><span class="o">]</span> <span class="p">}</span>
+  <span class="o">[</span><span class="n">key</span><span class="p">,</span> <span class="n">vals</span><span class="o">]</span> <span class="k">if</span> <span class="n">vals</span><span class="o">.</span><span class="n">any?</span>
+<span class="k">end</span><span class="o">.</span><span class="n">compact</span><span class="o">.</span><span class="n">to_h</span><span class="p">;</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bag_count</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">type</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+  <span class="nb">Array</span><span class="p">(</span><span class="n">container</span><span class="o">[</span><span class="n">type</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">child_bag</span><span class="p">,</span> <span class="n">number</span><span class="o">|</span>
+    <span class="n">count</span> <span class="o">*</span> <span class="p">(</span><span class="n">number</span> <span class="o">+</span> <span class="n">bag_count</span><span class="p">(</span><span class="n">container</span><span class="p">,</span> <span class="n">child_bag</span><span class="p">,</span> <span class="n">number</span><span class="p">))</span>
+  <span class="k">end</span><span class="o">.</span><span class="n">sum</span>
+<span class="k">end</span>
+<span class="n">bag_count</span><span class="p">(</span><span class="n">sized_containers</span><span class="p">,</span> <span class="s1">&#39;shiny gold&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>176035
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="08.html" title="previous page">Day 8</a>
+    <a class='right-next' id="next-link" href="06.html" title="next page">Day 6</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

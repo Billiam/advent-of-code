@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 2 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Day 3" href="03.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.html">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.html">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.html">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07.html">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05.html">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/02.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-2">
+<h1>Day 2<a class="headerlink" href="#day-2" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">=</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;2.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span><span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">i</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;: &quot;</span><span class="p">)</span> <span class="p">};</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">select</span> <span class="k">do</span> <span class="o">|</span><span class="n">condition</span><span class="p">,</span> <span class="n">pass</span><span class="o">|</span>
+  <span class="n">keys</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">condition</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+  <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="n">keys</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:to_i</span>
+  <span class="p">(</span><span class="n">low</span><span class="o">..</span><span class="n">high</span><span class="p">)</span><span class="o">.</span><span class="n">cover?</span> <span class="n">pass</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[&quot;2-3 b&quot;, &quot;bkkb&quot;], [&quot;7-10 f&quot;, &quot;zffxbwffqfxfffxf&quot;], [&quot;2-3 k&quot;, &quot;krjkk&quot;], [&quot;10-11 k&quot;, &quot;kkkkkkkkkkg&quot;], [&quot;3-5 m&quot;, &quot;tdwmmmmj&quot;], [&quot;2-5 s&quot;, &quot;tsszkhgf&quot;], [&quot;10-11 r&quot;, &quot;rrrxrrrrwhrrrr&quot;], [&quot;6-9 n&quot;, &quot;nnxnwnnnbl&quot;], [&quot;3-4 h&quot;, &quot;jhhh&quot;], [&quot;13-14 q&quot;, &quot;qqqqqqqqxqqqqlqq&quot;], [&quot;1-3 k&quot;, &quot;cmkrdptlkxlkh&quot;], [&quot;4-10 b&quot;, &quot;brbxqbbblb&quot;], [&quot;3-4 f&quot;, &quot;fqdff&quot;], [&quot;3-4 r&quot;, &quot;rqrpzrr&quot;], [&quot;6-7 n&quot;, &quot;cknndnngpnnn&quot;], [&quot;2-6 b&quot;, &quot;pkbbbbb&quot;], [&quot;3-9 s&quot;, &quot;lssssssjswzss&quot;], [&quot;3-4 p&quot;, &quot;pppqp&quot;], [&quot;7-16 s&quot;, &quot;ssnslsmshfsvstxsprw&quot;], [&quot;2-4 q&quot;, &quot;qcqqhq&quot;], [&quot;4-9 r&quot;, &quot;rrrrrrrrr&quot;], [&quot;1-4 h&quot;, &quot;hhhs&quot;], [&quot;5-17 g&quot;, &quot;cgvfqmggggqggggzgw&quot;], [&quot;2-13 m&quot;, &quot;mpsmmmmmmmmmmmm&quot;], [&quot;8-12 b&quot;, &quot;bdbbblbbbbxkbmb&quot;], [&quot;17-18 z&quot;, &quot;zzzzzzzzzzzzzzzzjz&quot;], [&quot;3-4 m&quot;, &quot;mmpm&quot;], [&quot;4-5 s&quot;, &quot;bsjsssbt&quot;], [&quot;2-5 j&quot;, &quot;psjvjzbghz&quot;], [&quot;11-12 b&quot;, &quot;bbbbbbbbbbbbl&quot;], [&quot;6-7 b&quot;, &quot;bbbbbbb&quot;], [&quot;6-7 k&quot;, &quot;kkkkkkps&quot;], [&quot;9-10 w&quot;, &quot;wwwcrxcwwwwwwf&quot;], [&quot;1-3 k&quot;, &quot;rkkk&quot;], [&quot;2-14 v&quot;, &quot;vhhtvgwvdhvmqvmsp&quot;], [&quot;3-5 v&quot;, &quot;bdlgvcqftvvx&quot;], [&quot;8-9 p&quot;, &quot;ppppppppw&quot;], [&quot;11-17 w&quot;, &quot;wgwwwwwwwwwwwwjbwwww&quot;], [&quot;1-5 q&quot;, &quot;ccbwhgqszgnqtf&quot;], [&quot;1-6 d&quot;, &quot;dkxxddd&quot;], [&quot;10-13 x&quot;, &quot;rxcxxxxxhxcxkxxx&quot;], [&quot;2-6 p&quot;, &quot;pppppfp&quot;], [&quot;4-5 k&quot;, &quot;mkjnkmtkkpk&quot;], [&quot;7-14 f&quot;, &quot;ffffffkwfffhpf&quot;], [&quot;7-10 l&quot;, &quot;lmllgllwll&quot;], [&quot;6-13 q&quot;, &quot;zqnrkqpqcdfnqvdnlrqq&quot;], [&quot;11-18 v&quot;, &quot;vvvgvvvvvtmvrvvvsqv&quot;], [&quot;7-8 n&quot;, &quot;wghnnnwnnnmvnn&quot;], [&quot;4-6 v&quot;, &quot;vvvvmsvd&quot;], [&quot;10-11 m&quot;, &quot;mmmmmmmkmgmm&quot;], [&quot;5-10 s&quot;, &quot;jgsssgsssqsh&quot;], [&quot;4-7 g&quot;, &quot;ggxtmdggmghgc&quot;], [&quot;15-16 v&quot;, &quot;vvvvvvvvvvvvvvvh&quot;], [&quot;2-5 g&quot;, &quot;sgcgr&quot;], [&quot;5-7 f&quot;, &quot;fxffjffffp&quot;], [&quot;10-15 r&quot;, &quot;rrrrrrdrrrrrjrr&quot;], [&quot;13-16 p&quot;, &quot;ppppppbppppppwpmppp&quot;], [&quot;5-11 z&quot;, &quot;zbmxftzzzzmz&quot;], [&quot;11-13 k&quot;, &quot;jkkxkkkkvkwkkkkvk&quot;], [&quot;8-11 j&quot;, &quot;gjjjjnjkdjqpjtj&quot;], [&quot;2-4 x&quot;, &quot;xxxjj&quot;], [&quot;2-13 r&quot;, &quot;rgnrlpwrbrrxvrrrrzw&quot;], [&quot;5-6 p&quot;, &quot;pppppp&quot;], [&quot;2-3 n&quot;, &quot;kfnn&quot;], [&quot;5-9 v&quot;, &quot;vvvvvvvvmv&quot;], [&quot;9-16 x&quot;, &quot;xxxxxxxxmxxxxxxnx&quot;], [&quot;6-12 t&quot;, &quot;tttgtttltbtnhrtgk&quot;], [&quot;7-10 v&quot;, &quot;vvvvvvvvvsv&quot;], [&quot;4-7 h&quot;, &quot;zmlhhpljhjjhqfh&quot;], [&quot;8-9 m&quot;, &quot;mmmxmsmkmmmm&quot;], [&quot;10-11 z&quot;, &quot;zzzzzzzzztwz&quot;], [&quot;13-14 t&quot;, &quot;ttttttttttttgt&quot;], [&quot;2-4 n&quot;, &quot;hnfnn&quot;], [&quot;9-10 z&quot;, &quot;zzzzzzzzzrz&quot;], [&quot;7-8 m&quot;, &quot;pmcgtmmmmmxmvm&quot;], [&quot;6-9 x&quot;, &quot;xxxxfxxxq&quot;], [&quot;2-4 w&quot;, &quot;wwws&quot;], [&quot;9-17 h&quot;, &quot;hbhhcvhrhctvhhhhx&quot;], [&quot;2-11 k&quot;, &quot;qfnkfhlbfkshtqvcnk&quot;], [&quot;10-14 n&quot;, &quot;nnnnnznnnnnnnknr&quot;], [&quot;6-8 k&quot;, &quot;ppkhkkgkjkqjkkhzkbv&quot;], [&quot;1-2 f&quot;, &quot;pfcm&quot;], [&quot;10-11 g&quot;, &quot;gggggwgggbgg&quot;], [&quot;3-6 w&quot;, &quot;dwrwgw&quot;], [&quot;4-7 s&quot;, &quot;pdsdmsssm&quot;], [&quot;2-9 d&quot;, &quot;dtzdfddmcbtddjddc&quot;], [&quot;4-5 j&quot;, &quot;jjhjjj&quot;], [&quot;1-5 l&quot;, &quot;ldjll&quot;], [&quot;7-11 m&quot;, &quot;mmwmmlmmmmmmm&quot;], [&quot;10-14 h&quot;, &quot;jhgchkhkhhhhhqhh&quot;], [&quot;1-13 k&quot;, &quot;kjzbztnmnqkckcgkt&quot;], [&quot;4-7 t&quot;, &quot;tzttvbtxltst&quot;], [&quot;2-12 t&quot;, &quot;ntkdzntftxnjl&quot;], [&quot;1-3 z&quot;, &quot;bzbzz&quot;], [&quot;1-11 t&quot;, &quot;ttttttttxts&quot;], [&quot;6-8 x&quot;, &quot;xxxxsxxxxsf&quot;], [&quot;1-3 g&quot;, &quot;cxngg&quot;], [&quot;12-14 h&quot;, &quot;hvhbhhnhhhhhhhh&quot;], [&quot;4-8 n&quot;, &quot;nnhnkzzrbgwtbvnprnjx&quot;], [&quot;2-5 t&quot;, &quot;qrlttrdf&quot;], [&quot;1-12 w&quot;, &quot;wwwwwwfgqwggwxwfwbw&quot;], [&quot;2-7 n&quot;, &quot;nnpswzxxhd&quot;], [&quot;7-9 g&quot;, &quot;ggggzgqgngm&quot;], [&quot;9-12 d&quot;, &quot;ddkddddddpdd&quot;], [&quot;9-16 c&quot;, &quot;ccdcckrccchcccpccs&quot;], [&quot;1-9 g&quot;, &quot;gkggrbggg&quot;], [&quot;15-16 k&quot;, &quot;kkkkkkkkkkkkkkks&quot;], [&quot;7-8 k&quot;, &quot;kkkkkkkt&quot;], [&quot;8-9 q&quot;, &quot;dqqqqqqwfqqbq&quot;], [&quot;4-10 z&quot;, &quot;hzjzprfqtzfzlcdpvm&quot;], [&quot;9-15 l&quot;, &quot;lflllblllllqllhl&quot;], [&quot;6-9 c&quot;, &quot;ccccczccxvckck&quot;], [&quot;3-6 v&quot;, &quot;vvvxtb&quot;], [&quot;4-7 n&quot;, &quot;nbcwzbvhgnnn&quot;], [&quot;3-4 d&quot;, &quot;pdhdgwdd&quot;], [&quot;16-20 t&quot;, &quot;tttttttttttttttttttt&quot;], [&quot;1-6 x&quot;, &quot;fxtmtlxgxl&quot;], [&quot;2-3 r&quot;, &quot;rsrr&quot;], [&quot;2-16 p&quot;, &quot;tpsthmqblbjdvxfspm&quot;], [&quot;13-15 c&quot;, &quot;ccccccccccccccc&quot;], [&quot;8-9 f&quot;, &quot;fffkfxfgfff&quot;], [&quot;1-6 f&quot;, &quot;fzfffjf&quot;], [&quot;5-6 d&quot;, &quot;dddcdrd&quot;], [&quot;5-6 h&quot;, &quot;gchlpkxhshhh&quot;], [&quot;1-3 d&quot;, &quot;dmfp&quot;], [&quot;8-13 n&quot;, &quot;cndnnknvpnvnnn&quot;], [&quot;2-4 z&quot;, &quot;xztz&quot;], [&quot;2-3 h&quot;, &quot;hhzzm&quot;], [&quot;5-9 w&quot;, &quot;qqwwwwvsw&quot;], [&quot;6-7 g&quot;, &quot;bggxggkgsmgg&quot;], [&quot;1-11 m&quot;, &quot;cnmbjlmhlqx&quot;], [&quot;14-15 n&quot;, &quot;nwpnnnnnnnnnnnnnpn&quot;], [&quot;3-5 m&quot;, &quot;mpmmnmd&quot;], [&quot;12-13 m&quot;, &quot;qmmmmmmmmmmmxmm&quot;], [&quot;6-8 b&quot;, &quot;cbbbbkbb&quot;], [&quot;7-8 m&quot;, &quot;mmmmmmtm&quot;], [&quot;2-7 s&quot;, &quot;ntbjsswshs&quot;], [&quot;2-3 r&quot;, &quot;btrgr&quot;], [&quot;2-4 r&quot;, &quot;rrrr&quot;], [&quot;1-9 n&quot;, &quot;nntshwzsf&quot;], [&quot;2-4 n&quot;, &quot;nnnpnjcc&quot;], [&quot;1-9 d&quot;, &quot;sddddddddd&quot;], [&quot;2-5 p&quot;, &quot;zpvwp&quot;], [&quot;5-6 g&quot;, &quot;gtgkgggzgr&quot;], [&quot;11-12 k&quot;, &quot;kkkkkkkkkkdk&quot;], [&quot;9-18 x&quot;, &quot;bxlqxvxxxxxxxxxcvmc&quot;], [&quot;1-4 f&quot;, &quot;dfcztnztghj&quot;], [&quot;7-10 t&quot;, &quot;tttpttkttjtt&quot;], [&quot;3-4 h&quot;, &quot;vfhhhhv&quot;], [&quot;5-9 c&quot;, &quot;bcbcccccmcchrgz&quot;], [&quot;7-12 f&quot;, &quot;ffqfvffkfrztjdfcff&quot;], [&quot;9-12 t&quot;, &quot;tttsqtttpttrtttlrt&quot;], [&quot;2-3 n&quot;, &quot;jnxpgngtgmx&quot;], [&quot;8-10 p&quot;, &quot;pxpsppzvpppppp&quot;], [&quot;1-2 b&quot;, &quot;bdhs&quot;], [&quot;2-4 n&quot;, &quot;nnlmmzhtnknb&quot;], [&quot;4-16 h&quot;, &quot;xhhhhchhhhhhghhphhs&quot;], [&quot;6-11 t&quot;, &quot;tttzqtbttttt&quot;], [&quot;10-12 d&quot;, &quot;dddddddkdrddd&quot;], [&quot;1-4 b&quot;, &quot;bnvsbb&quot;], [&quot;6-11 q&quot;, &quot;xqnfqqqqvqfqvqqqh&quot;], [&quot;3-8 k&quot;, &quot;skskkkkvkk&quot;], [&quot;4-6 b&quot;, &quot;bbbbbm&quot;], [&quot;6-9 v&quot;, &quot;fvthvvvvzhvv&quot;], [&quot;5-9 w&quot;, &quot;wwwwwwrwgw&quot;], [&quot;3-19 c&quot;, &quot;vlpkjhtcvbktwwrcmnc&quot;], [&quot;10-13 r&quot;, &quot;zrrrrrgwrrrsrrrcvr&quot;], [&quot;15-16 z&quot;, &quot;zzzzzzzzzzzzzzhdzz&quot;], [&quot;2-18 j&quot;, &quot;pjrkwwdbsfbbncjkpz&quot;], [&quot;11-12 z&quot;, &quot;zzzzzzzzzzzm&quot;], [&quot;5-17 h&quot;, &quot;whwdzvthhhhhhhhhhhh&quot;], [&quot;5-7 r&quot;, &quot;rrcqvnsjrcvrwrfrp&quot;], [&quot;5-7 w&quot;, &quot;wwrwwwww&quot;], [&quot;1-3 l&quot;, &quot;llhl&quot;], [&quot;5-8 x&quot;, &quot;hcjxszxxcxxxxx&quot;], [&quot;3-4 q&quot;, &quot;qqqlc&quot;], [&quot;3-5 n&quot;, &quot;nnmnnx&quot;], [&quot;7-10 r&quot;, &quot;rrrbqqrrgbrrmp&quot;], [&quot;4-6 c&quot;, &quot;ccpcldcc&quot;], [&quot;8-17 w&quot;, &quot;scwwpwwwwwwtvwwwwwh&quot;], [&quot;8-9 x&quot;, &quot;xxxxxxxxk&quot;], [&quot;4-12 l&quot;, &quot;prllqnlgzsqxlvwbj&quot;], [&quot;8-9 d&quot;, &quot;dddddddngd&quot;], [&quot;3-6 f&quot;, &quot;rfffkfqf&quot;], [&quot;4-8 d&quot;, &quot;dpzddfddhvjspzpn&quot;], [&quot;1-16 x&quot;, &quot;xlxcxxxxpxxqfxxlxrx&quot;], [&quot;1-4 f&quot;, &quot;hffpff&quot;], [&quot;4-6 f&quot;, &quot;fffnfmf&quot;], [&quot;13-14 t&quot;, &quot;tttctgttttttttttx&quot;], [&quot;4-12 h&quot;, &quot;zhxlbhhhhhzch&quot;], [&quot;6-10 p&quot;, &quot;ppdpptpxkpppd&quot;], [&quot;2-5 g&quot;, &quot;stgfgsq&quot;], [&quot;3-4 b&quot;, &quot;bbxbw&quot;], [&quot;16-17 c&quot;, &quot;cccccdcccccdcccdccc&quot;], [&quot;2-4 n&quot;, &quot;nvnvd&quot;], [&quot;7-8 d&quot;, &quot;dddddddd&quot;], [&quot;6-9 m&quot;, &quot;mpmmfmmmvm&quot;], [&quot;2-3 r&quot;, &quot;rrrj&quot;], [&quot;10-13 s&quot;, &quot;sjrssssdftsssss&quot;], [&quot;1-7 p&quot;, &quot;ptdpsggktwjkpzpp&quot;], [&quot;3-5 p&quot;, &quot;ppqppp&quot;], [&quot;1-2 l&quot;, &quot;jkrmtrnflxhj&quot;], [&quot;2-5 x&quot;, &quot;xxxxj&quot;], [&quot;3-13 m&quot;, &quot;zjmmxcbcbksmntxghsm&quot;], [&quot;1-8 v&quot;, &quot;nvvvvvvjvvg&quot;], [&quot;3-4 b&quot;, &quot;bblb&quot;], [&quot;1-3 p&quot;, &quot;qppmwvhmgmkcspdml&quot;], [&quot;2-3 p&quot;, &quot;nrppvr&quot;], [&quot;10-11 r&quot;, &quot;crrrrrrrrrrr&quot;], [&quot;12-14 k&quot;, &quot;kkjklkkhkrkkkbkkkkk&quot;], [&quot;3-13 l&quot;, &quot;lqfjldlxflnvrlcdmhll&quot;], [&quot;9-13 c&quot;, &quot;cxsccbqkhccccxcjcp&quot;], [&quot;13-14 d&quot;, &quot;dddddddddddddjd&quot;], [&quot;1-5 d&quot;, &quot;cmbdxnxndpct&quot;], [&quot;3-4 l&quot;, &quot;lllk&quot;], [&quot;5-6 b&quot;, &quot;bbbbdb&quot;], [&quot;4-13 s&quot;, &quot;sszsbksgtssbdmsls&quot;], [&quot;2-13 q&quot;, &quot;kqxqrccgfhwcq&quot;], [&quot;4-12 t&quot;, &quot;ttttlttttttlk&quot;], [&quot;14-16 h&quot;, &quot;hhhhhhhhhhhhhhhh&quot;], [&quot;10-11 z&quot;, &quot;zzzzzzzzzzz&quot;], [&quot;1-5 x&quot;, &quot;xxnxs&quot;], [&quot;12-14 x&quot;, &quot;xsxxxxxxxxxtkxx&quot;], [&quot;3-9 f&quot;, &quot;fvffvfxxf&quot;], [&quot;1-3 w&quot;, &quot;wwcw&quot;], [&quot;5-6 j&quot;, &quot;gjjjqpjj&quot;], [&quot;2-3 h&quot;, &quot;hchzhk&quot;], [&quot;2-4 z&quot;, &quot;vtzz&quot;], [&quot;1-4 q&quot;, &quot;mqqnqq&quot;], [&quot;5-7 v&quot;, &quot;vnvvvvv&quot;], [&quot;1-3 h&quot;, &quot;hlcsjhs&quot;], [&quot;8-19 s&quot;, &quot;stsssspqwsssssssssss&quot;], [&quot;1-3 f&quot;, &quot;nffn&quot;], [&quot;11-12 n&quot;, &quot;nnnnnnnnknnjwnn&quot;], [&quot;4-6 w&quot;, &quot;wwwkww&quot;], [&quot;10-17 p&quot;, &quot;ppwppzpppvqppszbxp&quot;], [&quot;3-10 d&quot;, &quot;ndnddmwdsnpdkbn&quot;], [&quot;7-9 f&quot;, &quot;ffffffwtf&quot;], [&quot;9-11 l&quot;, &quot;lhndlllllljmqccll&quot;], [&quot;4-7 v&quot;, &quot;tdgsvvjvvqvvvn&quot;], [&quot;13-14 k&quot;, &quot;kkkgkkkkgkkkkkkh&quot;], [&quot;2-6 x&quot;, &quot;xxxxjllxsx&quot;], [&quot;9-12 v&quot;, &quot;vvvvvvvvsvvv&quot;], [&quot;12-14 z&quot;, &quot;zzzzzpzzzzzvzcz&quot;], [&quot;14-15 w&quot;, &quot;wwwwwvwwwwwwwwpw&quot;], [&quot;2-8 m&quot;, &quot;hhtmwxgm&quot;], [&quot;5-13 z&quot;, &quot;zpzzwzzzzfwzdznzmwzf&quot;], [&quot;4-6 x&quot;, &quot;xfxxxg&quot;], [&quot;5-10 f&quot;, &quot;nfxffpffffffpf&quot;], [&quot;13-14 h&quot;, &quot;phhhhhhhwtrhjhfhhhh&quot;], [&quot;2-3 p&quot;, &quot;pxxp&quot;], [&quot;4-5 g&quot;, &quot;gggngg&quot;], [&quot;4-6 t&quot;, &quot;bdltkmtttcwctm&quot;], [&quot;12-13 g&quot;, &quot;gpggwghghcgghgggkpgg&quot;], [&quot;2-12 l&quot;, &quot;lllmxrnlgllvlwltcl&quot;], [&quot;1-4 g&quot;, &quot;grgk&quot;], [&quot;5-9 k&quot;, &quot;lxkhkklkbkdqlkk&quot;], [&quot;4-7 r&quot;, &quot;pjgrzzrrgpxnckxzrcxc&quot;], [&quot;4-5 m&quot;, &quot;mmmmm&quot;], [&quot;2-3 w&quot;, &quot;wtwx&quot;], [&quot;9-10 p&quot;, &quot;ptfpsfpjpnvppxpghpp&quot;], [&quot;15-17 m&quot;, &quot;mmmmmmmmmmxmmmqldmrm&quot;], [&quot;5-7 f&quot;, &quot;flfqfffvffn&quot;], [&quot;1-2 b&quot;, &quot;kzbb&quot;], [&quot;2-9 c&quot;, &quot;cccccccbjjv&quot;], [&quot;9-16 h&quot;, &quot;hshhhtjhthhhwhkh&quot;], [&quot;2-10 b&quot;, &quot;fmwfbcdwvbj&quot;], [&quot;8-10 j&quot;, &quot;jjjjjjjrjjj&quot;], [&quot;1-7 x&quot;, &quot;xtxzjwdxmcjdh&quot;], [&quot;4-5 j&quot;, &quot;jjjrjj&quot;], [&quot;3-7 f&quot;, &quot;ffvfffnf&quot;], [&quot;2-5 m&quot;, &quot;fmkhm&quot;], [&quot;6-12 j&quot;, &quot;jgwjjjjjxjvjjqdjg&quot;], [&quot;2-5 j&quot;, &quot;kjxjtrl&quot;], [&quot;3-6 b&quot;, &quot;bhtxxhjbxbbb&quot;], [&quot;2-9 h&quot;, &quot;mhhhhhhhh&quot;], [&quot;11-13 n&quot;, &quot;nnnnnnnnnnnnhn&quot;], [&quot;3-4 h&quot;, &quot;phxhh&quot;], [&quot;9-11 h&quot;, &quot;hhhhhhhhhhg&quot;], [&quot;5-6 l&quot;, &quot;lllljl&quot;], [&quot;4-12 w&quot;, &quot;gmgtvwfwcwwwb&quot;], [&quot;2-7 k&quot;, &quot;hkkmsspkrm&quot;], [&quot;3-7 k&quot;, &quot;tlklhkwk&quot;], [&quot;3-5 c&quot;, &quot;chgzcccd&quot;], [&quot;9-19 x&quot;, &quot;xxxxxxxxxxxxxxxxxxqx&quot;], [&quot;3-4 b&quot;, &quot;bbxbbz&quot;], [&quot;1-3 f&quot;, &quot;fhhf&quot;], [&quot;1-3 j&quot;, &quot;jjnj&quot;], [&quot;8-9 n&quot;, &quot;nnnnnnnnn&quot;], [&quot;10-11 m&quot;, &quot;mmmmmmmmmmh&quot;], [&quot;5-6 n&quot;, &quot;rldnpnnlxnbjmgnxncv&quot;], [&quot;7-8 f&quot;, &quot;pnrcpmgffzjffffrxf&quot;], [&quot;5-9 n&quot;, &quot;nffdnnnnqnnm&quot;], [&quot;10-18 s&quot;, &quot;sssssvsskxssssrsbsss&quot;], [&quot;4-5 b&quot;, &quot;bbbbkb&quot;], [&quot;7-9 r&quot;, &quot;rjcfrhrqmrrrrrr&quot;], [&quot;15-19 q&quot;, &quot;qcqqqqqqqqqqqqhqqjsq&quot;], [&quot;2-4 n&quot;, &quot;cnwn&quot;], [&quot;4-5 p&quot;, &quot;sncdvppkphpp&quot;], [&quot;4-10 m&quot;, &quot;gmpmmmrqmqcm&quot;], [&quot;7-10 d&quot;, &quot;hmddhvnddznddd&quot;], [&quot;8-11 b&quot;, &quot;bvhbsbnbhbmbfjbqbr&quot;], [&quot;5-7 q&quot;, &quot;wqqqqqgq&quot;], [&quot;4-14 n&quot;, &quot;nnnrfsnndncmnnmdw&quot;], [&quot;3-12 c&quot;, &quot;ktcccvpzgkfqcc&quot;], [&quot;3-6 l&quot;, &quot;lllllv&quot;], [&quot;1-3 q&quot;, &quot;fqmqq&quot;], [&quot;14-15 z&quot;, &quot;zzzzzzzzzzzzzwz&quot;], [&quot;5-11 z&quot;, &quot;zzmzbxzjzzzzp&quot;], [&quot;15-18 r&quot;, &quot;rrrrrrrrrrrrrrrrrlr&quot;], [&quot;10-11 c&quot;, &quot;ccccccccccfc&quot;], [&quot;5-16 t&quot;, &quot;ttstjrttzbttjltktk&quot;], [&quot;6-12 g&quot;, &quot;lgwgdfdzggggj&quot;], [&quot;15-17 v&quot;, &quot;vvvvvvvvvjvvvvvhgv&quot;], [&quot;1-5 n&quot;, &quot;cnnnnn&quot;], [&quot;5-7 w&quot;, &quot;mwwwxww&quot;], [&quot;9-12 w&quot;, &quot;wvwwwpwwwwwbvwwm&quot;], [&quot;13-15 z&quot;, &quot;czzrzzzzzhzzzzzzzz&quot;], [&quot;7-17 g&quot;, &quot;gggggglggggggggggg&quot;], [&quot;2-4 r&quot;, &quot;rjfzr&quot;], [&quot;5-6 n&quot;, &quot;nnnnsnbmn&quot;], [&quot;3-10 d&quot;, &quot;ddrdddlrnrchdfddd&quot;], [&quot;7-11 s&quot;, &quot;sswssnssssfsn&quot;], [&quot;2-5 q&quot;, &quot;jqdqq&quot;], [&quot;4-6 c&quot;, &quot;mczcccc&quot;], [&quot;11-13 b&quot;, &quot;crbbhxbbbbbfxbbbbx&quot;], [&quot;10-11 k&quot;, &quot;kkjkkkkkqckkk&quot;], [&quot;2-6 r&quot;, &quot;rrsntpc&quot;], [&quot;2-17 q&quot;, &quot;qcpzdqfbqqqqqqqqw&quot;], [&quot;2-5 d&quot;, &quot;fvdpddbkq&quot;], [&quot;1-8 q&quot;, &quot;dqqqfqzz&quot;], [&quot;12-13 w&quot;, &quot;wkwwwwntwwwtwktmwwww&quot;], [&quot;13-19 s&quot;, &quot;ssssssssxssskssssss&quot;], [&quot;8-10 k&quot;, &quot;kkkkkkkbkxkk&quot;], [&quot;10-13 r&quot;, &quot;rrrjrprrjrrrvr&quot;], [&quot;2-3 b&quot;, &quot;wbbc&quot;], [&quot;17-18 p&quot;, &quot;pppppgppppppppppxppp&quot;], [&quot;5-14 v&quot;, &quot;vdvlvvjzvdvpvc&quot;], [&quot;3-12 x&quot;, &quot;xnxxxtjxxkxxxxx&quot;], [&quot;5-6 b&quot;, &quot;gqzbbvbbbb&quot;], [&quot;6-10 k&quot;, &quot;kkhxqkkkkkcncxgkk&quot;], [&quot;9-10 j&quot;, &quot;jjjjjjjjcsjj&quot;], [&quot;4-9 t&quot;, &quot;wzttttxgthbfbbt&quot;], [&quot;2-12 v&quot;, &quot;vzvvvkpfvprwmvxjgsvd&quot;], [&quot;3-9 t&quot;, &quot;lttcmtrntxwjhhmqhnbc&quot;], [&quot;3-8 h&quot;, &quot;hhvhbhhhh&quot;], [&quot;4-5 z&quot;, &quot;mzzzz&quot;], [&quot;6-7 g&quot;, &quot;ggggggg&quot;], [&quot;4-6 r&quot;, &quot;rrcrfrg&quot;], [&quot;2-4 n&quot;, &quot;ngndn&quot;], [&quot;4-9 x&quot;, &quot;dxxxxxxqvqcxfdjzx&quot;], [&quot;7-13 q&quot;, &quot;qqqttqqxmfqqlzqpqqq&quot;], [&quot;8-11 g&quot;, &quot;gggggggpgggg&quot;], [&quot;1-3 q&quot;, &quot;qqtktrq&quot;], [&quot;6-9 r&quot;, &quot;rrrbrzrrc&quot;], [&quot;9-11 r&quot;, &quot;rrrrrrrrsrrr&quot;], [&quot;3-9 d&quot;, &quot;lsvdztpddd&quot;], [&quot;9-12 z&quot;, &quot;xzzzzzzgzzzcztzz&quot;], [&quot;3-13 f&quot;, &quot;fkffdzbtdffpfgjffff&quot;], [&quot;1-2 d&quot;, &quot;hdtnbxqdjnmsksm&quot;], [&quot;6-9 r&quot;, &quot;rlrrmxdrrrr&quot;], [&quot;8-9 c&quot;, &quot;cccccccmc&quot;], [&quot;5-13 w&quot;, &quot;wtwzkwwwjwxdwwvgbwjg&quot;], [&quot;5-11 f&quot;, &quot;fjfffgfffdlf&quot;], [&quot;6-7 l&quot;, &quot;llllllcl&quot;], [&quot;4-6 g&quot;, &quot;ggglggg&quot;], [&quot;11-12 r&quot;, &quot;rrrrrrrrrrrx&quot;], [&quot;3-4 r&quot;, &quot;rrrr&quot;], [&quot;4-8 p&quot;, &quot;sbpppdrpppmplfq&quot;], [&quot;9-11 m&quot;, &quot;vwmmmdpxlczmwmmmmgmj&quot;], [&quot;2-12 k&quot;, &quot;kkkkchsksjwbkkw&quot;], [&quot;8-17 r&quot;, &quot;rrrrrrvrkrlrrrrtz&quot;], [&quot;8-9 v&quot;, &quot;vvvvvvvkv&quot;], [&quot;5-6 b&quot;, &quot;bttbbbb&quot;], [&quot;7-9 f&quot;, &quot;rfwfffnmvjwktfwfff&quot;], [&quot;4-9 k&quot;, &quot;kkkckxkgz&quot;], [&quot;5-6 r&quot;, &quot;rrdrrsrr&quot;], [&quot;1-2 p&quot;, &quot;qplxp&quot;], [&quot;4-16 c&quot;, &quot;ccccccczfwphcbcmc&quot;], [&quot;4-10 n&quot;, &quot;nnnrnnnnnnn&quot;], [&quot;4-6 g&quot;, &quot;pgnvgwttgfg&quot;], [&quot;6-7 b&quot;, &quot;bbbbbbt&quot;], [&quot;6-15 m&quot;, &quot;qxhmlmmxmmnmmmppmrtn&quot;], [&quot;10-16 n&quot;, &quot;shknnnnqnnclnjnnn&quot;], [&quot;1-3 z&quot;, &quot;xzlz&quot;], [&quot;1-4 s&quot;, &quot;mssss&quot;], [&quot;1-7 p&quot;, &quot;bbppppppkgp&quot;], [&quot;4-6 g&quot;, &quot;ggpgggg&quot;], [&quot;2-3 z&quot;, &quot;dzzz&quot;], [&quot;6-11 t&quot;, &quot;xlthtttttccbqtrvqqst&quot;], [&quot;7-10 r&quot;, &quot;rrwrrrrrrx&quot;], [&quot;10-11 z&quot;, &quot;zvzzwzzskzkzzzzqc&quot;], [&quot;4-8 r&quot;, &quot;rrrxvrrsrw&quot;], [&quot;5-11 r&quot;, &quot;mrrptkrtrqjsrr&quot;], [&quot;8-9 f&quot;, &quot;fffpfffhfcf&quot;], [&quot;2-3 x&quot;, &quot;xltcxkg&quot;], [&quot;4-7 k&quot;, &quot;ckkcqkk&quot;], [&quot;2-5 p&quot;, &quot;qvfpp&quot;], [&quot;4-7 k&quot;, &quot;wkkkcfkrkhxd&quot;], [&quot;12-18 g&quot;, &quot;gggggggggggjgggggxg&quot;], [&quot;6-10 p&quot;, &quot;pppppppppp&quot;], [&quot;4-6 w&quot;, &quot;fgwwwwwcbkw&quot;], [&quot;1-5 l&quot;, &quot;blllll&quot;], [&quot;3-4 t&quot;, &quot;nrtbtstxwt&quot;], [&quot;1-3 h&quot;, &quot;xchh&quot;], [&quot;16-17 f&quot;, &quot;ffffftfffffffffff&quot;], [&quot;1-9 m&quot;, &quot;mkmbjmpbr&quot;], [&quot;3-5 x&quot;, &quot;xxxxx&quot;], [&quot;9-10 f&quot;, &quot;ffffjvrfgfffff&quot;], [&quot;4-10 q&quot;, &quot;lqqbqqqqqgqq&quot;], [&quot;8-11 n&quot;, &quot;pbfnnnwntnnnn&quot;], [&quot;1-15 j&quot;, &quot;jjjjjjjjjjjjjjj&quot;], [&quot;3-12 b&quot;, &quot;zbbsdblxbqvbp&quot;], [&quot;4-7 k&quot;, &quot;kgdhskkkklkmfgnkrtm&quot;], [&quot;9-10 s&quot;, &quot;sssshssfsjpxssvc&quot;], [&quot;2-4 w&quot;, &quot;whlhw&quot;], [&quot;11-16 z&quot;, &quot;zzbzzzzzzztzzzzsz&quot;], [&quot;8-10 x&quot;, &quot;txmxxvxpxxxxxmmlrnj&quot;], [&quot;4-9 v&quot;, &quot;vvvbbvvvvb&quot;], [&quot;7-14 h&quot;, &quot;hhvxcrhhkhhhtrbwtghx&quot;], [&quot;9-10 h&quot;, &quot;hhfkhchhhpwsphhjdhhc&quot;], [&quot;3-5 q&quot;, &quot;qqqqtq&quot;], [&quot;4-5 f&quot;, &quot;ffmftff&quot;], [&quot;3-13 l&quot;, &quot;llwmlldllfjlt&quot;], [&quot;2-3 j&quot;, &quot;jjbj&quot;], [&quot;6-11 r&quot;, &quot;rnwdrpjrrpxrwrr&quot;], [&quot;2-4 m&quot;, &quot;mccmm&quot;], [&quot;8-12 p&quot;, &quot;pppppvpppkpdppp&quot;], [&quot;2-5 h&quot;, &quot;hcbhcl&quot;], [&quot;12-13 c&quot;, &quot;ccccccccjcccgc&quot;], [&quot;2-9 r&quot;, &quot;nsrqvqtrrd&quot;], [&quot;1-4 r&quot;, &quot;trrr&quot;], [&quot;7-11 t&quot;, &quot;thtbhtxprtcttttt&quot;], [&quot;9-11 t&quot;, &quot;ttttttttpttt&quot;], [&quot;1-4 p&quot;, &quot;pnpp&quot;], [&quot;2-4 f&quot;, &quot;fvfvf&quot;], [&quot;2-3 f&quot;, &quot;mffjfj&quot;], [&quot;8-14 b&quot;, &quot;bbbbrbwbbjbbbzbb&quot;], [&quot;4-17 v&quot;, &quot;vlvmvvvvvnwtvvvnvvhv&quot;], [&quot;16-17 w&quot;, &quot;wwwwwwbtjwwwwwwwwww&quot;], [&quot;1-2 n&quot;, &quot;ndng&quot;], [&quot;13-14 z&quot;, &quot;zzzzzzzzzzzzzvz&quot;], [&quot;8-10 l&quot;, &quot;lllllllxlkl&quot;], [&quot;8-9 s&quot;, &quot;ssssssssp&quot;], [&quot;9-12 s&quot;, &quot;sdsssssvssss&quot;], [&quot;2-3 g&quot;, &quot;ggxv&quot;], [&quot;6-9 c&quot;, &quot;cccpcjccc&quot;], [&quot;3-4 f&quot;, &quot;ffwff&quot;], [&quot;8-14 k&quot;, &quot;dkkgkkzkqkkkzwj&quot;], [&quot;12-15 g&quot;, &quot;gsggrgglggngggrglggt&quot;], [&quot;3-6 w&quot;, &quot;wwwpch&quot;], [&quot;5-6 n&quot;, &quot;nnnnnbn&quot;], [&quot;11-15 t&quot;, &quot;ttttttttttttttt&quot;], [&quot;3-4 f&quot;, &quot;fffn&quot;], [&quot;5-7 b&quot;, &quot;bbbbbbtb&quot;], [&quot;17-20 l&quot;, &quot;lllllllnllllllllpllg&quot;], [&quot;10-18 h&quot;, &quot;hhhhphhhmnhhhnhhvhhh&quot;], [&quot;2-5 k&quot;, &quot;fndkkkksvbk&quot;], [&quot;3-16 k&quot;, &quot;kkkkkkkkkkkkkkkzk&quot;], [&quot;13-14 z&quot;, &quot;zzzpzzzzzzzzszz&quot;], [&quot;1-6 n&quot;, &quot;dwngnnrnnn&quot;], [&quot;4-9 n&quot;, &quot;nnghfsvnnp&quot;], [&quot;8-9 p&quot;, &quot;pppllpprnppp&quot;], [&quot;13-17 d&quot;, &quot;ddddrnddddddbdddd&quot;], [&quot;2-14 w&quot;, &quot;rptqzcsdvbjctwsfkwb&quot;], [&quot;3-6 x&quot;, &quot;mhxxqx&quot;], [&quot;17-18 t&quot;, &quot;ttttttttttttttttjt&quot;], [&quot;1-2 q&quot;, &quot;zcgfq&quot;], [&quot;5-12 q&quot;, &quot;qwqpqpmkhqqj&quot;], [&quot;9-12 j&quot;, &quot;bjjqjjjjgjjj&quot;], [&quot;2-6 q&quot;, &quot;qngktqqqw&quot;], [&quot;1-2 z&quot;, &quot;nzfzlfdqk&quot;], [&quot;3-10 m&quot;, &quot;jmrwmhwmmxdmmmm&quot;], [&quot;3-4 m&quot;, &quot;mmmg&quot;], [&quot;2-7 z&quot;, &quot;frrzczznn&quot;], [&quot;3-7 k&quot;, &quot;kbkkrgkgzmtlkwkljcq&quot;], [&quot;2-6 k&quot;, &quot;hknhpk&quot;], [&quot;5-13 p&quot;, &quot;pppptppppppppp&quot;], [&quot;8-14 j&quot;, &quot;jjjpjqxhjbjjjjjj&quot;], [&quot;2-5 m&quot;, &quot;mwpfmrnscgpbbbwt&quot;], [&quot;8-12 d&quot;, &quot;lbddddvdmddddzdddl&quot;], [&quot;2-3 j&quot;, &quot;jhrj&quot;], [&quot;8-9 w&quot;, &quot;wwwwwwwww&quot;], [&quot;11-12 f&quot;, &quot;fffffgfffffcf&quot;], [&quot;3-4 n&quot;, &quot;nnnh&quot;], [&quot;4-8 h&quot;, &quot;dztmrvhhchhhh&quot;], [&quot;13-18 l&quot;, &quot;llllllllllllfllllll&quot;], [&quot;2-3 s&quot;, &quot;tzssns&quot;], [&quot;4-6 p&quot;, &quot;ppppphprln&quot;], [&quot;5-7 g&quot;, &quot;cjljggsgvlkgqlg&quot;], [&quot;2-3 w&quot;, &quot;nfwwqklwr&quot;], [&quot;2-3 l&quot;, &quot;hllw&quot;], [&quot;3-13 v&quot;, &quot;vvvzvzvgvxlzflvr&quot;], [&quot;4-5 k&quot;, &quot;fbkkwxkrpxtkctjzhndk&quot;], [&quot;6-11 g&quot;, &quot;zggggndgggsggg&quot;], [&quot;5-6 b&quot;, &quot;xlbbbbb&quot;], [&quot;7-11 s&quot;, &quot;sssszssmsss&quot;], [&quot;2-3 n&quot;, &quot;wnknrjwtqcksmlw&quot;], [&quot;9-10 j&quot;, &quot;jjjjjjjjjp&quot;], [&quot;3-5 f&quot;, &quot;hbfnfjkmfpnfjfv&quot;], [&quot;2-4 r&quot;, &quot;rbqr&quot;], [&quot;1-11 q&quot;, &quot;qqqqqqqqqqzq&quot;], [&quot;2-13 k&quot;, &quot;kkmqckkgqqntkmr&quot;], [&quot;2-4 j&quot;, &quot;vjzjj&quot;], [&quot;2-10 x&quot;, &quot;dxhqtxtbkxnnpcrbtgp&quot;], [&quot;3-9 d&quot;, &quot;ddhdvzpdw&quot;], [&quot;9-18 f&quot;, &quot;flpgfvffsffwfffgsk&quot;], [&quot;14-17 t&quot;, &quot;tttttttxtttttttttt&quot;], [&quot;12-15 b&quot;, &quot;bbbbbbbbbbbbbbqfb&quot;], [&quot;4-9 t&quot;, &quot;ttfhtftwt&quot;], [&quot;4-5 f&quot;, &quot;ffvff&quot;], [&quot;4-18 s&quot;, &quot;jssjsssssssssssnsvms&quot;], [&quot;2-5 z&quot;, &quot;tzzsz&quot;], [&quot;9-17 g&quot;, &quot;nwpqgggbggjfgggmglhd&quot;], [&quot;5-6 c&quot;, &quot;kccdbccc&quot;], [&quot;3-4 r&quot;, &quot;rgrr&quot;], [&quot;9-15 d&quot;, &quot;dqddhddngdddddnzd&quot;], [&quot;8-9 q&quot;, &quot;qqhqqqqczqq&quot;], [&quot;6-15 k&quot;, &quot;llfkkknskkbkkkbkkjkk&quot;], [&quot;14-15 z&quot;, &quot;zzvzzzzzzzzzznczz&quot;], [&quot;9-12 d&quot;, &quot;ddddjrddmddnd&quot;], [&quot;9-12 g&quot;, &quot;gbdgggnggcggpg&quot;], [&quot;5-9 c&quot;, &quot;ccvshdqtcvcczl&quot;], [&quot;9-10 v&quot;, &quot;xvvtfxrvxvvvvvtvbc&quot;], [&quot;5-6 g&quot;, &quot;gggggm&quot;], [&quot;1-6 j&quot;, &quot;djjjjjj&quot;], [&quot;2-6 p&quot;, &quot;dpcjksgxtp&quot;], [&quot;1-8 t&quot;, &quot;gchtttbtt&quot;], [&quot;4-12 j&quot;, &quot;sjjjmzjjjjjpj&quot;], [&quot;7-15 t&quot;, &quot;tslntctttxtkgtm&quot;], [&quot;1-8 k&quot;, &quot;kkkkkntkkcdqk&quot;], [&quot;5-6 m&quot;, &quot;mmmmmm&quot;], [&quot;3-4 h&quot;, &quot;hgxhjchhlpms&quot;], [&quot;1-2 r&quot;, &quot;drcr&quot;], [&quot;19-20 l&quot;, &quot;llllllllllllllllllll&quot;], [&quot;2-7 g&quot;, &quot;fmggdgggx&quot;]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">_</span><span class="o">.</span><span class="n">count</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>536
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="k">do</span> <span class="o">|</span><span class="n">condition</span><span class="p">,</span> <span class="n">pass</span><span class="o">|</span>
+  <span class="n">positions</span><span class="p">,</span> <span class="n">val</span> <span class="o">=</span> <span class="n">condition</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">)</span>
+  <span class="n">positions</span> <span class="o">=</span> <span class="n">positions</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;-&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="o">&amp;</span><span class="ss">:to_i</span>
+  <span class="n">positions</span><span class="o">.</span><span class="n">count</span> <span class="p">{</span><span class="o">|</span><span class="n">pos</span><span class="o">|</span> <span class="n">pass</span><span class="o">[</span><span class="n">pos</span><span class="o">-</span><span class="mi">1</span><span class="o">]</span> <span class="o">==</span> <span class="n">val</span> <span class="p">}</span> <span class="o">==</span> <span class="mi">1</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>558
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="03.html" title="previous page">Day 3</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

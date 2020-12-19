@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 18 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Day 17" href="17.html" />
+    <link rel="prev" title="Day 19" href="19.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.html">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.html">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07.html">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05.html">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.html">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/18.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/18.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2">
+   Part 2
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-18">
+<h1>Day 18<a class="headerlink" href="#day-18" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="s1">&#39;18.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">map</span> <span class="p">{</span><span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="n">n</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&quot;6*((4*8+4)+(3*5+3+3*7*5))+7+(9*(6+9*7+2*6*6))+2&quot;, &quot;6+6*(8+9*6*7+4*8)*(3*2+8*(5*8+6*3*7+4))&quot;, &quot;((2+5*5+8+3+4)+8*7*6)*9*8+2&quot;, &quot;(2+7*(3+5*2+3+6)*(4*6+8*3*2+7))+3*((2+8+6)*8+9*6*6)+5+6+5&quot;, &quot;((5*8*4+6*9)+2*7+2+(6*7+6))+6+6*9*(2*8*(3+7)*9)*7&quot;, &quot;6*4+8+(2*(4*3*7*4)*3)&quot;, &quot;6+8+((3+7+4+9+6)*7+9+2*4*6)*(3+6*5*2*4)*3+9&quot;, &quot;(5*5*5*7+9)*7*5&quot;, &quot;9+5+(2+(2*3+5*9)*6)*2*(2*(4+5+2+9+3))&quot;, &quot;8+7+(2+4+5+9)*(7+4)*7&quot;, &quot;9*(3+9+5+7)*5+6&quot;, &quot;2+3+4&quot;, &quot;8*4&quot;, &quot;6*4*(2*7*7*2)*4&quot;, &quot;2*(6+5)+5&quot;, &quot;(5+6*2*3)*(3+8+4+2+6)*8&quot;, &quot;((7+7*3+3+7)*3+7+2*(3*8*2+2*7*4)+9)+4+3*7&quot;, &quot;6+8+((4+9+5+9+5+6)*6*(3*5+2*8)*9*5+9)&quot;, &quot;(4*2)+7+9+8+((2*9*4+3+7+8)+7*9)&quot;, &quot;2*3+3*8&quot;, &quot;9*6*3*8*((8*4*2*6)+3*8)&quot;, &quot;7*8+5*8*9&quot;, &quot;7*((3*3+4+4)*3)+8+7+2*8&quot;, &quot;2*(9+9*(8*9))&quot;, &quot;(8+6+9*(5+5+5)*6*9)*((2+7*6+2)+4*9*8*(5*2+5+2+5))&quot;, &quot;(6*9)+5*8*8+8*(7+4+6*(9*9)+8)&quot;, &quot;2*9+3*((3*7*4*3+3*8)*(8+6+3*8+6)+5+3+7+5)+9*(3+3+6+4)&quot;, &quot;((9+2*7*8+7)+3*(6+9*3))+7&quot;, &quot;4*(8*(6+3*4))&quot;, &quot;4+3+7+4+2*7&quot;, &quot;7*8*5+7&quot;, &quot;(7*9)*(2*9+5+(5+2))+((9+7+9*7*4+8)*(6*7+4)+3*7+4*8)&quot;, &quot;(8*6*9*7+2*2)*8*2*9+(8+9*7*8*7)+(5*5)&quot;, &quot;9*4+8+(8*6*4+(5*6*3*6+3)+5)*9+4&quot;, &quot;7*(7*8*9)*2&quot;, &quot;(3+3+(8+5*6)+7+(9+8+2*3*9+2))+(3+4+(9*5*2+2+8)+(4*3+4))+8*6*((9+8)+9*3)&quot;, &quot;3+2+7&quot;, &quot;(6+6+6*3+(5+5*4))*(3*(9+2+4*5*3*3))+(3+6+6+5+6*8)&quot;, &quot;(9+(9*7+7*4+2)+(8*8)+5+9*2)*5*(5*9*5+8*6)&quot;, &quot;2+5+(2+2+(7*2*7))*(2*(6*5+9*4))*4&quot;, &quot;5+7&quot;, &quot;7+5*4*((8+6+9*7*7+6)+3+3+5)*(8+(4*2*9)*5*6+(2*8+2*7))+8&quot;, &quot;6*7*(2*3)*3*3&quot;, &quot;6*3+8*(4*7+9)+4*7&quot;, &quot;4+2+((3+7)+(4+9))&quot;, &quot;4+8*6*5*7+(7*(8+5+5+2+3*5)*(6+3)+(2*3*5+4))&quot;, &quot;4+(7*7*(5*4+8)*2)+8*3&quot;, &quot;(4*9*8*9*(6*7+2*5+6))*((4+2*5+9*9)*3+8*2)+9+9+2&quot;, &quot;4*5+9*(4*(8+8*5))&quot;, &quot;7+(7*5*(5*6)+2*2)+(6*3*(7*9+2*6))+5*7+((7*4*4+8*8*6)*(8*8*7+9*3+2)*2*5)&quot;, &quot;(8+3*6*6*2+4)+4&quot;, &quot;9*8*(9+8)&quot;, &quot;((9*4+5+5)+2+8*6)*6*5*9&quot;, &quot;(7*3)+3*8*3*7+8&quot;, &quot;8+(9*7*(6+2))*9&quot;, &quot;((6+9*2+7+4)*5)*7+(6+3*9+5+9*4)+(3*6*3+8)+((4*3+2+2)+9*5+5*5)&quot;, &quot;(8*(8*6+2)*4)*4*6&quot;, &quot;2+9+(3*9*4+(7*7))+7&quot;, &quot;(2*3+2)+((8+4+6*7*8*3)*8+(3+2+3*8*6+3)+8)&quot;, &quot;2*(9*7*(4+5+8))+(3+(7+2*6+2)+7*2*9*7)+2*4*3&quot;, &quot;5+((9*6*6)+(6*6+5)*2)*9+7*((8*8*2+2)+(4*9))+(7+2*4+7+6)&quot;, &quot;((7*9+8*6*4+8)+(9+9+6*4)+6)*3*8&quot;, &quot;2*5+6+7*(6*(7*5+2*2)+7*8)&quot;, &quot;4*(4*4*2+3*9+7)*7+6&quot;, &quot;7+3*4+2*8&quot;, &quot;6+3*8&quot;, &quot;5+((6+2*3+4)+8+4+5*6*6)&quot;, &quot;(2+(6+3+4+9)*(7+3+2+7*9)+(2*2*7+9*7)+4+4)+((5+5)+4+5+2*2)+2+4*6&quot;, &quot;(5*(4+4*5*7+9+6)*9)*6+2&quot;, &quot;(6+2+(8*9+2)+8+5+(7+2))*6&quot;, &quot;(9*3*(8*7+6+7*3))+3&quot;, &quot;(4+4+2*9+(5*9*3+7)+9)*2+6&quot;, &quot;4*((9*3+9)+4)*9&quot;, &quot;(5+3+4)*((5+4+3*6)*7*2*6*8)+3*9+7+5&quot;, &quot;(3+4*8+8+3)*4*7*((7+8*3+7*7*8)+2+4+(7+6*4)+2*6)&quot;, &quot;4*(8+2*8)*6*7*9+5&quot;, &quot;5+3+6+8*(2+(4*5*2+9*9))&quot;, &quot;(3+6+5)*2*9+3&quot;, &quot;(7*5*2*2+5)*6&quot;, &quot;7*8*(3*5+(4*7)+6)+6+(5*(7*3)*3*5)*6&quot;, &quot;(8+(6+2*2*6)+3+9+5)*3+6*7+4&quot;, &quot;(5*8+(8+6*7*7*3))+(6+7+(5+7+7+4*8)+8*5+2)*(5+(5*4*9+7*9*6))&quot;, &quot;9*(9*2)*2*5&quot;, &quot;2+3*8*6+7*2&quot;, &quot;4+2*6*5*6+(4+7*6*(2*7+5+6*7+6))&quot;, &quot;((4*6+5+5)*5*4+8*8)*3+5&quot;, &quot;8*5*5*(3*8+3+5+9*(5+4*5+3*2))&quot;, &quot;8+4*7*3*4&quot;, &quot;(9+4*(5*7)+6*8*(8+7+9))+(2*(4+8*3))*7&quot;, &quot;((6*6+3+9+6)+3)+((9+2)+6+(2+7))*5*((3+2)+9*2)&quot;, &quot;(6*7)+8&quot;, &quot;(5*3+8+(9*4*4*3*9+2)*6)*8+4&quot;, &quot;8*7+(6*8+(8+2+8*3*9))&quot;, &quot;8*(3+(8*6))+(2+5+8*3+8*9)&quot;, &quot;((9*3+9)+8+7*9)+5*(4+(6*7*8)*4+(5+6+6*2)*3*5)+8+5&quot;, &quot;4+(2+3+5+(8*2+7)+3)*8*3*3*2&quot;, &quot;5+2*6+(5+(2*5*7+6)*5*4+4)+(2+5*9*(2*5*2+5*2))*6&quot;, &quot;9+5+5+((7*4)*6)+3&quot;, &quot;(2*4+6+(6*5*6+5*3*5)+4*4)*(3+5+8+3+(5*8*4+4*6+5)*8)*4+(3+6+9+(4+6*7*2+5)+(3+2+8*9*9))&quot;, &quot;(2+9*7)+(2*4*(7+3*2))&quot;, &quot;(8*4+3*3)*9*8&quot;, &quot;(4*3)*6*5*7+(4+7+4*6*9*6)&quot;, &quot;(7+4+9+7)*3*(2*(7*5*7)*5+9*4+3)&quot;, &quot;2*4*9*7+(3*6*5*7+4)&quot;, &quot;5+5*2*3&quot;, &quot;5+6*(8*9+(4+7*6+5*8+8)+9*(2+7+6+5))+(4*4+7*3)+6&quot;, &quot;5*8+6+(9+3+(5+3+2+9))&quot;, &quot;4*(7*2*6*2+6*(5+3))*(2+5*5*3)+(7*7+(7+6)*5*6)*(4+(3+4)+4*5*(5+4*9*7*9*6))&quot;, &quot;(5*8+3*3+(3+8))*9+3+4+4&quot;, &quot;2+5*2*5*8+6&quot;, &quot;4*7*5+((2+3+9*4)+4*(4*2*4+9*7))*6&quot;, &quot;(4*5*3*5)*3+8*4&quot;, &quot;7+4+(6*(4*4+7))+5+9*3&quot;, &quot;(3*8*7*(2+6)+(8*9+8+3*2)+6)*2+3*8&quot;, &quot;(6+9*4*4*9+(4+7+7*7))+(4*3*(6*7+4+5+8)*7)*((5*7*5*9)+4+4+8)+3&quot;, &quot;8*5*(5*8)*5+8+9&quot;, &quot;3+7+(5+4)+((9*8*4+7+7)+6)*(8+8+(4*4+8+4+8)*8+2+(4*7*4))&quot;, &quot;9*3*5+(3+3+(4+8+6+4+9*2)+7*7)&quot;, &quot;((9*7+8*6)+3+2+8+(6*6+7*4)*6)*4+((8+6*4*7+3+6)*6+3*6*(5+8+8*6+2+3))+9+9+6&quot;, &quot;7+3+8+(9*2+(3*3+6+4))+(6+7*3*2*9+(4+5+6+9+2+4))&quot;, &quot;(7+5+6)*2*7*(3*5)&quot;, &quot;(6*5*9*4)*9*2+3*7*5&quot;, &quot;8*(2+(4+8*5*7)*3)&quot;, &quot;(6+2+8*3*8)+((9+8+8+9*3)*(3*4)*2*4+6+5)*5*6*4+7&quot;, &quot;(2*6)+(7+8+3)&quot;, &quot;5+4*7*3*(3+3+(2+3*8+4)+9+3*3)+3&quot;, &quot;9*((8*5*8+7+2)*(6+2*9)+2)*7&quot;, &quot;(6*8*8*(4+5+3+4))*9+(2+4+2+8)&quot;, &quot;(8+(2+3*7)*5*6*3)*5*7+(7+(7*8*4*5)*5*3*4*8)+((2+6*9*2+8)+7*(5*8*5+6+9))*2&quot;, &quot;4*6+3+(5+5)+2&quot;, &quot;5+(7+2)+7*7+(2+5)*3&quot;, &quot;(9+4*7+(7*2+8*8*8))+2*(7*9+7+6)+5+5&quot;, &quot;9*9+(8+(8+7+8+2+8+5)+6*2*5*6)+3&quot;, &quot;6+(9+5*3+6+8)+3&quot;, &quot;2*4*2+9+3*((8*6*9+7*6)*3*2+9+9)&quot;, &quot;6*3+(4+8+(3+5+5)*6*2*3)+6*5+9&quot;, &quot;(7*8+9)*7*(6+5)*(4+8*5*6*9)*4&quot;, &quot;5*(7*3+3*4*(2*3*9))&quot;, &quot;6+6*3+7*(4+4*5)*(6+2)&quot;, &quot;7+8*9*3*8*2&quot;, &quot;3*2&quot;, &quot;8*((3*4*3)*9+9+9)*2*4+6*4&quot;, &quot;3+(4+5+5)+4+6&quot;, &quot;(4*7*5+8*7)*4*(6*6+4)*4+(2+7+2+8*6)&quot;, &quot;(2+2+8+9*9)+(9*4*2*9)*9&quot;, &quot;(8*(2*7+9)*4)*4*5+2*8&quot;, &quot;((7+8+6)+(9+8*7)+6*(5*8))*4&quot;, &quot;4+(3+(5+2*3*3*3)*2)*(7+2)&quot;, &quot;5+(5+3*4*6+6)&quot;, &quot;(4+4)+7+8+6*5&quot;, &quot;5*(6+(6+6*2+9)+8*(2*6))*6*9&quot;, &quot;(4+7*6*9)+6*(9*7)*4*((6+7)+5+9*5*5+2)&quot;, &quot;(4+(6+8+4*9)*8+(5+3+7))+2*3*9*3&quot;, &quot;9*9+9+(4*9*3+4)*9*6&quot;, &quot;2*(6+(8+7+6)*9*6*(2*8*3))*((9*7+6*3)*8*5+8+(7+7+7*5)*5)+2&quot;, &quot;6+(7+8*(5+4*3*2+2))+(4+8+5+7+7*(7*6+2*8*6+4))*(6*9)*9*9&quot;, &quot;7*(5*7*5*(7+7+9+5*2)*3*3)*(4*9)&quot;, &quot;7+2*9&quot;, &quot;(9+(6+3))*3+9+3*9*(8*(4+3*9))&quot;, &quot;7+2*4*5*(6*5+3*3*(5*8+7*5)*7)&quot;, &quot;6*(6*6+5*2)+8*((4+2*7+9+9)*4+5*5*2)*3&quot;, &quot;3*((7*2)*2+5+3*2+5)&quot;, &quot;9*(4+3*6*4*6+3)+7&quot;, &quot;2*8+(2+9)*8+(9+(5*8)+2)*6&quot;, &quot;(4+(2*7*8*5*9)+6+(8+2*9+6)*5+8)+7+7+7&quot;, &quot;8+(3+7+5*8)+2*(4*3)&quot;, &quot;9+(2*5*2)*(2+4+(4+4*7*9)*6+(8+9*3))+((2*7*8+5*5+5)*6*9+5*9)+2&quot;, &quot;7+(4+(2*4+6+3+8+5)+2*5+3)&quot;, &quot;(7+4+9*7+2+(5*8*8+2))+2+7&quot;, &quot;8*(8+4)&quot;, &quot;5*(3+8*4)&quot;, &quot;8+(5*4+3+5)&quot;, &quot;3*5*9*5+8+8&quot;, &quot;2*4*((3*3*7*2+7)+9)*4+3&quot;, &quot;9+8+(4+(6*4*3*8)*(8+6*3)+7)&quot;, &quot;3*(3+6*7+8+4+(5*4+3+4*6))*4+3+(5*3+(8*8+6*3+6*9)+2+9)&quot;, &quot;(5+5*7)+3*2+(8*4+3+4)&quot;, &quot;(7*8*(2+6+8)+6)*5&quot;, &quot;7*8+((6*9)*5*5*9+9)+(7+8+2)&quot;, &quot;8*4*4*(7+(5*4*4)+3*(4+8*7)*2*9)*(4+5)*6&quot;, &quot;(2*3+(3*4+7+5+2+2)+7)+7&quot;, &quot;(6*(8+6*3+7*4+7)+2+(5+2+2+5+4*7)*6+(2+4*7))*3+7&quot;, &quot;3*(2*8*7+6)*8+7*((7+2+3+2)*8+(3*2+7*7+8+3)*8+3+9)*2&quot;, &quot;(9*2+4)+4*(7*2*5*3*6)&quot;, &quot;(3+9+2*5)*(6*6)*9*(4+7)*9*7&quot;, &quot;(5+8*6*5)+6+(3+9*8*2)*7&quot;, &quot;6+((9+7+2*7+2+7)*(5+5*8+9+3+4)+(9*7+7*7+9)+4*6+6)+6+2*3&quot;, &quot;(4+(4+4+7+5+8))+(7+(2*8+4+6))+8+8+2&quot;, &quot;7*(4*8*5*(4*3*4+2+7)+6*6)&quot;, &quot;9*4+4+((9+3)*5+5)+6&quot;, &quot;(4*9+3+(9*6+4*6+3)*8)+3+9*4+8*6&quot;, &quot;(3+3)+8*4*6&quot;, &quot;8+7*(4+4*(6+3+3+4+7+4)*(2+8+9*4*7)*4*(7+2*6+8*2+5))&quot;, &quot;6*(2+(4*9*8)+8+(8+6+3*8*5*7)+9)+8*9&quot;, &quot;(8+5)+(4*5*2*2+4+6)+(8+7*2)&quot;, &quot;9*(7+3)*7*(6*9+4)*4&quot;, &quot;2*4+(9+8+3+5+9+(4+7*6*7+9))*9*3&quot;, &quot;9*(7*3)+4*7+2&quot;, &quot;7+9&quot;, &quot;2*(7+7+4+9*5)*8+3&quot;, &quot;3+9*7*(7*8*5*3)&quot;, &quot;((4+6+6*9*9)+2+8+(5+8+2))+5*5+7&quot;, &quot;(9+9)*(6+(5+7+3*4)*7)+(4*7+2+9+9)*9+(8*4*2)&quot;, &quot;5*(7*5)*3+3*5+7&quot;, &quot;9*((9*4+2+6*2*5)*(8+7)*7*7*8+9)+7*9+(8*8+4*4*4)&quot;, &quot;9*9+(4+9)+7+(5*(7+7+9+4*4)*(5+9*7+5*9*2)+7+2)&quot;, &quot;7+8+4+((3+4)*2+3*5+9+6)*6*(9*6+9*8*5*8)&quot;, &quot;4+(4+7*(5*6*3*9+8)*4)+6+6*((8+7*7+5+2)+3+(8+3+3+2*9+7)*(8+5+7*9+2)+6+5)&quot;, &quot;8*8*9+(3*4*4*7*(8*2*3+3))*2&quot;, &quot;((4*5*4)+3)+6*6*4*5&quot;, &quot;3*3+5+(7+3)*9*6&quot;, &quot;((7*3*7+3*7)+4)+2+4+7+8&quot;, &quot;6+(8*9*6*3*(5*9+7*5))*(6*6+7*7)+2+4*3&quot;, &quot;(2*(8*2*3*3)*3)*(2+5*9)+((9*6+6+8+3+6)+3*5+(3*8+8*2+9)+3+6)&quot;, &quot;4+5&quot;, &quot;(7*(6*9+5*6+3)*3*(3*7*2*3+7*9))*9&quot;, &quot;(8+2+9*6*(9+5+4+2)*5)*9&quot;, &quot;(6+6)+(7+9+8)+(7+3*(6+2+8*5*7)+7*3+7)*3+3*6&quot;, &quot;6*8+((6+4*3)+(3*2+4)+9*7)*4&quot;, &quot;(7*(2*4*5+9))+9+(8*2+(2*4+9*2*5)+3+6+8)*9*8&quot;, &quot;8*7*8*(4+4)&quot;, &quot;(4+8+(8+7*3+4*2*7)*5*(9*9*7+3+9+5))*9+4*3*(8+7+(9*2))*3&quot;, &quot;6*5*8+(2+3*7*4*2)&quot;, &quot;2*(7*7)*(6+7+2*3*7)*2*5*7&quot;, &quot;7*2*(3*(2*5*7+3*8))+(9*(6*6*7*3)+(4+3+2+9*8)+5*(7*2*3*8+5*7))*8&quot;, &quot;((2*7+5)+3*2*7)+4*8&quot;, &quot;4*(4+6)+(4*2*8+(3*8+4*8))&quot;, &quot;3+3*8*6+(4+(5+5+6+5*5)*3*8*4)*5&quot;, &quot;9+9*(5+7+7)*5&quot;, &quot;(5*(7+6*9+6*9+5)+3+(4*8+5*8*3)*(9*9+2*2+2*8))+7&quot;, &quot;((6*8+5)*(6+6*4*7+5*5)*7)*5*8+2*6*8&quot;, &quot;(3+7+2+2*2+6)+4*2*3&quot;, &quot;5*2*(7*2+2+8*2)+4*4&quot;, &quot;2*6*9+(9+2+6)&quot;, &quot;7*(4+7+4*4)+8&quot;, &quot;6*8+9*7+(2*(6+8*5*9*3*6)+7)&quot;, &quot;4*9*(4+9+8+7)+7+4+7&quot;, &quot;((8*8)*6+6*(7+8)+3+9)+(2*9+2*3*7)+(7+2+5)*5&quot;, &quot;9+9+5*(8*7*4+8+8*4)+4&quot;, &quot;(2+(4+3+7)*8+2)*(7*8*4+5)&quot;, &quot;7*(7*5*8*(5+8+6+9)*6*6)*3&quot;, &quot;(6+7*(6+9)+3*(2+9+5)*5)*3*(3*(4*6+4*5*5))&quot;, &quot;8+7+4+(5+7+9+8)+4*(4+2+7)&quot;, &quot;4+2*6+(9*(3+5)*(2+7*6+8+8)+6*8*7)+7&quot;, &quot;(2*(9*2+8*3+2)+(7*3*5*6))*2+9+7+(4+7*8+9*3)+8&quot;, &quot;6*(9*8+(5+2*5+2*6+6)*8+2)&quot;, &quot;8*2+(7*7*(9*6+3))+7+5*4&quot;, &quot;9+3+7+9+(5+(7*4*6+3+7+3)*8+(9+4*8*7*7)+2)&quot;, &quot;((4*4*8)+6*4*7+4*7)+7*8+3+8+9&quot;, &quot;6*(5+2*(4+3*5+6*2+6)*5*4+4)+4+(9*(7*5*2*4+5)+8)*(5*(2+2)+7+(6*4+3*7*9))&quot;, &quot;2*(7+9)*(2*2+4*7*6)*5+5*((5*8+3+9*3)+6*4+9)&quot;, &quot;(4*3+5*7+3+3)+(3*8*3*4*4)*8+5*8&quot;, &quot;6*4*(4*(3+6)+2)&quot;, &quot;9*(7+8+5+(9*9*8*6*5)*9)&quot;, &quot;(6*7)*5+5+7+3+((4+7*5+6+7)*3+4*4+3+(6+2*3*2+4+8))&quot;, &quot;3+4*2+2*7&quot;, &quot;(7*4+9)*9+6&quot;, &quot;2*(4+7+6+2+5+2)*3*(5+(9*8)+4+5)&quot;, &quot;2*(6+5+8*5*(7*3*7*7))*8+2+(3+7)&quot;, &quot;((3*8+7*8)+5*2+(7+4+8*3*6))+(5*2*3+2*2)+2+5+3&quot;, &quot;3*5*9+4*((5+5*4*3)*5+8+5)&quot;, &quot;9+7+(8+2+4*8+8*3)*5&quot;, &quot;(4+6*4+7+9+9)+5+5*5+(4*8+2)*2&quot;, &quot;(9+2*8*8)+6+(6+5+3)+(8+8+4)*7&quot;, &quot;2*(9*9+9+7)*((5+9*9*8*4+5)+8*(3*6)+(9*9*2))+6+((7+9+3*3)+4+(3*6+2*8))&quot;, &quot;((6*5+7+8*9+4)+4)*6+4*(5+(7*9+7+9)+7)&quot;, &quot;(9*3)*(3+2)+((7*5+8*7+5)*2)+4+8&quot;, &quot;(8*(4*2*8+6+6)*9*(8+9+9+7*7*2)+2*5)+(4+3+9)+4*2*7+5&quot;, &quot;5*6+9+6+(9*7)&quot;, &quot;(7*9+9+8*4)+5*(2+(4*5*5+8)+3*6*5)*7&quot;, &quot;2+(9*2*4+(8+6*6+6*4))*7&quot;, &quot;4*5+(2*4+6+(8*2)*9*2)+9&quot;, &quot;6*2*(7+5+4*3*2)*8&quot;, &quot;(6+(5*2*9*6+4)+8)+7*2*9*8&quot;, &quot;(8*8)*((9*4*2*4)*(2+7)+6*7*5)+(9+6)*3*6*((5*5*3+6*5+4)+5+5)&quot;, &quot;5+3*8+7*2+(3+3+4)&quot;, &quot;2*2*3+4&quot;, &quot;(6+5*3+(7*2*8)*4*4)+2&quot;, &quot;4+(2+(9*8)*2)+(6+(6*3*2*5+4+2)+2+8*2)&quot;, &quot;((3+9+9)+3)*(3*4+(3*8*3)+3*4+5)+3*5*9*5&quot;, &quot;(9*7*4*5)*(9+6)+(5*4+7*6+9*4)*5&quot;, &quot;8+((2+5*2+4*4+5)*(2+4*6*8)+3*7+8)+3+6&quot;, &quot;(4*6+(2+9+5+4*7*2))+4+9&quot;, &quot;3+6+9*(7*6+5)*(6*7*3)&quot;, &quot;(2*6+(2*8+2*8))+4&quot;, &quot;6*4+3*7*9*(9*2+6+2)&quot;, &quot;(8+(8*6+5*3+9))*4*9+4+5&quot;, &quot;(8*9*8)+7*4*3+5*(3+8*2*9*7*8)&quot;, &quot;5+6+8+(4+4+4*5+(9*2+6)+5)&quot;, &quot;2*(8*5+7+7+(3+2)*4)*(9*(2+8*7))&quot;, &quot;(2*(4+7+9)*(2*3+5*9*5+4)*6)+2&quot;, &quot;2*(5*2+(9+8+9+9+6)*5)*9*8+3*(2*(3*9)*7*4*(5*7)*6)&quot;, &quot;(5+3*4+9)+2&quot;, &quot;((3*9)*(8+3*3+2+2)*3)*9*7+4+(3+9*3+(2+6*7+8+9)*(6*6+2+3+2))*8&quot;, &quot;8*(3+9+5)*(5*(3*4*7*3)*2*8)*7+(6+6+5)&quot;, &quot;9+(8+2*3+7*3)*5*5+7*4&quot;, &quot;6*9+(9*5+7*(4*5)*2)+9*4*5&quot;, &quot;8+3+(4*6+(9*2+4+4+4+8)+3)&quot;, &quot;(3*6)+2*9&quot;, &quot;8*6*(2*7*5+(8+6+6)*4*(4*8))*7+((4*3+5+2)*6+(2+6*6*8+8)*9)+7&quot;, &quot;(9*(7*9)*(9*8+5)+8+(2+8*6*9)*(3*5*7*6+2+4))+(8*9+7+(3*5*2*4+9*8))+6*5&quot;, &quot;(7*8*2*4)+7+8*8*6*(6+2*(5*2)*4)&quot;, &quot;8*(5*4+4)*3+4*4&quot;, &quot;7+8+5+((3*2+3+4*8)*7*5)&quot;, &quot;((9*7*6)+7)+7+3+(4*(2*8*7+2+9)+(4+2*3)+2+4)&quot;, &quot;(6+3*6)*9*7*(4*8*2*(5*8*9+4+2))+3&quot;, &quot;3*7*7+9*9+(7+6+(3+6))&quot;, &quot;5+8+((8*8*4+5*3*5)*4+4+(5*5*2))*4*5&quot;, &quot;2*(5*4+(3*9+9*9)*9)+6+(3*3)+9*7&quot;, &quot;6*5+(6*(8*5)*(9+7*6*5)*9+3*(6+9))+8&quot;, &quot;4+9+(5*9+(7*6*3*8)+(8+2+7*5+3)+(4+7*7+7)+9)+7+(7+2+8+4)&quot;, &quot;((6+4*4+5+7+7)*(8*2)*(6+3)+(9+3*4*7+4+9))+5&quot;, &quot;(6*2*3)+8+9+(3*3*2+8)*(3*9*7+5*5)&quot;, &quot;7*5*(9+5+3*7+8*4)*3+2+4&quot;, &quot;(8+9)+((5*5+5*3)+2+8+9)*4*2*4*(5+4+2*8+7*3)&quot;, &quot;9*3*6+(2*(3+8*7*4+6)+5+(4*7)+2*(3*9*8))*7&quot;, &quot;((6+3+8*6*8)*(8*6+4+9+4)*(4+9+2*2+3)+7+(3+9+3+7+9*6)*4)+8&quot;, &quot;5*(3*4*4+(5+7*3))*3*5*7&quot;, &quot;((5*5*7+7+4*9)+3)+4+5&quot;, &quot;(7*4+6)*2&quot;, &quot;6*2*5*(8+6+3*8*5)*(4*3*5+4+5+9)*((4*6+3+9)+5+4+2+6+2)&quot;, &quot;4+(5+4+7+(8*8+7+6)*3*4)*(2+3+4+9)+3+8&quot;, &quot;5*5+(7*9)+5&quot;, &quot;(2+3+3+5*6*2)*7+8*(2+5*8+2+3+5)&quot;, &quot;2+5*(5*7*5*3)+2*(7+4*(5*9*5)+6)&quot;, &quot;5*7+7*4&quot;, &quot;2+8+3+(3*8*9)+5&quot;, &quot;3+((2*8+3)+3)*9*6*6&quot;, &quot;((7+6*3+6+7)*4*(9+6)+6+(5+8+4*7+9)*7)+9&quot;, &quot;6+((2*7*6+2)*9)*(8*5*2+(2+6))*4*6&quot;, &quot;(5*6*4*2*7)*2+2+(5*8*(9+8+7*3+2+6)+5)+(2+(9*4+3)*9*2*4+8)*6&quot;, &quot;((7*8+2)*8*6*5)+4+((8+3*9+7)+8*5)+(2+5+8)*4&quot;, &quot;3*(4+(7+2*4)*8*6)&quot;, &quot;9*((6+8+2*3)*2+7+4+9+5)+6+9&quot;, &quot;6+7+(7*7)+(8*9+(9+9)+(6*5*9+9*4))*3&quot;, &quot;(5+(3*5)+5)+(3+5*(4+7+7*8)*8*2)*7&quot;, &quot;5*7+((9+3*8)+3*3)&quot;, &quot;2*(8+8)*(4*9*9*(6+8+3))*7*7+8&quot;, &quot;9+((6*4*9+3+7)*5*9+9*(2*8+3+7*9+4))+8+6*8*9&quot;, &quot;(8+3+9+7*6)*6*2+7&quot;, &quot;7*(5*4*8+(9*7)*7)*8+3&quot;, &quot;(5+5+(3*9)*3*(6+2*5*4*5)*(8*7*9+9))+9+((6*2+9+5+6)+4)*3*8&quot;, &quot;4+4+7+2+(4*5+2)&quot;, &quot;5+8*(5*(6*5*7))&quot;, &quot;((8*5+8+4*9+4)*5*2*5)+6+5&quot;, &quot;4+((2+6*3+5)+9*3*6+4*7)*(7*6*4)&quot;, &quot;5*(4+2*8*3+8*8)&quot;, &quot;5+2+(2*(2+4)*(3*3*7*6+5*7)*8+4)*(8*9*(5+3+8+4*9*7))&quot;, &quot;8+((5+4+9+3+8)+9*(3*2)+(6+5))+((8+7*2*4)*5+4+5+2*(2*3))&quot;, &quot;(8+(7+6+9+2*6+4)*2+5)*(3+6*9+6+(8+9+4*4+2*7)*6)+4&quot;, &quot;8+((5*4)+7)*2*3*7&quot;, &quot;(3+4+2+8+2+4)+(2+6+(7*8*4)+3)+3+2*9+5&quot;, &quot;6*8*(8*9+5+8)&quot;, &quot;((8+2+5*8*9+4)*8+9*(9+2*6))+3*3+9*(5*4)&quot;, &quot;((2*9)+7+7*(7+8*4+2))*6+6+(4*2*7)&quot;, &quot;7+((2+8+7+4)*(4+2+9+2*9)+2+(6*8+5*2*3)+5)+7*(6+8)*5+2&quot;, &quot;8*5+3+7*7&quot;, &quot;(6*3+2*5+6)+5*(4+9*2*8*(7*7))*7+9&quot;, &quot;2*7*((5+7*5)*6+3*(2*3+8)+5*(9+7+5*3*6))+(7*(8*5+7*4)*9)&quot;, &quot;((6*9+8*8+2*8)+8+5+4*7*4)+7&quot;, &quot;5*6*(3*3*6)*6*7*9&quot;, &quot;2+3+((6+5)*7+(2*4)+7)+6&quot;, &quot;(7+8+(2+4*9*8*5))+(3+8*7)&quot;, &quot;9+((3+4*8+3*4)+2+9+(8*7+3*4*7*8)+3)*2+4*6&quot;, &quot;4+((2+9+4)*3+(7+3+2)*5*3+2)&quot;, &quot;2*4+8+2+5*(4+6)&quot;, &quot;(9+8+9+7)*8+4*8*(9+9*6)*8&quot;, &quot;3+5+(6*8*2+(6*9)*6*8)&quot;, &quot;3+4*2&quot;, &quot;6*(3*2+3+(6+3+7*4+2*7))+6*9+9*7&quot;, &quot;8+6+4+4+(6*3+9)+7&quot;, &quot;(4+(3*5*7*7+4)*5)*2*6&quot;, &quot;8+4+(5*5)+(6+8*(7+3+7*7)+(6+4+9*8)*(2+6+7+4*3*7))*(8*7+9)&quot;, &quot;((4*6*3+5*6+9)+4*7+2+5)+(3*6+4)+(7+8+8)&quot;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+  <span class="n">s</span> <span class="o">=</span> <span class="no">StringScanner</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+  <span class="n">stack</span> <span class="o">=</span> <span class="o">[</span><span class="mi">0</span><span class="o">]</span>
+  <span class="n">mod</span> <span class="o">=</span> <span class="kp">nil</span>
+  
+  <span class="k">until</span> <span class="n">s</span><span class="o">.</span><span class="n">eos?</span>
+    <span class="k">case</span>
+      <span class="k">when</span> <span class="nb">open</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">)</span>
+        <span class="n">stack</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">mod</span> <span class="o">||</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span>
+        <span class="n">stack</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="kp">nil</span>
+      <span class="k">when</span> <span class="n">s</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">)</span>
+        <span class="n">last_mod</span><span class="p">,</span> <span class="n">paren_result</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">stack</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">last_mod</span><span class="o">.</span><span class="n">to_sym</span><span class="p">,</span> <span class="n">paren_result</span><span class="p">)</span>
+      <span class="k">when</span> <span class="n">m</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/[+-\/*]/</span><span class="p">)</span>
+        <span class="n">mod</span> <span class="o">=</span> <span class="n">m</span>
+      <span class="k">when</span> <span class="n">n</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/\d+/</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">mod</span>
+          <span class="n">stack</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">stack</span><span class="o">.</span><span class="n">last</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">mod</span><span class="o">.</span><span class="n">to_sym</span><span class="p">,</span> <span class="n">n</span><span class="o">.</span><span class="n">to_i</span><span class="p">)</span>
+        <span class="k">else</span>
+         <span class="n">stack</span><span class="o">[-</span><span class="mi">1</span><span class="o">]</span> <span class="o">+=</span> <span class="n">n</span><span class="o">.</span><span class="n">to_i</span>
+       <span class="k">end</span>
+       <span class="n">mod</span> <span class="o">=</span> <span class="kp">nil</span>
+    <span class="k">else</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="n">stack</span><span class="o">.</span><span class="n">first</span>
+<span class="k">end</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1451467526514
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="part-2">
+<h2>Part 2<a class="headerlink" href="#part-2" title="Permalink to this headline">¶</a></h2>
+<p>It’s not dumb if it works</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">map</span> <span class="k">do</span> <span class="o">|</span><span class="n">v</span><span class="o">|</span>
+  <span class="n">v</span><span class="o">=</span><span class="n">v</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+ 
+  <span class="kp">loop</span> <span class="k">do</span>
+    <span class="n">ov</span> <span class="o">=</span> <span class="n">v</span>
+    <span class="c1"># evaluate strings of a+b+c</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\d+(\+\d+)+/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+      <span class="nb">eval</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">end</span>
+    
+    <span class="c1"># evaluate top level paren groups</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/\([^())]+\)/</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">r</span><span class="o">|</span>
+      <span class="nb">eval</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="k">end</span>
+ 
+    <span class="k">break</span> <span class="k">if</span> <span class="n">ov</span> <span class="o">==</span> <span class="n">v</span>
+  <span class="k">end</span>
+
+  <span class="nb">eval</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="k">end</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="ss">:+</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>224973686321527
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="19.html" title="previous page">Day 19</a>
+    <a class='right-next' id="next-link" href="17.html" title="next page">Day 17</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>

@@ -1,0 +1,563 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 15 &#8212; Advent of Code 2020</title>
+    
+  <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Day 14" href="14.html" />
+    <link rel="prev" title="Day 16" href="16.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">Advent of Code 2020</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="19.html">
+   Day 19
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.html">
+   Day 18
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.html">
+   Day 17
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.html">
+   Day 16
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Day 15
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.html">
+   Day 14
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.html">
+   Day 13
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.html">
+   Day 12
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.html">
+   Day 11
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.html">
+   Day 10
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.html">
+   Day 9
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08.html">
+   Day 8
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="07.html">
+   Day 7
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06.html">
+   Day 6
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05.html">
+   Day 5
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.html">
+   Day 4
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03.html">
+   Day 3
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.html">
+   Day 2
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/15.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/15.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#easy-performance-improvements">
+   Easy performance improvements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#enumerator">
+     Enumerator
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="day-15">
+<h1>Day 15<a class="headerlink" href="#day-15" title="Permalink to this headline">¶</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="o">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="o">].</span><span class="n">freeze</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[7, 14, 0, 17, 11, 1, 2]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">ocache</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reverse</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span><span class="o">.</span><span class="n">each_with_index</span><span class="o">.</span><span class="n">to_h</span><span class="o">.</span><span class="n">freeze</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{7=&gt;0, 14=&gt;1, 0=&gt;2, 17=&gt;3, 11=&gt;4, 1=&gt;5}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">cache</span><span class="o">=</span><span class="no">Marshal</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">Marshal</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ocache</span><span class="p">))</span>
+<span class="n">n</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">last</span>
+
+<span class="p">((</span><span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span><span class="o">...</span><span class="p">(</span><span class="mi">2020</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+  <span class="k">if</span> <span class="n">v</span><span class="o">=</span><span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+    <span class="n">next_val</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">v</span>
+    <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">next_val</span>
+  <span class="k">else</span>
+    <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+  <span class="k">end</span>
+
+  <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">1_000_000</span> <span class="o">==</span> <span class="mi">0</span>
+    <span class="nb">print</span> <span class="s2">&quot;/&quot;</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+<span class="nb">puts</span> <span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>206
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="easy-performance-improvements">
+<h2>Easy performance improvements<a class="headerlink" href="#easy-performance-improvements" title="Permalink to this headline">¶</a></h2>
+<p>I used the above to get the part 2 solution, and a version where the cache contained two rolling values for each number. It took around 15-30 seconds per million. :/</p>
+<p>Much of the time spent during the loop is spent accessing the lookup hash in the global scope
+Moving the variables more local improves cost significantly, event with the added price of
+additional array creation etc.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="nb">require</span> <span class="s1">&#39;benchmark&#39;</span>
+
+<span class="n">cache</span><span class="o">=</span><span class="no">Marshal</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">Marshal</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ocache</span><span class="p">))</span>
+<span class="n">n</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">last</span>
+
+<span class="k">def</span> <span class="nf">in_method</span><span class="p">(</span><span class="n">count</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+  <span class="n">count</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span><span class="p">(</span><span class="mi">15</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;Global lookup&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="mi">1_000_000</span><span class="o">.</span><span class="n">times</span> <span class="k">do</span>
+      <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;Local lookup&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="mi">1_000_000</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">cache</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">cache</span><span class="o">|</span>
+      <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+      
+      <span class="n">cache</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;Local key&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="mi">1_000_000</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="n">n</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span>
+      <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+      
+      <span class="n">n</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;lookup + key&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="mi">1_000_000</span><span class="o">.</span><span class="n">times</span><span class="o">.</span><span class="n">inject</span><span class="p">(</span><span class="o">[</span><span class="n">cache</span><span class="p">,</span> <span class="n">n</span><span class="o">]</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="o">|</span>
+      <span class="n">c</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+      
+      <span class="o">[</span><span class="n">c</span><span class="p">,</span> <span class="n">n</span><span class="o">]</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;Method scope&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">in_method</span><span class="p">(</span><span class="mi">1_000_000</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">n</span><span class="p">)</span>
+  <span class="k">end</span> 
+<span class="k">end</span><span class="p">;</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                      user     system      total        real
+Global lookup     8.420360   0.000000   8.420360 (  8.429577)
+Local lookup      4.282466   0.003861   4.286327 (  4.290906)
+Local key         4.299350   0.000000   4.299350 (  4.303004)
+lookup + key      0.099704   0.000000   0.099704 (  0.099510)
+Method scope      0.061123   0.000000   0.061123 (  0.061131)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="n">cache</span><span class="o">=</span><span class="no">Marshal</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="no">Marshal</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">ocache</span><span class="p">))</span>
+<span class="n">n</span><span class="o">=</span><span class="n">data</span><span class="o">.</span><span class="n">last</span>
+
+<span class="k">def</span> <span class="nf">run</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">starting</span><span class="p">,</span> <span class="n">ending</span><span class="p">)</span>
+  <span class="p">(</span><span class="n">starting</span><span class="o">...</span><span class="n">ending</span><span class="p">)</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">i</span><span class="o">|</span>
+    <span class="k">if</span> <span class="n">v</span><span class="o">=</span><span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+      <span class="n">next_val</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">v</span>
+      <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="n">next_val</span>
+    <span class="k">else</span>
+      <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+      <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+  <span class="n">n</span>
+<span class="k">end</span>
+
+<span class="nb">puts</span> <span class="no">Benchmark</span><span class="o">.</span><span class="n">measure</span> <span class="p">{</span>
+  <span class="n">n</span><span class="o">=</span><span class="n">run</span><span class="p">(</span><span class="n">cache</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">count</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">30_000_000</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">n</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  6.201681   0.023926   6.225607 (  6.236146)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>955
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="enumerator">
+<h3>Enumerator<a class="headerlink" href="#enumerator" title="Permalink to this headline">¶</a></h3>
+<p>Slower, but nicer interface</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ruby notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">memory_game</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+  <span class="no">Enumerator</span><span class="o">.</span><span class="n">new</span> <span class="k">do</span> <span class="o">|</span><span class="n">yielder</span><span class="o">|</span>
+    <span class="n">all_but_last</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reverse</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">reverse</span>
+    <span class="n">cache</span> <span class="o">=</span> <span class="n">all_but_last</span><span class="o">.</span><span class="n">each_with_index</span><span class="o">.</span><span class="n">to_h</span>
+
+    <span class="n">data</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">i</span><span class="o">|</span> <span class="n">yielder</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="p">}</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">last</span>
+
+    <span class="kp">loop</span><span class="o">.</span><span class="n">with_index</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">count</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">_</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span>
+      <span class="k">if</span> <span class="n">v</span><span class="o">=</span><span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span>
+        <span class="n">next_val</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="n">v</span>
+        <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="n">next_val</span>
+      <span class="k">else</span>
+        <span class="n">cache</span><span class="o">[</span><span class="n">n</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+      <span class="k">end</span>
+      
+      <span class="n">yielder</span><span class="o">.</span><span class="n">yield</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="no">Benchmark</span><span class="o">.</span><span class="n">bm</span> <span class="k">do</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span>
+  <span class="n">index</span> <span class="o">=</span> <span class="mi">30_000_000</span> <span class="o">-</span> <span class="mi">1</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;next&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">sequence</span> <span class="o">=</span> <span class="n">memory_game</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">index</span><span class="o">.</span><span class="n">times</span> <span class="p">{</span> <span class="n">sequence</span><span class="o">.</span><span class="n">next</span> <span class="p">}</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">sequence</span><span class="o">.</span><span class="n">next</span>
+  <span class="k">end</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;find&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">memory_game</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">find</span><span class="o">.</span><span class="n">with_index</span> <span class="p">{</span><span class="o">|</span><span class="n">_n</span><span class="p">,</span> <span class="n">i</span><span class="o">|</span> <span class="n">i</span> <span class="o">==</span> <span class="n">index</span> <span class="p">}</span>
+  <span class="k">end</span>
+  
+  <span class="n">x</span><span class="o">.</span><span class="n">report</span><span class="p">(</span><span class="s2">&quot;drop&quot;</span><span class="p">)</span> <span class="k">do</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="n">memory_game</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">lazy</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="p">)</span><span class="o">.</span><span class="n">first</span>
+  <span class="k">end</span>
+<span class="k">end</span><span class="p">;</span><span class="kp">nil</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       user     system      total        real
+next 19.691053   0.143800  19.834853 ( 19.859294)
+find 13.011795   0.011868  13.023663 ( 13.045248)
+drop 13.300430   0.007862  13.308292 ( 13.330321)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "ruby"
+        },
+        kernelOptions: {
+            kernelName: "ruby",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ruby'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="16.html" title="previous page">Day 16</a>
+    <a class='right-next' id="next-link" href="14.html" title="next page">Day 14</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Billiam<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
